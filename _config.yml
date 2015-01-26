@@ -1,0 +1,31 @@
+# visit https://github.com/mojombo/jekyll/wiki/Configuration for more settings
+
+paginate: 10 # pagination based on number of posts
+paginate_path: "page:num"
+exclude: ["README.md"] # files to exclude
+highlighter: pygments
+markdown: kramdown
+
+
+defaults:
+  -
+    scope:
+      path: "" # empty string for all files
+    values:
+      title: Cobus
+
+description: Techical blog
+author:
+  name: Cobus
+  email: me@cobus.io
+  github: cobusbernard
+  twitter: cobusbernard
+  linkedin: cobusbernard
+  bio: Technical ramblings of button monkey
+  email_md5: 9864cccf5b8d379f9a5bfdcc0d7b33d5
+
+rss_path: feed.xml
+categories_path: categories.html
+tags_path: tags.html
+
+BASE_PATH:
