@@ -99,7 +99,7 @@
 
 
 <div id="bio" class="text-center">
-	Technical ramblings of button monkey
+	Technical ramblings of a button monkey
 </div>
 
 
@@ -157,19 +157,22 @@
 	<div class="col-sm-10">
 	 <span class="post-date">
 	   
-	   November 
-	   15th,
+	   January 
+	   26th,
 	   
-	   2013
+	   2015
 	 </span>
 	  <div class="article_body">
-	  <p><strong>dbyll</strong> is minimalist, stylish theme for jekyll. Supports gravatar, account links (github, twitter, e-mail, pinterest, résume file) and a bio.  </p>
+	  <p>So I finally got round to sorting out the tech blog. I chose to use <a href="http://jykellrb.com">Jekyll</a> rather than <a href="https://wordpress.com">WordPress</a> as I didn’t want to deal with constant updates and security vulnerabilities. Jekyll generates a static site based on the posts created, but still has the advantages of a CMS like tags and categories. Posts are written using <a href="http://kramdown.gettalong.org/">Markdown</a> in a plain text file, making it very easy to do the formatting. You are able to generate the site locally before publishing / pushing it elsewhere. This is where one of the other benefits come in: <a href="https://pages.github.com/">GitHub Pages</a>. You are able to create a repository with the format &lt;GitHub Username&gt;.github.io. In my case, that is <a href="https://cobusbernard.github.io">cobusbernard.github.io</a>. GitHub itself uses Jekyll, and by creating this repository, it automatically creates the Jekyll site for you.</p>
 
-<p><strong>dbyll</strong> is brought to you by <strong><a href="http://ismaildemirbilek.com">dbtek</a></strong>. Open sourced under <a href="http://opensource.org/licenses/MIT">MIT</a> license.</p>
+<p>Now let’s try out some code blocks. Currently I am doing most of my work in C#, so would like to see if Jekyll supports the text markup for this correct:</p>
 
-<h3 id="dbyll-is-on-github">dbyll is on GitHub</h3>
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span> <span class="n">args</span><span class="p">[])</span>
+<span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="n">Console</span><span class="p">.</span><span class="n">Writeln</span><span class="p">(</span><span class="s">&quot;Hello World&quot;</span><span class="p">);</span>
+<span class="p">}</span></code></pre></div>
 
-<p><a class="btn btn-default" href="https://github.com/dbtek/dbyll">Grab your copy now!</a></p>
+<p>That worked! The markup is very easy, just wrap the code in {\% hightlight csharp \%} tags.</p>
 
 	  </div>
 
@@ -180,17 +183,17 @@
 		  
 			 
 				<li><a href="/categories.html#general-ref">
-					general <span>(4)</span>
+					general <span>(1)</span>
 					,
 				</a></li>
 			 
 				<li><a href="/categories.html#setup-ref">
-					setup <span>(2)</span>
+					setup <span>(1)</span>
 					,
 				</a></li>
 			 
 				<li><a href="/categories.html#demo-ref">
-					demo <span>(4)</span>
+					demo <span>(1)</span>
 					
 				</a></li>
 			
@@ -206,28 +209,21 @@
 			 
 				<li>
 					<a href="/tags.html#demo-ref">
-					demo <span>(4)</span>
+					demo <span>(1)</span>
 					,
 					</a>
 				</li>
 			 
 				<li>
-					<a href="/tags.html#dbyll-ref">
-					dbyll <span>(4)</span>
-					,
-					</a>
-				</li>
-			 
-				<li>
-					<a href="/tags.html#dbtek-ref">
-					dbtek <span>(4)</span>
+					<a href="/tags.html#jekyll-ref">
+					jekyll <span>(1)</span>
 					,
 					</a>
 				</li>
 			 
 				<li>
 					<a href="/tags.html#setup-ref">
-					setup <span>(2)</span>
+					setup <span>(1)</span>
 					
 					</a>
 				</li>
@@ -262,7 +258,7 @@
       <section class="col-sm-6 author">
         <img src="http://www.gravatar.com/avatar/9864cccf5b8d379f9a5bfdcc0d7b33d5" class="img-rounded author-image" />
         <h4 class="section-title author-name">Cobus</h4>
-        <p class="author-bio">Technical ramblings of button monkey</p>
+        <p class="author-bio">Technical ramblings of a button monkey</p>
       </section>
     </div>
 
@@ -270,7 +266,7 @@
 
 		<ul class="pager">
 		  
-		  <li class="previous"><a href="/general/setup/demo/2013/11/15/configuration.html" title="Configuration">&larr; Previous</a></li>
+		  <li class="previous disabled"><a>&larr; Previous</a></li>
 		  
 		  
 			<li class="next disabled"><a>Next &rarr;</a>

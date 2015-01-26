@@ -12,7 +12,7 @@ defaults:
     scope:
       path: "" # empty string for all files
     values:
-      title: Cobus
+      title: (thoughts) => tryParse(thoughts, out blog)
 
 description: Techical blog
 author:
@@ -21,7 +21,7 @@ author:
   github: cobusbernard
   twitter: cobusbernard
   linkedin: cobusbernard
-  bio: Technical ramblings of button monkey
+  bio: Technical ramblings of a button monkey
   email_md5: 9864cccf5b8d379f9a5bfdcc0d7b33d5
 
 rss_path: feed.xml
