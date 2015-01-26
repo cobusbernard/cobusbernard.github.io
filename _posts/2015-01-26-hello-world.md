@@ -17,4 +17,4 @@ public void Main(string args[])
 }
 {% endhighlight %}
 
-That worked! The markup is very easy, just wrap the code in \{% hightlight csharp %\} tags.
+That worked! The markup is very easy, just wrap the code in {% raw %} {% hightlight csharp %} {% endraw %} tags.

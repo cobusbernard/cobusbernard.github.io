@@ -17,7 +17,7 @@
     &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Writeln&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Hello World&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;That worked! The markup is very easy, just wrap the code in {\% hightlight csharp \%} tags.&lt;/p&gt;
+&lt;p&gt;That worked! The markup is very easy, just wrap the code in  {% hightlight csharp %}  tags.&lt;/p&gt;
 </description>
 				<pubDate>Mon, 26 Jan 2015 00:00:00 +0200</pubDate>
 				<link>/general/setup/demo/2015/01/26/hello-world.html</link>
