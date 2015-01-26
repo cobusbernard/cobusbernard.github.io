@@ -12,7 +12,7 @@ defaults:
     scope:
       path: "" # empty string for all files
     values:
-      title: (thoughts) => tryParse(thoughts, out blog)
+      title: (thoughts) => TryParse(thoughts, out blog)
 
 description: Techical blog
 author:
