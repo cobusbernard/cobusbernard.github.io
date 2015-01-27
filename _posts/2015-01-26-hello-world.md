@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Hello World!
-comments: true
+exclude_comments: false
 categories: [general, setup, demo]
 tags: [demo, jekyll, setup]
 fullview: true
@@ -80,3 +80,73 @@ public void Main(string args[])
 {% endhighlight %}
 {% endraw %}
 ~~~
+
+Google Analytics
+-----------------
+
+This will be a completely new area for me as I know what analytics do, but have never worked with them before. The easiest way to get going is to create an account on [Google Analytics](http://www.google.com/analytics/), set up a site and stick the chunk of Javascript they give you into the page. To do this cleanly, create a new file in [_includes/google_analytics.html](https://github.com/cobusbernard/cobusbernard.github.io/blob/master/_includes/google_analytics.html) that will contain the following:
+
+{% highlight javascript %}
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '<tracking code>', '<site name>');
+  ga('send', 'pageview');
+
+</script>
+{% endhighlight %}
+
+This needs to be added to all the pages by adding the following line to [_includes/default.html](https://github.com/cobusbernard/cobusbernard.github.io/blob/master/_includes/default.html#L5):
+
+{% raw %}
+~~~
+{% include google_analytics.html %}
+~~~
+{% endraw %}
+
+Comments
+--------
+
+One of the major pain points for me on my almost non-existent blog were the number of spam comments I had to delete. I installed some plugins to deal with it, but some still slipped through. There were even some cases where my WordPress site was high-jacked due to some weird comment being added. To avoid this, use [Disqus](https://disqus.com) - create an account and set up your first site. Choose the *Universal* code option at the end and they will provide you with a chunk of Javascript to paste in. As with the Google Analytics, we don't want to just dump this into the file, but rather use another include. Create a file [_includes/comments.html](https://github.com/cobusbernard/cobusbernard.github.io/blob/master/_includes/comments.html) and add the Javascript into it:
+
+{% highlight javascript %}
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = '<disqus forum name>'; // required: replace example with your forum shortname
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+{% endhighlight %}
+
+To add the this to the page layout, edit the [default.html](https://github.com/cobusbernard/cobusbernard.github.io/blob/master/_includes/default.html#L98) page to include it above the footer by adding in:
+
+{% raw %}
+~~~
+{% include comments.html %}
+~~~
+{% endraw %}
+
+
+This will display the comments on all pages. To add the ability to exclude comments from certain posts, add a variable at the top of the specific post with:
+
+~~~
+exclude_comments: true
+~~~
+
+Also wrap the _comments.html content with:
+
+{% raw %}
+{% if page.exclude_comments == false %}
+{% endif %}
+{% endraw %}
+
+When `exclude_comments` is set to `true`, the Disqus comment section will not be displayed.
