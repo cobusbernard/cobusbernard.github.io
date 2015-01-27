@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Hello World!
+comments: true
 categories: [general, setup, demo]
 tags: [demo, jekyll, setup]
 fullview: true
