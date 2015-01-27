@@ -40,7 +40,7 @@ I recently bought the domain [cobus.io](http://cobus.io) and wanted to point tha
 cobus.io
 ~~~
 
-Do not prefix with `http://``!
+Do not prefix with `http://`!
 
 Go to your GitHub repo and look at the settings section - to do this, follow [these instructions](https://help.github.com/articles/adding-a-cname-file-to-your-repository/). GitHub -> Repository -> Settings (right sidebar) -> Scroll down to *GitHub Pages*. You should see your custom domain name with a checkmark and a green background if all went well.
 
