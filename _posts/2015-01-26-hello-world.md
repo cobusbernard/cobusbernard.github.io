@@ -70,16 +70,16 @@ public void Main(string args[])
 
 That worked! The markup is very easy, just wrap the code in {% raw %} {% hightlight csharp %} {% endraw %} tags, i.e.
 
-~~~
 {% raw %}
+~~~
 {% highlight csharp %}
 public void Main(string args[])
 {
   System.Console.Writeln("Hello World");
 }
 {% endhighlight %}
-{% endraw %}
 ~~~
+{% endraw %}
 
 Google Analytics
 -----------------
