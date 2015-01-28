@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Hello World!
+title: Basic Jekyll GitHub Blog
 exclude_comments: false
 categories: [general, setup, demo]
 tags: [demo, jekyll, setup]
