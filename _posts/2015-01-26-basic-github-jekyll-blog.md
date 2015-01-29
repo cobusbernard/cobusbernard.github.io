@@ -4,7 +4,7 @@ title: Basic Jekyll GitHub Blog
 exclude_comments: false
 categories: [general, setup, demo]
 tags: [demo, jekyll, setup]
-fullview: true
+fullview: false
 ---
 
 So I finally got round to sorting out the tech blog. I chose to use [Jekyll](http://jykellrb.com) rather than [WordPress](https://wordpress.com) as I didn't want to deal with constant updates, security vulnerabilities and backing up of the site. Jekyll generates a static site based on the posts created, but still has the advantages of a CMS like tags and categories. Posts are written using [Markdown](http://kramdown.gettalong.org/) in a plain text file, making it very easy to do the formatting. You are able to generate the site locally before publishing / pushing it elsewhere. This is where one of the other benefits come in: [GitHub Pages](https://pages.github.com/). You are able to create a repository with the format \<GitHub Username\>.github.io - in my case, that is [cobusbernard.github.io](https://cobusbernard.github.io). GitHub itself uses Jekyll, and by creating this repository, it automatically creates the Jekyll site for you. No backup is required as your site is already under version control in GitHub!

@@ -4,7 +4,7 @@ title: Using SSH Config
 exclude_comments: false
 categories: [linux, ssh]
 tags: [config, ssh]
-fullview: true
+fullview: false
 ---
 
 If you use [SSH](http://www.openssh.com/) on Linux a lot, you will know that having to specify the key each time you want to access a server is a pain. You really don't want to have a single key for all servers as you would need to revoke it globally in the event that it was compromised. The ssh config file allows you to specify multiple values to use for specific hosts:

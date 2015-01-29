@@ -4,7 +4,7 @@ title: Migrating repo from SVN to Git RPC error
 exclude_comments: false
 categories: [VCS, git, svn]
 tags: [git, svn]
-fullview: true
+fullview: false
 ---
 
 While I was working on [Dementium II HD](http://www.dementium2.com), I wanted to migrate the repository from [SVN](https://subversion.apache.org/) to [Git](http://git-scm.com/). It was being hosted on a machine in the one studio and served the external developers over a 10mbit ADSL connection. The upstream rate is ~400kbit, so imagine trying to checkout a 26GB repository. I ran into the following error when I tried to import the SVN repo into a Git one:
