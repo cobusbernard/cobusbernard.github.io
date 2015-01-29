@@ -2,8 +2,8 @@
 layout: post
 title: Using SSH Config
 exclude_comments: false
-categories: [linux, ssh]
-tags: [config, ssh]
+categories: [Linux]
+tags: [config, ssh, linux]
 fullview: false
 ---
 

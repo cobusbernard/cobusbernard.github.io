@@ -2,8 +2,8 @@
 layout: post
 title: Ubuntu on Hyper-V
 exclude_comments: false
-categories: [setup, linux]
-tags: [linux, security]
+categories: [linux]
+tags: [linux, ubuntu, hyper-v]
 fullview: false
 ---
 Getting Ubuntu to run on Hyper-V was a bit of an issue for Windows Server 2008, here are some things to look for.

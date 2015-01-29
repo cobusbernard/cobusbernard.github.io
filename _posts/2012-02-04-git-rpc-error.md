@@ -2,7 +2,7 @@
 layout: post
 title: Migrating repo from SVN to Git RPC error
 exclude_comments: false
-categories: [VCS, git, svn]
+categories: [Version Control]
 tags: [git, svn]
 fullview: false
 ---

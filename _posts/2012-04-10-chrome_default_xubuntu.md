@@ -2,8 +2,8 @@
 layout: post
 title: Chrome as default browser in Xubuntu
 exclude_comments: false
-categories: [setup, linux]
-tags: [linux, config]
+categories: [Linux]
+tags: [linux, config, xubuntu]
 fullview: false
 ---
 
