@@ -2,8 +2,8 @@
 layout: post
 title: Basic Jekyll GitHub Blog
 exclude_comments: false
-categories: [General]
-tags: [demo, jekyll, setup]
+categories: [Ruby]
+tags: [demo, jekyll, setup, ruby]
 fullview: false
 ---
 

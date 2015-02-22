@@ -2,7 +2,7 @@
 layout: post
 title: Home VPN with OpenVPN
 exclude_comments: false
-categories: [General]
+categories: [Linux]
 tags: [linux, openvpn, vpn, docker]
 fullview: false
 ---

@@ -2,8 +2,8 @@
 layout: post
 title: NodeJS 12 Factor App
 exclude_comments: false
-categories: [setup, linux]
-tags: [linux, security]
+categories: [Meetups]
+tags: [linux, docker, nodejs]
 fullview: false
 ---
 

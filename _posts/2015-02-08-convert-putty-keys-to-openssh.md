@@ -2,7 +2,7 @@
 layout: post
 title: Converting Putty keys to OpenSSH
 exclude_comments: false
-categories: [General]
+categories: [Windows]
 tags: [ssh, putty]
 fullview: false
 ---

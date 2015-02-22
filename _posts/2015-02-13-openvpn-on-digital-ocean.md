@@ -2,14 +2,14 @@
 layout: post
 title: Personal VPN - OpenVPN in Docker on DigitalOcean
 exclude_comments: false
-categories: [General]
+categories: [Linux]
 tags: [linux, openvpn, vpn, docker]
 fullview: false
 ---
 
 I was playing around on a [random](http://netflix.com) site today, when I received the message *This content is not available in your country yet*. As a South African, we run into this a lot as our online presence it not that large and most international companies do not feel it is financially viable to run their services here. So I decided it is time to get a VPN going to avoid this. I decided to use a [Digital Ocean](https://www.digitalocean.com/) Droplet for the task - costing $5 a month is cheap enough. The smallest one has 512MB Ram, 20GB SSD, 1 core and 1TB of transfer - this will be plenty to get the VPN up and possibly some other services. Signup was very quick and I was happy to see that they support 2 factor auth via [Google Authenticator](https://itunes.apple.com/za/app/google-authenticator/id388497605?mt=8).
 
-I found this [easy guide](https://www.digitalocean.com/community/tutorials/how-to-run-openvpn-in-a-docker-container-on-ubuntu-14-04) on how to set up [OpenVPN](https://openvpn.net/)] using [Docker](http://docker.io) - blindly followed it and after 5 minutes, I could log on to the new VPN. This is a lot quicker than my first attempts in 2011  - I would first set up a VM with Ubuntu, update it and then do all the installation / configuration of OpenVPN manually. Sometimes you would run into some fun issues when dealing with [Ubuntu on Hyper-V](2011-07-25-Ubuntu-on-HyperV). 
+I found this [easy guide](https://www.digitalocean.com/community/tutorials/how-to-run-openvpn-in-a-docker-container-on-ubuntu-14-04) on how to set up [OpenVPN](https://openvpn.net/)] using [Docker](http://docker.io) - blindly followed it and after 5 minutes, I could log on to the new VPN. This is a lot quicker than my first attempts in 2011  - I would first set up a VM with Ubuntu, update it and then do all the installation / configuration of OpenVPN manually. Sometimes you would run into some fun issues when dealing with [Ubuntu on Hyper-V](2011-07-25-Ubuntu-on-HyperV).
 
 Here are the commands in order for quick copy & paste - still need  to create or find an [Ansible](http://www.ansible.com/home) playbook for this to make it even easier. The commands should be run as a normal user - it will *sudo* where needed.
 
