@@ -23,5 +23,5 @@ After a while (remember, this is Africa where we have [really slow bandwidth](ht
 
 ~~~bash
 /ip firewall nat add chain=dstnat protocol=udp dst-port=1194 \
-    action=dst-nat to-addresses=10.0.0.1 to-ports=1194
+    action=dst-nat to-addresses=10.0.0.1 to-ports=1194 in-interface=uncapped
 ~~~
