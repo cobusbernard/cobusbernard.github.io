@@ -8,10 +8,9 @@ fullview: true
 ---
 
 * Bring
- ** Warm top - the aircon might be too cold.
- ** Converter for you charger - even with a Mac you might need to charge it.
+  * Warm top - the aircon might be too cold.
+  * Converter for you charger - even with a Mac you might need to charge it / help out foreigner attending.
 
 Presenter
 ---------
-
 White / black background - depends on lighting
