@@ -6,6 +6,7 @@ categories: [Version Control]
 tags: [ssh, https, git]
 fullview: false
 ---
+One of those *djissis duh* moments - trying to check out a public git repo, but failing due to authentication ...
 
 ~~~bash
 git clone git@github.com:cobusbernard/Scripts.git
@@ -18,10 +19,14 @@ Please make sure you have the correct access rights
 and the repository exists.
 ~~~
 
+So I checked my ssh setup / keys, but nothing in there looks dodgy:
+
 ~~~bash
 ls ~/ssh/
 known_hosts
 ~~~
+
+So it ended up being ssh vs https cloning. SSH checkout is always authenticated.
 
 ~~~bash
 git clone https://github.com/cobusbernard/Scripts.git
