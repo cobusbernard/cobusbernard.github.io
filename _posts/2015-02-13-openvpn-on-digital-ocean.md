@@ -43,7 +43,7 @@ sudo start docker-openvpn
 
 At this point, the Docker container will be created, configured and running via an upstart script. To add a user, use the following 2 commands - first one will create the user and the second will output the config file to the host VM to allow copying it to the client.
 
-~~~bah
+~~~bash
 docker run --volumes-from $OVPN_DATA --rm -it kylemanna/openvpn easyrsa build-client-full CLIENTNAME nopass
 docker run --volumes-from $OVPN_DATA --rm kylemanna/openvpn ovpn_getclient CLIENTNAME > CLIENTNAME.ovpn
 ~~~
