@@ -2,6 +2,8 @@
 layout: post
 title: Chrome as default browser in Xubuntu
 exclude_comments: false
+tagline: How to get Chrome as you default browser in Xubuntu.
+image:
 categories: [Linux]
 tags: [linux, config, xubuntu]
 fullview: false

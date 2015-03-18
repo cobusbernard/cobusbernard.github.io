@@ -1,6 +1,8 @@
 ---
 layout: post
 title: ScaleConf 2015, Day 3
+tagline: Notes for day 3 of ScaleConf
+image: scale_conf_logo.png
 exclude_comments: false
 categories: [Conferences]
 tags: [scaling]
@@ -8,7 +10,7 @@ fullview: false
 ---
 
 **How to upgrade your databases**\\
-*Charity from Parse*
+*[Charity Majors](https://twitter.com/mipsytipsy) from [Parse](http://parse.com)*
 
 Parse
 : * Mobile backend with 500k apps
@@ -16,15 +18,15 @@ Parse
 * Mongo, cassandra, mysq, redis
 * Ruby on Rails => golang
 
-Operations / backend maintenance: if you do it well, no-one will notice. That is why operation engineers drink and swear a lot. Benckmarketing. Why not to upgrade? "You can get fuuuucked". Additional risk for upgrading is that for the current version, you know where all the grmlins live, so you can avoid them. For new versions, it is like a write-your-own=adventure book: you will find the in suprising, new places.
+Operations / backend maintenance: if you do it well, no-one will notice. That is why operation engineers drink and swear a lot. [Benckmarketing](http://www.urbandictionary.com/define.php?term=benchmarketing). Why not to upgrade? "You can get fuuuucked". Additional risk for upgrading is that for the current version, you know where all the [gremlins](http://en.wikipedia.org/wiki/Gremlin) live, so you can avoid them. For new versions, it is like a write-your-own-adventure book: you will find them in surprising, new places.
 
 So the basic steps for upgrading are:
 : * Read the release notes
 * Write some unit tests
 * Finally sit down and evaluate risk
 
-The "cowboy coninuum": how much risk will you take for the new shiny version.
-Anything with "nosql" in the description means your db is not mature. ;)
+The "cowboy continuum": how much risk will you take for the new shiny version.
+Anything with "[NoSQL](http://en.wikipedia.org/wiki/NoSQL)" in the description means your db is not mature. ;)
 
 Risk assessment:
 : * How mature is the DB
@@ -33,7 +35,7 @@ Risk assessment:
 * Can you roll back? How hard will it be?
 * How much does your workload push the boundaries o f the db? If you are doing new / out of boundaries things, make sure you can test properly
 
-Your db content determines how risky upgrading the db is - using Redis for caching means a broken upgrade isn't hard to recover from. For MySQL that contains usernames / passwords, you don't want to just do it. We do loads of different things with mongo that no-one else are doing.
+Your db content determines how risky upgrading the db is - using [Redis](http://redis.io/) for caching means a broken upgrade isn't hard to recover from. For [MySQL](http://www.mysql.com/) that contains usernames / passwords, you don't want to just do it. We do loads of different things with mongo that no-one else are doing.
 
 Real production testing
 : * YOUR query set
@@ -47,10 +49,10 @@ Correctness
 : * Unit tests
 * Tools to replay sample queries against 2 primaries (pt-upgrade)
 * Traffic splitter
-* Bul traffic capture + replay
+* Build traffic capture + replay
 
 Base Performance
-: * Scnapt data
+: * Snapshot data
 * Capture ops
 * Replay ops
 * Reset snapshot, tweak variable, repeat
@@ -58,14 +60,14 @@ Base Performance
 Mongo: going from 2.4 -> 2.6 took 9 months, to go to 3.0 will take a full year.
 
 Replay tools: (mongo flashback)
-: * Snapshot - from start of record run. Then creat and LVM snapshot for resetting.
-* Record - ython tool to capture ops
+: * Snapshot - from start of record run. Then create an LVM snapshot for resetting.
+* Record - python tool to capture ops
 * Replay - go too to play back ops
 * Rewind snapshot, rinse, repeat
 
 MySql tools
-: * Apiary (old, deprecated)
-* Percona playback (new, shiny)
+: * [Apiary](http://apiary.io/) (old, deprecated)
+* [Percona](http://www.percona.com/) playback (new, shiny)
 
 Make sure you are stressing the performance of your db, not your tool
 
@@ -77,11 +79,9 @@ Data integrity, your sanity, query performance - you can only have 2 ...
 ---
 
 **"Just" shard it**\\
-*Maggie Zhou from [Etsy](http://etsy.com)*
+*[Maggie Zhou](https://twitter.com/zmagg) from [Etsy](http://etsy.com)*
 
-
-Sharding with MySql for ~
-
+Initially designed a sharding solution in 2010 on MySQL.
 Ticket server for UUID (twitter uses snowflake)
 Taking 2 months to load balance the shards when adding new ones. So 2010's solution is not scaling.
 
@@ -90,33 +90,33 @@ Migrations were:
 * arbitrary
 * developers had to be aware
 * created orphaned data
-* locked shops / ysers out of changes for up tohours
+* locked shops / users out of changes for up to 8 hours
 * slow
 
 
-Error prone? We can fx the erros - script more
-Arbitrary? Writ tooling to figure out which rows are right to migrate off / unit test
-Developers had to be aware? We can write better interfaces.Orphaned data?
-
+* Error prone? We can fix the errors - script more!
+* Arbitrary? Write tooling to figure out which rows are right to migrate off / unit test
+* Developers had to be aware? We can write better interfaces. Orphaned data?
 * Deletes are expensive, so we didn't do them.
-* Migrations created orphaned data on old hosts that werer still pickerd up by full table scans (downstram sysems: search, analytics). ** Financial systems were showing duplicate records!!**
+* Migrations created orphaned data on old hosts that were still picked up by full table scans (downstram systems: search, analytics). ** Financial systems were showing duplicate records!!**
 
 Able to solve 1 - 4, but the locking and slowness haven't been solved yet.
 
-For slowness, use logical sharding. So why not do that in the first place. You first need to understand the issue, i.e. run your site to learn your data access pattern. Etsy won't have viral traffic: once things are sold out, the shop will not be heavy traffic anymore. Changed to mutliple logicanl shards per server. Up to 16 shards on a node. So when you need to move / rebalance, you would:
+For slowness, use logical sharding. So why not do that in the first place. You first need to understand the issue, i.e. run your site to learn your data access patterns. Etsy won't have viral traffic: once things are sold out, the shop will not be heavy traffic anymore. Changed to multiple logical shards per server. Up to 16 shards on a node.
 
-* Create a copy using a backup
+So when you need to move / rebalance, you would:
+:* Create a copy using a backup
 * Then start replication to bring 2nd copy up to speed with the first one
 * Split the writes for the logical shards to new shardpile (writing to 1/2 or to 3/4 (makes 3/4 dead on 1/2 and vice versa)
 * Used the old row-based migration framework to migrate the system to the new sharding setup. Took 5 months
 
-*'Why not nosql for sharding'?*
+*'Why not NoSQL for sharding'?*
 Etsy loves MySQL, not just about your team, but the cost to company. ORM expects to talk to some SQL-like DB.
 
 ---
 
 **From horses to unicorns - Practical DevOps tools and tips.**\\
-*Shaun Norris - Amazon*
+*[Shaun Norris](http://za.linkedin.com/in/shaunnorris) - [Amazon AWS](http://aws.amazon.com/)*
 
 Standard process:
 : * Dev (agile) -> Test (waterfall) -> Prod (waterfall). This leads to configuration drive.
@@ -127,9 +127,9 @@ Standard process:
 Goals are different: dev (ne features), ops (uptime)
 
 How is DevOps different?
-:*"The traditional model is that you take your software to the wall that separates developement and operations, and throw it over and then you forget about it. Not at Amazon. You build it, you run it."*
+:*"The traditional model is that you take your software to the wall that separates development and operations, and throw it over and then you forget about it. Not at Amazon. You build it, you run it."*
 
-Conway's Law: Org and culture manages.
+[Conway's Law](http://en.wikipedia.org/wiki/Conway%27s_law): Org and culture will shape how you build your software.
 
 Old way of different teams for db / deploy / dev don't work, rather have smaller service teams that do all the tasks.
 
@@ -137,7 +137,7 @@ How to scale your organization
 : * Start with your customer, then work backwards.
 * Hire full stack developers
 * Adopt a "you build it, you run it" - if you get woken up by pages, you will be more motivated to fix the issue.
-* Two pizza team rules. Smaller, focussed team is more efficient / successful.
+* Two pizza team rules - *if you can't feed the team with 2 pizzas, it is too big*. Smaller, focussed team is more efficient / successful.
 * Hire for attitude, teach skills.
 
 Automate everything
@@ -147,8 +147,8 @@ Automate everything
 * Log analysis and production feedback.
 
 Automation Ideas
-: * Jenkins, electric cloud
-* Chef, Puppet, CloudFormation, Opsworks
+: * [Jenkins](http://jenkins-ci.org/), [Electric Cloud](http://electric-cloud.com/)
+* [Chef](http://jenkins-ci.org/), Puppet, CloudFormation, Opsworks
 * spluk, Smologic, lggly, datadog, elasticsearch + kibana
 
 Load Testing

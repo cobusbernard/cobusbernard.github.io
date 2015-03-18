@@ -2,6 +2,8 @@
 layout: post
 title: NodeJS 12 Factor App
 exclude_comments: false
+tagline: Notes from the local NodeJS meetup.
+image:
 categories: [Meetups]
 tags: [linux, docker, nodejs]
 fullview: false

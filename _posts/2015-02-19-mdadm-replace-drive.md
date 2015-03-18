@@ -2,6 +2,8 @@
 layout: post
 title: Replacing mdadm drive
 exclude_comments: false
+tagline: How to identify and replace a failed drive in mdadm.
+image:
 categories: [Linux]
 tags: [linux, mdadm]
 fullview: false

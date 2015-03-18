@@ -2,6 +2,8 @@
 layout: post
 title: Git checkout error for public repo
 exclude_comments: false
+tagline: How to avoid authentication issues on GitHub when using SSH as the protocol.
+image:
 categories: [Version Control]
 tags: [ssh, https, git]
 fullview: false

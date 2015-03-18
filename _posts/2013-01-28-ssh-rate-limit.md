@@ -2,6 +2,8 @@
 layout: post
 title: Linux SSH rate limiting
 exclude_comments: false
+tagline: How to limit the number of connections using IpTables.
+image:
 categories: [Linux]
 tags: [linux, security, ssh]
 fullview: false

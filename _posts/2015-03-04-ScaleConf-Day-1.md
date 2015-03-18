@@ -1,6 +1,8 @@
 ---
 layout: post
 title: ScaleConf 2015 Day 1
+tagline: Notes for day 1 of ScaleConf
+image: scale_conf_logo.png
 exclude_comments: false
 categories: [Conferences]
 tags: [scaling]
@@ -14,7 +16,7 @@ Code of conduct -> **"Don't be a dick!"**
 
 ---
 
-**Robert Elliot from [GraphFlow](http://graphflow.com)**
+**[Robert Elliot](https://twitter.com/greenafrican) from [GraphFlow](http://graphflow.com)**
 
 University didn't really prepare, more learning on the job. Use the free online courses to better yourself [MIT](), [Coursera](), [Udemy](), etc. Should create the yearning for learning - ties back with the polymath concept from RubyFuza. Consulting, started at 5 days a week, took down to 4 to allow retraining / trying out different ideas. Not the classic quit -> startup, slowly built up. South Africa isn't big on the quit concept, hard to get funding. "If you want to start a business, there are plenty of hours between 9PM and 2AM". Very important to ensure you have the MVP down, allows you test the product. Once you have that, it is easier to get investors onboard.
 
@@ -44,7 +46,7 @@ IP protection: come from South Africa, building the company here, so all IP is i
 
 ---
 
-**Franz Struwig from [Garmin](http://www.garmin.co.za/)** (previously [Kubu](http://ikubu.com))
+**[Franz Struwig](fstruwig) from [Garmin](http://www.garmin.co.za/)** (previously [Kubu](http://ikubu.com))
 
 Reaction to bad corporates - wanted to create a space for techies that allow you to be the same person as at home. You spend so much time at work, it should be fun. Started with a micron meter for sheep wool. Original vision was very weak, just hacking things. News refers to "startup" but Kubu was 8 years old when they did the exit. Used [theatre improv](http://en.wikipedia.org/wiki/Improvisational_theatre) to get creative solutions to problems. Got the idea from seeing a guy cycling on the wrong side of the road due to being afraid. Started by consulting and selling services to corporates - wanted to make money and explore ideas at the same time.
 
@@ -69,7 +71,7 @@ Acquirer dictates, all depends. Makes it easier for them to negotiate with the n
 
 ---
 
-Mark from [WooThemes](http://www.woothemes.com/) / [WooCommerce](http://www.woothemes.com/woocommerce/)
+**[Mark Forrester](https://twitter.com/mark_forrester) from [WooThemes](http://www.woothemes.com/) / [WooCommerce](http://www.woothemes.com/woocommerce/)
 
 Frustrated with being a freelancer: holidays mean no money, hard to find constant contracts. 18 months before meeting the others in the company, only comms via non-verbal, didn't even know what everyone sounded like. Company had been registered, had some side-contracts still. Team is distributed across the world, one in Sau Paulo, one in Poland. Happiness hero lives in an RV, drives across the US drinking beer ... Started as support, but quickly moved into culture / on-boarding new staff. TheRoamingPint - tests craft beer in the US, drives to new city every week.
 
@@ -101,13 +103,13 @@ Changing from a $70, life-time support is like the Health and Racquet club. Cann
 
 ---
 
-**Willem von Biljon**
+**[Willem von Biljon](https://twitter.com/willemvanbiljon)** from [Takealot](http://takealot.com)
 
-[Takealot](http://takealot.com) - post-lunch coma, very interesting talk, but no notes :)
+Post-lunch coma, very interesting talk, but no notes :)
 
 ----
 
-**Charity from [Facebook](https://facebook.com) (previously [Parse](http://parse.com))**
+**[Charity Majors](https://twitter.com/mipsytipsy) from [Parse](http://parse.com)**
 
 Didn't grow up with computers at all, piano scholarship. Got a crush on a CS boy, lost interest in boy fast, but not computers. Took 2 years to go from piano to coding: really likes money, not performing or teaching, so rules out music until you are independently wealthy :)
 
@@ -119,7 +121,7 @@ Went to another startup closer to home, but found it a bit boring, main reason f
 
 At Parse, fell in love with [Chef](https://www.chef.io/). Had to use [MongoDB](http://www.mongodb.org/) as there was nothing else that could handle what they did, even if it kept falling over. Scaling has grown at 5x every year - a lot of hires have come from Google. There is no point in designing a system that should scale more than 10x your current system: you will try to solve problems that you don't understand yet. The mindset should be that you will be rewriting again for the next 10x, make peace with that. First version used Ruby on Rails, current rewrite is in Go.
 
-Acquired by Facebook, and acquisitions are hard. Initial commute was 15mins on a bike, now it is ~3 hours per day on the shuttle. Culture clash: they have built a bigger platform, therefore feel that your problems are small and they can "easily" fix them. Going from walking into a room where you know everyone, know their skills and being able to joke to having to constantly prove yourself to a room full of new people. Main reason for staying is that a lot of the engineers that kept the backup running had left, so felt responsible to keep things going. Other engineers left as they came from Google, so felt there wasn't really any benefit, so went back to Google. Finally adapted to the Facebook culture, but still doesn't like the large corporate culture. Working with Mark to fix MongoDB has been amazing, probably won't be able to get that kind of experience anywhere else.
+Acquired by [Facebook](https://facebook.com), and acquisitions are hard. Initial commute was 15mins on a bike, now it is ~3 hours per day on the shuttle. Culture clash: they have built a bigger platform, therefore feel that your problems are small and they can "easily" fix them. Going from walking into a room where you know everyone, know their skills and being able to joke to having to constantly prove yourself to a room full of new people. Main reason for staying is that a lot of the engineers that kept the backup running had left, so felt responsible to keep things going. Other engineers left as they came from Google, so felt there wasn't really any benefit, so went back to Google. Finally adapted to the Facebook culture, but still doesn't like the large corporate culture. Working with Mark to fix MongoDB has been amazing, probably won't be able to get that kind of experience anywhere else.
 
 Likes the fact that Facebook have identified what makes startups and constantly tries to applies that - Google not so much. Startups rarely fails for moving too fast. "Move fast, but with stable infrastructure" - a lot of "that is someone else's problem". In the startup culture, you don't have that, something breaks, you fix it.
 
@@ -138,6 +140,6 @@ How to upgrade: API splitter, sent request to both Go and Ruby, compare the diff
 
 ----
 
-**Paul Cartmel from [New Media Labs](http://newmedialabs.com/)**
+**[Paul Cartmel](https://twitter.com/PaulCartmel) from [New Media Labs](http://newmedialabs.com/)**
 
 Everyone should start their own company and become part of a local network - you need an eco-system to be able to survive.

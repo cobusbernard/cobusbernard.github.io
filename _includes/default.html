@@ -3,12 +3,34 @@
 <head>
 	<meta charset="utf-8">
 	<title>{{ page.title }}</title>
-	{% if page.description %}
-	<meta name="description" content="{{ page.description }}">
+	{% if page.tagline %}
+	<meta name="tagline" content="{{ page.tagline }}">
 	{% endif %}
 	<meta name="author" content="{{ site.author.name }}" />
+
+	<!-- Twitter cards -->
+	<meta name="twitter:card" content="summary"/>
 	<meat name="twitter:site" content="@{{ site.author.twitter }}" />
-	<meat name="twitter:creator" content="@{{ site.author.twitter }}" />
+	<meta name="twitter:creator" content="@{{ site.author.twitter }}" />
+	<meta name="twitter:title" content="{{ page.title }}" />
+	{% if page.description %}<meta name="twitter:description" content="{{ page.tagline }}" />{% endif %}
+	{% if page.image %}
+	<meta name="twitter:image:src" content="{{ site.BASE_PATH }}/assets/media/{{ page.image }}"/>
+	{% else %}
+	<meta name="twitter:image:src" content="{{ site.BASE_PATH }}/assets/media/placeholder_card.png"/>
+	{% endif %}
+
+	<!-- OpenGraph tags -->
+	<meta property="og:type" content="article"/>
+	<meta property="og:url" content="{{ site.BASE_PATH }}{{ post.url }}"/>
+	<meta property="og:title" content="{{ page.title }}"/>
+	<meta property="og:site_name" content="{{ site.title }}"/>
+	<meta property="og:description" content="{{ page.tagline}}"/>
+	{% if page.image %}
+	<meta property="og:image" content="{{ site.BASE_PATH }}/assets/media/{{ page.image }}"/>
+	{% else %}
+	<meta property="og:image" content="{{ site.BASE_PATH }}/assets/media/placeholder_card.png"/>
+	{% endif %}
 
 	<!-- Enable responsive viewport -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">

@@ -2,6 +2,8 @@
 layout: post
 title: Using SSH Config
 exclude_comments: false
+tagline: Setting up various SSH host configs to simplify access.
+image:
 categories: [Linux]
 tags: [config, ssh, linux]
 fullview: false

@@ -2,6 +2,8 @@
 layout: post
 title: Moving DNS to Amazon Route 53, Dynamic Updates
 exclude_comments: false
+tagline: Using Amazon Route 53 as primary nameserver. 
+image:
 categories: [Linux]
 tags: [linux, openvpn, vpn]
 fullview: false

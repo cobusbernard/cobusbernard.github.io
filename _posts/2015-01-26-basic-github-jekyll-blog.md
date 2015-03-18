@@ -2,6 +2,8 @@
 layout: post
 title: Basic Jekyll GitHub Blog
 exclude_comments: false
+tagline: Covers the basics of getting a Jekyll blog running on GitHub with a custom URL.
+image:
 categories: [Ruby]
 tags: [demo, jekyll, setup, ruby]
 fullview: false

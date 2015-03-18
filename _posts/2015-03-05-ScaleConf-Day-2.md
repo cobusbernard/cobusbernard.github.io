@@ -1,6 +1,8 @@
 ---
 layout: post
 title: ScaleConf 2015 Day 2
+tagline: Notes for day 2 of ScaleConf
+image: scale_conf_logo.png
 exclude_comments: false
 categories: [Conferences]
 tags: [scaling]
@@ -8,7 +10,7 @@ fullview: false
 ---
 
 **Scaling past 5 million**\\
-*Matty Cohen*
+*[Matty Cohen](https://twitter.com/mattyza)*
 
 Started the project in September 2011, 1 designer, engineer. Scaled that up to 3 engineers, didn't work on it full time. In November 2014, hit 5M downloads. Currently up to 4 full time engineers, ~6.5M downloads. Has 11k commits on GitHub.
 
@@ -57,7 +59,7 @@ Developers get bored if they aren't solving problems, need to expand around the 
 ---
 
 **Building an Android App**\\
-*Ales Koller and Hiren Patel*
+*[Alex Koller[(https://plus.google.com/+AlexKoller)] and [Hiren Patel](https://plus.google.com/+HirenPatel)*
 
 [Android](https://www.android.com/) has been constantly be growing - there are a billion active Android users. Use the [MyCiti](http://myciti.org.za/) bus daily, but need to know where my bus is and how much money do I have on my card. Got a Nexus 4 with NFC, realised that the MyCiti can be scanned. KitKat allows Host Mode emulation mode - can pretend to be a card. The cards use open [EMV](http://en.wikipedia.org/wiki/EMV) schemes, hacked away at the binary data. Started with only the ability to show transactions + balance. Started adding more and more features. Used the Android wearables to add "where is my bus" option - allows finding out all your bus details without taking out your phone. Submitted the app to the store, got a lot of positive reviews. Best metric for Android apps. Google reached out to feature the app, but only if the UI was improved. Project isn't monitized at all - part of the challenge it to keep it entirely free. Need to also not cost to host / scale.
 
@@ -94,7 +96,7 @@ Billed for reads from the DB, so made it cheaper.
 **Scaling your frontend**\
 *Donovan Graham*
 
-It is divided into Web Sites and Apps. The usage / focus / implementation of the 2 differ a lot. User interfaces are hard to build. Managing state is very very hard. Using the right tool for the job: choose the correct framework and libraries.
+It is divided into Web Sites and Apps. The usage / focus / implementation of the 2 differ a lot. User interfaces are hard to build. Managing state is very, very hard. Using the right tool for the job: choose the correct framework and libraries.
 
 ---
 

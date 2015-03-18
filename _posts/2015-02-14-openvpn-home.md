@@ -2,6 +2,8 @@
 layout: post
 title: Home VPN with OpenVPN
 exclude_comments: false
+tagline: Using the guide in the previous post to set up a VPN to access your home network securely.
+image:
 categories: [Linux]
 tags: [linux, openvpn, vpn, docker]
 fullview: false

@@ -2,6 +2,8 @@
 layout: post
 title: Install Java JDK using terminal
 exclude_comments: false
+tagline: Notes on installing Java JDK using the terminal.
+image:
 categories: [Linux]
 tags: [java, linux]
 fullview: false

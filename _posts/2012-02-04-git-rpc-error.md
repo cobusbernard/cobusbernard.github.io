@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Migrating repo from SVN to Git RPC error
+tagline: Interesting Git issues with large repositories.
+image:
 exclude_comments: false
 categories: [Version Control]
 tags: [git, svn]

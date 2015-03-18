@@ -2,6 +2,8 @@
 layout: post
 title: Personal VPN - OpenVPN in Docker on DigitalOcean
 exclude_comments: false
+tagline: Setting up a VPN to change the country you are accessing content from.
+image:
 categories: [Linux]
 tags: [linux, openvpn, vpn, docker]
 fullview: false
