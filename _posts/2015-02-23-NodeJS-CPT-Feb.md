@@ -16,7 +16,7 @@ fullview: false
 Reason for changing
 ---
 * Better US (no page reloads)
-* Rapid UI Protyping (no rebuilds)
+* Rapid UI Prototyping (no rebuilds)
 * Browser tooling e.g. Chrome Dev Tools
 * JavaScript performance improvement
 
@@ -24,7 +24,7 @@ Reason for Angular
 ---
 * Testability
 * Modularity
-* Seperation of concerns
+* Separation of concerns
 
 PayPal Case Study
 ---
@@ -52,7 +52,7 @@ Uses
 * JSON microservices for web / mobile [Native JSON]
 * Back-end microservices for SPAs [language homogeneity]
 * Integration glue [Network services, SOA, microservices]
-* Isomorphic web pages [Jade, handlebars, react componentes]
+* Isomorphic web pages [Jade, handlebars, react components]
 * Testing
 
 Better ways of working working with JS
