@@ -2,7 +2,7 @@
 layout: post
 title: External MSBuild for WebApi in VS 2013 fails
 tagline: MSBuild Error MSB4019 when running outside of Visual Studio 2013
-image:
+image: MSB4019.png
 exclude_comments: false
 categories: [dotnet]
 tags: [msbuild, errors, visualstudio]
