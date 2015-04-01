@@ -11,7 +11,7 @@ fullview: false
 
 Earlier today, I ran into the following error when trying to build a new WebApi solution using the commandline and MSBuild:
 
-![MSB4019]({{ site.url }}/assets/Media/MSB4019.png){:height="111px" width="646px"}
+![MSB4019]({{ site.url }}/assets/media/MSB4019.png){:height="111px" width="646px"}
 
 This is odd as v11 is Visual Studio 2012 and don't even have 2012 installed. The issue manifests when you try to build the solution with: `msbuild /t:Clean;Rebuild /v:q /p:Configuration=$projectConfig $source_dir\$projectName.sln /p:Platform="Any CPU"`
 
@@ -27,4 +27,4 @@ The cause and solution is discussed on [Stack Overflow](http://stackoverflow.com
 
 After that, the build succeeds :)
 
-P.S.: Even changing the `VisualStudioVersion` to `12.0` does not work. 
+P.S.: Even changing the `VisualStudioVersion` to `12.0` does not work.
