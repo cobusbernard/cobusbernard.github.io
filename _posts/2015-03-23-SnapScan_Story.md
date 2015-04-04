@@ -13,7 +13,7 @@ fullview: false
 *Kobus Ehlers*
 
 Initially based the idea of Stripe, but it would not work in SA
-:* Cards are chip & pin.
+: * Cards are chip & pin.
 * Merchants didn't have smartphones / computers.
 
 Catch 22, need both customers and merchants. Started with Coffee shops, small merchants and street vendors.
@@ -22,17 +22,17 @@ Picked the street merchants as they couldn't get credit card machines, or they w
 Got coffee shops to sign up to get a foothold in a consumer market.
 
 Product pitch
-:* Safe - people are nervous about carrying cash, or to hand over a card.
+: * Safe - people are nervous about carrying cash, or to hand over a card.
 * Easy - lots of people will try something if it makes them feel cool (early adopters)
 * Convenient - extremely easy to pay
 
 The product is not sophisticated at all - this is intentional. Need to be easy to use, intuitive and fast - you don't want users to spend time in the app. You want then to not notice that they are using it. Bootstrapping a new user (FTUx):
-:* Select yourself from address book
+: * Select yourself from address book
 * Take photo of card
 * Choose pin / touchId
 
 For the merchant
-:* It is cheap.
+: * It is cheap.
 * Get money quicker, some cards still take up to 1 month
 * No new hardware needs to bought
 * Set up a new merchant in under 5 mins.
@@ -50,7 +50,7 @@ The idea originated after selling off the various startups, decided they wanted 
 Doubloon allowed you to checkout online - took 45 days for the first working PoC. It made sense on the consumer side, but not on the merchant side. After 2 months they found that integration works, but Google / Apple would kill it as they are just too big. You don't want to compete with online, one-click checkouts - luckily they were smart enough to realise this before going down that road.
 
 Decided to copy Stripe - go to farmers markets
-:* Zero risk
+: * Zero risk
 * Lots of bored, rich people.
 * They will have smart phones.
 * Not really worried about loosing card.
