@@ -7,6 +7,7 @@ image:
 categories: [Meetups]
 tags: [nodejs, docker]
 fullview: false
+exclude_as_post: true
 ---
 
 **Node.js for IOLmobile.co.za**\\

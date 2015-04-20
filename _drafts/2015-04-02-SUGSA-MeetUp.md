@@ -7,6 +7,7 @@ image:
 categories: [Meetups]
 tags: [sugsa, proces]
 fullview: false
+exclude_as_post: true
 ---
 
 

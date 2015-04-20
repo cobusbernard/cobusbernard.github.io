@@ -15,7 +15,7 @@ I have been spending most of my time splitting up a [monolithic system](http://e
 This is done fairly easily
 : * Create a new solution with a [Class Library project](https://msdn.microsoft.com/en-us/library/f1yh62ef%28v=vs.90%29.aspx) in a new Git repo.
 * Copy the classes from the old project to the new location and include in the project.
-* Sort out the references - [ReSharper](https://www.jetbrains.com/resharper/) for the system libs, NuGet restore for the others and then finally installing the newly created packages if the current package depends on it. (More on this later).
+* Resolve any references - [ReSharper](https://www.jetbrains.com/resharper/) for the system libs, NuGet restore for the others and then finally installing the newly created packages if the current package depends on it. (More on this later).
 * Add a NuSpec file to the project.
 * Build, package and push with NuGet.
 

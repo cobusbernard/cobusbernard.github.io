@@ -7,6 +7,7 @@ image:
 categories: [tips]
 tags: [conference, rubyfuza]
 fullview: false
+exclude_as_post: true
 ---
 
 Things to bring along:

@@ -7,6 +7,7 @@ exclude_comments: false
 categories: [Conferences]
 tags: [scaling]
 fullview: false
+exclude_as_post: true
 ---
 
 **Scaling past 5 million**\\

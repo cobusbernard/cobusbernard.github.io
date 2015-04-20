@@ -7,6 +7,7 @@ exclude_comments: false
 categories: [Conferences]
 tags: [scaling]
 fullview: false
+exclude_as_post: true
 ---
 
 These are just some personal notes, will do a write-up on the entire conference later this week.

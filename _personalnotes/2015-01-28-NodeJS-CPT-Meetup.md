@@ -7,6 +7,7 @@ image:
 categories: [Meetups]
 tags: [linux, docker, nodejs]
 fullview: false
+exclude_as_post: true
 ---
 
 The talk was given by Barry Botha from [io](http://www.io.co.za) (a local digital agency) on [12 Factor Apps](http://http://12factor.net/).
