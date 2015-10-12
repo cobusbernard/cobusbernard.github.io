@@ -9,7 +9,7 @@ tags: [linux, mdadm]
 fullview: false
 ---
 
-With all the load shedding, a drive failed in my software raid array had failed. Luckily, it is a [Raid-5](http://en.wikipedia.org/wiki/Standard_RAID_levels#RAID_5) setup, so I had time to replace the drive and rebuild the array. I was lucky with this failure as I randomly looked at my [mdadm](http://en.wikipedia.org/wiki/Mdadm) array today - I **really** need to set up the mail details to allow the system to mail me when something fails. Here is the command to check the health of your arrays:
+With all the load shedding, a drive failed in my software raid array. It is a [Raid-5](http://en.wikipedia.org/wiki/Standard_RAID_levels#RAID_5) setup, so I had time to replace the drive and rebuild the array. I was lucky with this failure as I randomly looked at my [mdadm](http://en.wikipedia.org/wiki/Mdadm) array today - I **really** need to set up the mail details to allow the system to mail me when something fails. Here is the command to check the health of your arrays:
 
 ~~~
 cat /proc/mdstat
@@ -66,7 +66,7 @@ smartctl -a /dev/sdd | grep Serial
 Serial Number:    3NX12345
 ~~~
 
-Time to open up the server and find the faulty drive. Luckily my server has hot swap bays and I guessed 'sdd' to be the fourth drive, so got the right one on my first attempt. Replaced the drive with a spare I had - originally I ran a 8x 1TB Raid-5 array on a different server, but the power usage was too high, so scaled things down a bit. To get the backup drive correctly partitioned, I deleted all the existing partitions and added a new one with file-system type 'fd' for 'Linux Raid autodetect' using `fdisk`. To add the disk back into the array, use `mdadm --manage /dev/md0 --add /dev/sdd1`. To check the progress, look at `/proc/mdstat`:
+Time to open up the server and find the faulty drive. My server has hot swap bays and I guessed 'sdd' to be the fourth drive, so got the right one on my first attempt. Replaced the drive with a spare I had - originally I ran a 8x 1TB Raid-5 array on a different server, but the power usage was too high, so scaled things down a bit. To get the backup drive correctly partitioned, I deleted all the existing partitions and added a new one with file-system type 'fd' for 'Linux Raid autodetect' using `fdisk`. To add the disk back into the array, use `mdadm --manage /dev/md0 --add /dev/sdd1`. To check the progress, look at `/proc/mdstat`:
 
 ~~~
 cat /proc/mdstat
@@ -92,7 +92,7 @@ unused devices: <none>
 Notifications for future failures
 ---
 
-Now to ensure we get notified about any future fails, we need to set up mailing. I found [this post]() which looked to be what I needed. Here is the short version:
+Now to ensure we get notified about any future fails, we need to set up mailing. I found [this post](http://ubuntuforums.org/showthread.php?t=1185134) which looked to be what I needed. Here is the short version:
 
 ~~~bash
 sudo apt-get install msmtp msmtp-mta
@@ -163,7 +163,7 @@ account default : gmail
 To test, run `echo "This is a test e-mail from my server using msmtp" | msmtp -d youremail@gmail.com`. It should print out multiple lines, any error will be clearly displayed as such, i.e.
 
 ~~~
---> AUTH PLAIN AGNvYnVzYmVybmFyZABhYmthdnFiam9seXZlaGJiZA==
+--> AUTH PLAIN AGNvYnVzYXyXbmFyZGuYYmthdnFiam9seXZlaGJiZA==
 <-- 535-5.7.8 Username and Password not accepted. Learn more at
 <-- 535 5.7.8 http://support.google.com/mail/bin/answer.py?answer=14257 n1sm2519061wib.11 - gsmtp
 msmtp: authentication failed (method PLAIN)
