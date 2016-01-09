@@ -19,7 +19,7 @@ md0 : active raid5 sdd1[3] sdc1[1] sdb1[0]
       [====>................]  recovery = 20.1% (433131624/2147351040) finish=420.1min speed=68006K/sec
 ~~~
 
-As you can see from the above, this isn't very fast. I found [this article](http://www.cyberciti.biz/tips/linux-raid-increase-resync-rebuild-speed.html) with some tips on increasing the speed. The one that worked for me was increasing the _stripe-cache_size_ (tip 3):
+As you can see from the above, this isn't very fast. I found [this article](http://www.cyberciti.biz/tips/linux-raid-increase-resync-rebuild-speed.html) with some tips on increasing the speed. The one that worked for me was increasing the `stripe-cache_size` (tip 3):
 
 ~~~
 # echo 32768 > /sys/block/md0/md/stripe_cache_size
@@ -31,7 +31,8 @@ md0 : active raid5 sdd1[3] sdc1[1] sdb1[0]
 
 Much better, about 3x faster.
 
-*Original*
+
+**Original**
 With all the load shedding, a drive failed in my software raid array. It is a [Raid-5](http://en.wikipedia.org/wiki/Standard_RAID_levels#RAID_5) setup, so I had time to replace the drive and rebuild the array. I was lucky with this failure as I randomly looked at my [mdadm](http://en.wikipedia.org/wiki/Mdadm) array today - I **really** need to set up the mail details to allow the system to mail me when something fails. Here is the command to check the health of your arrays:
 
 ~~~
@@ -48,7 +49,7 @@ Replacing the broken drive
 
 The `[UUU_]` indicates that one of the drives is no longer part of the array. To see which drive is faulty, run `mdadm --detail /dev/md0` to get the details:
 
-~~~bash
+~~~
 /dev/md0:
         Version : 1.2
   Creation Time : Mon Jun 23 20:08:17 2014
@@ -197,7 +198,7 @@ msmtp: could not send mail (account default from /etc/msmtprc)
 
 Now to replace the `sendmail` command with `msmtp`:
 
-~~~bash
+~~~
 sudo mv /usr/sbin/sendmail /usr/sbin/sendmail.bak
 sudo ln -s /usr/bin/msmtp /usr/sbin/sendmail
 ~~~
