@@ -8,7 +8,30 @@ categories: [Linux]
 tags: [linux, mdadm]
 fullview: false
 ---
+*Update 2016-01-09*: In the previous version, I never added the command for creating the array and since I needed it for a new server. When the array starts rebuilding, it *will* look like there is a failed drive: this is normal. When it builds from scratch, it is actually doing the rebuild process and will indicate a failed drive until the array is rebuilt.
 
+~~~
+# mdadm --create --verbose /dev/md0 --level=5 --raid-devices=3 /dev/sdb1 /dev/sdc1 /dev/sdd1
+
+# cat /proc/mdstat
+md0 : active raid5 sdd1[3] sdc1[1] sdb1[0]
+      4294702080 blocks super 1.2 level 5, 512k chunk, algorithm 2 [3/2] [UU_]
+      [====>................]  recovery = 20.1% (433131624/2147351040) finish=420.1min speed=68006K/sec
+~~~
+
+As you can see from the above, this isn't very fast. I found [this article](http://www.cyberciti.biz/tips/linux-raid-increase-resync-rebuild-speed.html) with some tips on increasing the speed. The one that worked for me was increasing the _stripe-cache_size_ (tip 3):
+
+~~~
+# echo 32768 > /sys/block/md0/md/stripe_cache_size
+
+md0 : active raid5 sdd1[3] sdc1[1] sdb1[0]
+      4294702080 blocks super 1.2 level 5, 512k chunk, algorithm 2 [3/2] [UU_]
+      [====>................]  recovery = 24.3% (523330980/2147351040) finish=147.1min speed=183976K/sec
+~~~
+
+Much better, about 3x faster.
+
+*Original*
 With all the load shedding, a drive failed in my software raid array. It is a [Raid-5](http://en.wikipedia.org/wiki/Standard_RAID_levels#RAID_5) setup, so I had time to replace the drive and rebuild the array. I was lucky with this failure as I randomly looked at my [mdadm](http://en.wikipedia.org/wiki/Mdadm) array today - I **really** need to set up the mail details to allow the system to mail me when something fails. Here is the command to check the health of your arrays:
 
 ~~~
