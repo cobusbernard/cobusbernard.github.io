@@ -2,7 +2,7 @@
 layout: post
 title: Ubuntu on Hyper-V
 exclude_comments: false
-tagline: Tun times getting Ubuntu to run on Hyper-V
+tagline: Tun times getting Ubuntu to run on Hyper-V.
 image:
 categories: [linux]
 tags: [linux, ubuntu, hyper-v]
