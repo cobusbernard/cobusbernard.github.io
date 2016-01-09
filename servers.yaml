@@ -1,0 +1,7 @@
+---
+- name: jekyll
+  box: ubuntu/trusty64
+  ram: 512
+  ip: 172.17.8.101
+  ports: [ 80, 4000 ]
+  provision_script: install_jekyll.sh

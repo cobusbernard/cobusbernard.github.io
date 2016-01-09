@@ -33,7 +33,7 @@
 	{% endif %}
 
 	<!-- Other tags -->
-	<meta name="keywords" content="{{ page.tags }}"/>
+	<meta name="keywords" content="{{ site.keywords }} {{ page.tags }}"/>
 	<meta itemprop="name" content="{{ page.title }}"/>
 	<meta name="description" content="{{ page.tagline }}"/>
 	{% if page.image %}

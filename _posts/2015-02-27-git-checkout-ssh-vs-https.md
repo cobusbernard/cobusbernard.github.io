@@ -10,7 +10,7 @@ fullview: false
 ---
 One of those *djissis duh* moments - trying to check out a public git repo, but failing due to authentication ...
 
-~~~bash
+~~~
 git clone git@github.com:cobusbernard/Scripts.git
 Cloning into 'Scripts'...
 Warning: Permanently added the RSA host key for IP address '192.30.252.131' to the list of known hosts.
@@ -23,14 +23,14 @@ and the repository exists.
 
 So I checked my ssh setup / keys, but nothing in there looks dodgy:
 
-~~~bash
+~~~
 ls ~/ssh/
 known_hosts
 ~~~
 
 So it ended up being ssh vs https cloning. SSH checkout is always authenticated.
 
-~~~bash
+~~~
 git clone https://github.com/cobusbernard/Scripts.git
 Cloning into 'Scripts'...
 remote: Counting objects: 9, done.

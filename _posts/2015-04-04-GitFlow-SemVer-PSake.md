@@ -5,7 +5,7 @@ tagline: With GitFlow, releases should be SemVer'ed - use PSake to extract this 
 image:
 exclude_comments: false
 categories: [dotnet]
-tags: [msbuild, psake, git]
+tags: [msbuild, psake, git, csharp]
 fullview: false
 ---
 

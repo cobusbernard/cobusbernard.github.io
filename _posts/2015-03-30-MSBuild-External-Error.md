@@ -5,7 +5,7 @@ tagline: MSBuild Error MSB4019 when running outside of Visual Studio 2013
 image: MSB4019.png
 exclude_comments: false
 categories: [dotnet]
-tags: [msbuild, errors, visualstudio]
+tags: [msbuild, errors, visualstudio, csharp]
 fullview: false
 ---
 

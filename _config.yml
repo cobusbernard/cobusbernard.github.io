@@ -5,6 +5,7 @@ paginate_path: "page:num"
 exclude: ["README.md"] # files to exclude
 highlighter: pygments
 markdown: kramdown
+keywords: cobus, bernard, cobus bernard, cobusbernard, devops, chef, ansible, aws, ec2, linux, mesos, marathon, docker, automation, jenkins, msbuild
 
 
 defaults:
@@ -21,7 +22,7 @@ author:
   github: cobusbernard
   twitter: cobusbernard
   linkedin: cobusbernard
-  bio: DevOps, Distributed Systems and some .Net for fun
+  bio: Problem solver, automator, builder
   email_md5: 9864cccf5b8d379f9a5bfdcc0d7b33d5
 
 rss_path: feed.xml
