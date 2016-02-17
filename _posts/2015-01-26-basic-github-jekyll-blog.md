@@ -129,7 +129,7 @@ var disqus_shortname = '<disqus forum name>'; // required: replace example with 
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 {% endhighlight %}
 
-To add the this to the page layout, edit the [default.html](https://github.com/cobusbernard/cobusbernard.github.io/blob/master/_includes/default.html#L98) page to include it above the footer by adding in:
+To add the this to the page layout, edit the [default.html](https://github.com/cobusbernard/cobusbernard.github.io/blob/master/_includes/default.html#L134) page to include it above the footer by adding in:
 
 {% raw %}
 ~~~
