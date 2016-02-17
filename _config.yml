@@ -3,9 +3,9 @@
 paginate: 10 # pagination based on number of posts
 paginate_path: "page:num"
 exclude: ["README.md"] # files to exclude
-highlighter: pygments
+highlighter: rouge
 markdown: kramdown
-keywords: cobus, bernard, cobus bernard, cobusbernard, devops, chef, ansible, aws, ec2, linux, mesos, marathon, docker, automation, jenkins, msbuild
+keywords: cobus, bernard, cobus bernard, cobusbernard, devops, chef, ansible, aws, ec2, linux, mesos, marathon, docker, automation, jenkins, msbuild, kubernetes
 
 
 defaults:
