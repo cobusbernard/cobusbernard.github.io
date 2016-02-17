@@ -101,7 +101,7 @@ This will be a completely new area for me as I know what analytics do, but have 
 </script>
 {% endhighlight %}
 
-This needs to be added to all the pages by adding the following line to [_includes/default.html](https://github.com/cobusbernard/cobusbernard.github.io/blob/master/_includes/default.html#L5):
+This needs to be added to all the pages by adding the following line to [_includes/default.html](https://github.com/cobusbernard/cobusbernard.github.io/blob/master/_includes/default.html#L146):
 
 {% raw %}
 ~~~
