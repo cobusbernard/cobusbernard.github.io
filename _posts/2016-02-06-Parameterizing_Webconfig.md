@@ -208,3 +208,5 @@ msbuild /t:Package /v:q /p:VisualStudioVersion=12.0 /p:Configuration=Release /p:
 *Lastly*
 
 We now have the ability to build and package our project without including any configuration required to run it. In the next post, I will show you how to create a build script using PSake that will build on top of this.
+
+The source used in the post has been uploaded to [GitHub](https://github.com/cobusbernard/CSharp.WebApi.Template)
