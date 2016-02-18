@@ -11,7 +11,7 @@ fullview: false
 
 Most people would have experienced the issue of setting values in `web.config` for a project on different environments, i.e. the connection string for the database. My first attempt at resolving this was to simply create multiple configurations and build the appropriate one per environment. This has multiple issues: you are including sensitive information in your build artifact, creating different builds for the same version (to allow different values) and tightly coupling your build process to your environment values. This will require a rebuild if your connection string changes, which could be problematic if you are unable to build a specific version easily. But it won't be the exact same version as you would need to commit the new config value, retag and finally rebuild the solution. Sounds like too much effort for a simple change.
 
-*Creating a project to test this*
+**Creating a project to test this**
 
 First, let's create a new solution to work with. Create project -> Web -> ASP.Net Web Application
 
@@ -29,7 +29,7 @@ You often have additional files to store in your version control system, so I pr
 
 ![Suggested Project Structure]({{ site.url }}/assets/media/web_api/web_api_new_structure.png){:width="47px" height="21px"}
 
-*Adding the parameters.xml file*
+**Adding the parameters.xml file**
 
 There is feature that isn't very well known: you can set parameters in the `web.config` at deployment time via a `SetParameters.xml` file if you are creating your build artifact via [MSBuild](https://msdn.microsoft.com/en-us/library/wea2sca5(v=vs.90).aspx). If you want to add additional parameters into it, add `parameters.xml` to the project you are publishing.
 
@@ -133,7 +133,7 @@ Inside the `SetParameters.xml` you will see the following values:
 </parameters>
 ~~~
 
-*More details and caveats*
+**More details and caveats**
 By default, the location inside the zip file is fairly insane, here is what it would be for the project created above:
 `WebApi.Template.zip\Content\V_C\Personal\WebApi.Template\src\WebApi.Template\obj\Release\Package\PackageTmp` for the project that is stored in `V:\Personal\WebApi.Template\src`. To address this, add the following to the end of your project file (I've included the default commented out before/after build targets help find the position):
 
@@ -205,7 +205,7 @@ In later posts, I will be showing how to incorporate this into your [PSake](http
 msbuild /t:Package /v:q /p:VisualStudioVersion=12.0 /p:Configuration=Release /p:PackageLocation=..\dist\WebApi.Template.zip /p:ProjectParametersXMLFile=src\WebApi.Template\parameters.xml /p:DeployIisAppPath=dist src\WebApi.Template\WebApi.Template.csproj```
 ~~~
 
-*Lastly*
+**Lastly**
 
 We now have the ability to build and package our project without including any configuration required to run it. In the next post, I will show you how to create a build script using PSake that will build on top of this.
 
