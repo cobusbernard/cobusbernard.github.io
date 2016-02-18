@@ -197,7 +197,7 @@ This is used to lookup values in the `web.config` with a structure like this:
 </configuration>
 ~~~
 
-You can see that the nesting of the xml matches the string in the `match` element. If you need to choose between multiple elements on a specific node, the `<element name>[@<identifying field>='string to match']` will allow you to do so. I.e. for the `LOGENTREOS_TOKEN` node, unless you specify this, you will not be able to distinguish between it and `SomeRandomValue`. To set a value between the xml tags, i.e. `<myField>value</myField>`, you would use the matching string of `match="/configuration/customValues/value[@name='MyField']/text()"`.
+You can see that the nesting of the xml matches the string in the `match` element. If you need to choose between multiple elements on a specific node, the `<element name>[@<identifying field>='string to match']` will allow you to do so. I.e. for the `LOGENTRIES_TOKEN` node, unless you specify this, you will not be able to distinguish between it and `SomeRandomValue`. To set a value between the xml tags, i.e. `<myField>value</myField>`, you would use the matching string of `match="/configuration/customValues/value[@name='MyField']/text()"`.
 
 In later posts, I will be showing how to incorporate this into your [PSake](https://github.com/psake/psake) buld script, here is what it will resemble:
 
