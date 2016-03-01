@@ -61,9 +61,9 @@ The important parts to note here are:
 - `scope="Website\\Web\.config$"` - Specifies the file to search using the `match` string. The default packaging does not put the files in this folder structure, more on that further down.
 - `match="/configuration/connectionStrings/add[@name='NHibernateConnection']/@connectionString" />` - The location of the value to set using the value we provide. Once again, more on this further down.
 
-*Creating a publishing profile*
+**Creating a publishing profile**
 
-This will allow you to add additional parameters to `SetParameters.xml`. To test what this does, we can use the publish feather in Visual Studio to publish to a local file. Create a publishing profile by right-clicking on the `WebApi.Template` project and selecting `Publish`. Use the following values which are relative to your project file. This is where the folder structure starts to help, we will be creating a `dist` folder next to the `src` one to which we will publish the project. Once we add the solution to source control, we can exclude the `dist` folder to avoid committing compiled code.
+This will allow you to add additional parameters to `SetParameters.xml`. To test what this does, we can use the publish feather in Visual Studio to publish to a local file. Create a publishing profile by right-clicking on the `WebApi.Template` project and selecting `Publish` and click on `Custom`. Use the following values which are relative to your project file. This is where the folder structure starts to help, we will be creating a `dist` folder next to the `src` one to which we will publish the project. Once we add the solution to source control, we can exclude the `dist` folder to avoid committing compiled code.
 
 ![Publish Profile Create]({{ site.url }}/assets/media/web_api/web_api_create_local_publish_profile.png){:width="705px" height="556px"}
 
@@ -133,7 +133,8 @@ Inside the `SetParameters.xml` you will see the following values:
 </parameters>
 ~~~
 
-**More details and caveats**
+**Changing the publish folder structure**
+
 By default, the location inside the zip file is fairly insane, here is what it would be for the project created above:
 `WebApi.Template.zip\Content\V_C\Personal\WebApi.Template\src\WebApi.Template\obj\Release\Package\PackageTmp` for the project that is stored in `V:\Personal\WebApi.Template\src`. To address this, add the following to the end of your project file (I've included the default commented out before/after build targets help find the position):
 
@@ -173,6 +174,8 @@ By default, the location inside the zip file is fairly insane, here is what it w
 
 Now when we publish, the directory structure inside the archive will be: `WebApi.Template.zip\Content\Website`. This ties in the value specified in `parameters.xml` for the `scope` element.
 
+**XML Matching in Web.config**
+
 Earlier in this post, there was an element in the `parameters.xml` file called `match` with the following 2 values:
 
 ~~~
@@ -207,6 +210,10 @@ msbuild /t:Package /v:q /p:VisualStudioVersion=12.0 /p:Configuration=Release /p:
 
 **Lastly**
 
-We now have the ability to build and package our project without including any configuration required to run it. When it is time to deploy the api, you can set values in the `SetParameters.xml` file according to your environment and use [MSDeploy](http://www.iis.net/downloads/microsoft/web-deploy) to deploy. In the next post, I will show you how to create a build script using PSake that will build on top of this.
+We now have the ability to build and package our project without including any configuration required to run it. When it is time to deploy the api, you can set values in the `SetParameters.xml` file according to your environment and use [MSDeploy](http://www.iis.net/downloads/microsoft/web-deploy) to deploy. At the moment, you might be thinking *that is a lot of effort for something that still requires manual intervention*. Stay tuned, in the next post, I will show you how to create a build script using PSake that will build on top of this and the following post how we start automating deployments using this mechanism.
 
-The source used in the post has been uploaded to [GitHub](https://github.com/cobusbernard/CSharp.WebApi.Template)
+The source used in the post has been uploaded to [GitHub](https://github.com/cobusbernard/CSharp.WebApi.Template) with commits as part of each step.
+: - [Moving the solution into the src directory](https://github.com/cobusbernard/CSharp.WebApi.Template/commit/8a2bffbe05558053a2f2070f216ab8817262faa5)
+- [Adding the parameters.xml file](https://github.com/cobusbernard/CSharp.WebApi.Template/commit/170322e2320a355590ec6c19a01b4646b2c7ff76)
+- [Adding the local publishing profile](https://github.com/cobusbernard/CSharp.WebApi.Template/commit/5430cae9e205db2d49db83cbbcdcbba9797d03b6)
+- [Updating the project file to publish to a more sane directory](https://github.com/cobusbernard/CSharp.WebApi.Template/commit/3ed4384939f45bda82065df202030e1765a0412d)
