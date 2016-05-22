@@ -70,7 +70,7 @@ public void Main(string args[])
 }
 {% endhighlight %}
 
-That worked! The markup is very easy, just wrap the code in {% raw %} {% hightlight csharp %} {% endraw %} tags, i.e.
+That worked! The markup is very easy, just wrap the code in {% raw %} {% highlight csharp %} {% endraw %} tags, i.e.
 
 {% raw %}
 ~~~
