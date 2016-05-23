@@ -61,7 +61,7 @@ That is it, you should now be ready to start adding some content.
 Adding Content
 --------------
 
-Now let's try out some code blocks. Currently I am doing most of my work in C#, so would like to see if Jekyll supports the text markup for this correct:
+Now let's try out some code blocks. Currently I am doing most of my work in C#, so would like to see if Jekyll supports the text markup for this correctly:
 
 {% highlight csharp %}
 public void Main(string args[])
@@ -70,7 +70,7 @@ public void Main(string args[])
 }
 {% endhighlight %}
 
-That worked! The markup is very easy, just wrap the code in {% raw %} {% hightlight csharp %} {% endraw %} tags, i.e.
+That worked! The markup is very easy, just wrap the code in {% raw %} {% highlight csharp %} {% endraw %} tags, i.e.
 
 {% raw %}
 ~~~
