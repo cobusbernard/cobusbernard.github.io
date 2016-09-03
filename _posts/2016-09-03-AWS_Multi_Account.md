@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Securing AWS environment using multiple accounts
+title: Securing AWS environments using role switching
 exclude_comments: false
 tagline: Separate environments, single login, granular permissions
 image:
