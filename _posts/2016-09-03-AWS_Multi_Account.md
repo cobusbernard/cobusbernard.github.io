@@ -124,3 +124,20 @@ You will see a red oval top-right with `Production` in it, when you click on it,
 ![IAM add cross account role]({{ site.url }}/assets/media/aws_multi_account/iam_switch_role_2.png){:width="369p×" height="360px"}
 
 You are now able to switch between development and production without having to log in! If you want to go back to the master account, simply click on `Back to cobus` in that menu. What is happening in the background is the console uses your master account user to generate temporary credentials on the development / production account via the [STS service](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) and using them to access the other environments.
+
+Finally, you want to configure profiles to do the role switching for you when using the CLI. To do this, you can configure them in `~/.aws/config`
+
+~~~
+[profile demo-master-cobus]
+region = us-west-2
+
+[profile demo-development-cobus]
+role_arn = arn:aws:iam::<development_account_id>:role/administrator
+source_profile = demo-master-cobus
+
+[profile demo-production-cobus]
+role_arn = arn:aws:iam::<production_account_id>:role/administrator
+source_profile = demo-master-cobus
+~~~
+
+This will allow you to add `--profile <target>` to your CLI commands, i.e. `aws --profile demo-master-cobus s3 cp s://my-bucket/myfile.txt ./` to copy from a bucket created in the `master` account. Or if you want to copy from a bucket in the `development` account: `aws --profile demo-development-cobus s3://my-dev-bucket/myfile.txt ./`. You are now able to update each individual AWS root account using a single crednetial set. When managing many users, this becomes very powerful as you only have a single location to look at to assess what a user's rights are across all your environments. 
