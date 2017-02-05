@@ -210,7 +210,7 @@ msbuild /t:Package /v:q /p:VisualStudioVersion=12.0 /p:Configuration=Release /p:
 
 **Lastly**
 
-We now have the ability to build and package our project without including any configuration required to run it. When it is time to deploy the api, you can set values in the `SetParameters.xml` file according to your environment and use [MSDeploy](http://www.iis.net/downloads/microsoft/web-deploy) to deploy. At the moment, you might be thinking *that is a lot of effort for something that still requires manual intervention*. Stay tuned, in the next post, I will show you how to create a build script using PSake that will build on top of this and the following post how we start automating deployments using this mechanism.
+We now have the ability to build and package our project without including any configuration required to run it. When it is time to deploy the api, you can set values in the `SetParameters.xml` file according to your environment and use [MSDeploy](http://www.iis.net/downloads/microsoft/web-deploy) to deploy. At the moment, you might be thinking *that is a lot of effort for something that still requires manual intervention*. Stay tuned, [in the next post]({% post_url 2016-02-07-Build_Script_With_PSake %}) , I will show you how to create a build script using PSake that will build on top of this and the following post how we start automating deployments using this mechanism.
 
 The source used in the post has been uploaded to [GitHub](https://github.com/cobusbernard/CSharp.WebApi.Template) with commits as part of each step.
 : - [Moving the solution into the src directory](https://github.com/cobusbernard/CSharp.WebApi.Template/commit/8a2bffbe05558053a2f2070f216ab8817262faa5)

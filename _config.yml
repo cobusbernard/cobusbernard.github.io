@@ -7,7 +7,6 @@ highlighter: rouge
 markdown: kramdown
 keywords: cobus, bernard, cobus bernard, cobusbernard, devops, chef, ansible, aws, ec2, linux, mesos, marathon, docker, automation, jenkins, msbuild, kubernetes
 
-
 defaults:
   -
     scope:
@@ -17,7 +16,7 @@ defaults:
 
 description: Techical blog
 author:
-  name: Cobus
+  name: Cobus Bernard
   email: me@cobus.io
   github: cobusbernard
   twitter: cobusbernard
@@ -28,5 +27,10 @@ author:
 rss_path: feed.xml
 categories_path: categories.html
 tags_path: tags.html
+
+gems:
+   - jekyll-gist
+   - jekyll-paginate
+   - kramdown
 
 BASE_PATH:

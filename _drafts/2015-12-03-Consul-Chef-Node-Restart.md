@@ -17,11 +17,11 @@
        "ui_dir": "/srv/consul-ui/current/dist",
        "verify_incoming": false,
 
-       Recipe: consul::default
-         * consul_service[consul] action restart
-           * poise_service[consul] action restart
-             * service[consul] action restart
-               - restart service service[consul]
+Recipe: consul::default
+ * consul_service[consul] action restart
+   * poise_service[consul] action restart
+     * service[consul] action restart
+       - restart service service[consul]
 
                instances = search(:node, "role:consul-server AND chef_environment:#{node.chef_environment}")
                instances.sort_by!{ |n| n[:hostname] }
