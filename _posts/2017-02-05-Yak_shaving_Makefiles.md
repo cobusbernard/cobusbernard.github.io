@@ -53,7 +53,7 @@ echo " - run    : runs the docker container with the site"
  - run    : runs the docker container with the site
 ~~~
 
-Damn, that is ugly. So how do I hide the command ala `echo off`? Google! Prefix it with an `@`.
+Damn, that is ugly. So how do I hide the command ala `echo off`? Google! Prefix it with an `@`. *Update 2017-02-08*: [Geoff Kruss](https://www.linkedin.com/in/geoff-kruss-84968915/) pointed out on [ZA Tech Slack](https://zatech.co.za) that this is considered bad practice as you can hide the commands by using `make -s` for silent mode. Updating the `Makefile` references to only have the default target's commands surpressed.
 
 ~~~
 default:
@@ -183,11 +183,11 @@ Once we have the container, we want to make it available to use again in future,
 
 ~~~
 @echo "Tagging latest and pushing to Docker hub..."
-@docker tag jekyll-blog:latest cobusbernard/jekyll-blog:latest
-@docker push cobusbernard/jekyll-blog:latest
+docker tag jekyll-blog:latest cobusbernard/jekyll-blog:latest
+docker push cobusbernard/jekyll-blog:latest
 @echo "Tagging version ${VERSION} and pushing to Docker hub..."
-@docker tag jekyll-blog:latest cobusbernard/jekyll-blog:${VERSION}
-@docker push cobusbernard/jekyll-blog:${VERSION}
+docker tag jekyll-blog:latest cobusbernard/jekyll-blog:${VERSION}
+docker push cobusbernard/jekyll-blog:${VERSION}
 ~~~
 
 Lastly, we need to add an `ENTRYPOINT` for the container. Have a read [here](https://www.ctl.io/developers/blog/post/dockerfile-entrypoint-vs-cmd/) for the difference between an `ENTRYPOINT` and a `CMD` - in my case, I don't want to easily allow overwriting the command executed when the container starts as I like convention over configuration. When running the `jekyll serve` command, we need to ensure we are inside the correct directoy. For that, we need to add a `WORKDIR` directive. The final `Dockerfile` looks like this:
@@ -242,19 +242,19 @@ default:
 docker:
 	$(call check_defined, VERSION, Please set a version number)
 	@echo "Preparing to build version [${VERSION}] of cobusbernard/jekyll-blog container..."
-	@docker build -t jekyll-blog .
+	docker build -t jekyll-blog .
 	@echo "Tagging latest and pushing to Docker hub..."
-	@docker tag jekyll-blog:latest cobusbernard/jekyll-blog:latest
-	@docker push cobusbernard/jekyll-blog:latest
+	docker tag jekyll-blog:latest cobusbernard/jekyll-blog:latest
+	docker push cobusbernard/jekyll-blog:latest
 	@echo "Tagging version ${VERSION} and pushing to Docker hub..."
-	@docker tag jekyll-blog:latest cobusbernard/jekyll-blog:${VERSION}
-	@docker push cobusbernard/jekyll-blog:${VERSION}
+	docker tag jekyll-blog:latest cobusbernard/jekyll-blog:${VERSION}
+	docker push cobusbernard/jekyll-blog:${VERSION}
 
 run:
 	@echo "Running the docker container cobusbernard/jekyll-blog to start Jekyll..."
 	-@docker stop jekyll-blog
 	-@docker rm   jekyll-blog
-	@docker run -tp 4000:4000 -v $(shell pwd):/site --name jekyll-blog cobusbernard/jekyll-blog:1.0.0
+	docker run -tp 4000:4000 -v $(shell pwd):/site --name jekyll-blog cobusbernard/jekyll-blog:1.0.0
 
 # Check that given variables are set and all have non-empty values,
 # die with an error otherwise.
