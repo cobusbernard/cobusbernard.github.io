@@ -53,7 +53,7 @@ echo " - run    : runs the docker container with the site"
  - run    : runs the docker container with the site
 ~~~
 
-Damn, that is ugly. So how do I hide the command ala `echo off`? Google! Prefix it with an `@`. *Update 2017-02-08*: [Geoff Kruss](https://www.linkedin.com/in/geoff-kruss-84968915/) pointed out on [ZA Tech Slack](https://zatech.co.za) that this is considered bad practice as you can hide the commands by using `make -s` for silent mode. Updating the `Makefile` references to only have the default target's commands surpressed.
+Damn, that is ugly. So how do I hide the command ala `echo off`? Google! Prefix it with an `@`. *Update 2017-02-08*: [Geoff Kruss](https://www.linkedin.com/in/geoff-kruss-84968915/) pointed out on [ZA Tech Slack](https://zatech.co.za) that this is considered bad practice as you can hide the commands by using `make -s` for silent mode. Updating the `Makefile` references to only have the `echo` commands suppressed.
 
 ~~~
 default:
