@@ -72,7 +72,7 @@ aws configure --profile dns-update-your-site
 Finally, to test that your script is working, run it:
 
 ~~~bash
-./update-route53.sh BJBK35SKMM9OE example.com dns-update-your-site 1
+./update-route53.sh BJBK35SKMM9OE dns-update-your-site example.com 1
 ~~~
 
 This should output the following:
