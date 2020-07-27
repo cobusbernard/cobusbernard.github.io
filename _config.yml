@@ -28,7 +28,7 @@ rss_path: feed.xml
 categories_path: categories.html
 tags_path: tags.html
 
-gems:
+plugins:
    - jekyll-gist
    - jekyll-paginate
    - kramdown
