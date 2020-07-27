@@ -30,7 +30,7 @@ tags_path: tags.html
 
 plugins:
    - jekyll-paginate
-#   - jekyll-gist
+   - jekyll-gist
 #   - kramdown
 
 
