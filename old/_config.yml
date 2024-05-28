@@ -14,7 +14,7 @@ defaults:
     values:
       title: (thoughts) => TryParse(thoughts, out blog)
 
-description: Techical blog
+description: Technical blog
 author:
   name: Cobus Bernard
   email: me@cobus.io
