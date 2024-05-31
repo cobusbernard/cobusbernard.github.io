@@ -368,6 +368,7 @@ frontend:
                 APP_DEPLOY_DOMAIN=""
               fi
               export APP_DEPLOY_DOMAIN
+              echo "App Deployment Domain set to $(APP_DEPLOY_DOMAIN)"
             - hugo $APP_DEPLOY_DOMAIN
    artifacts:
       baseDirectory: public
