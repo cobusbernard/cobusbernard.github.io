@@ -12,9 +12,9 @@ frontend:
                 APP_DEPLOY_DOMAIN=""
               fi
               export APP_DEPLOY_DOMAIN
-              echo "Git Branch: $(AWS_BRANCH)"
-              echo "Git Branch: $(AWS_APP_ID)"
-              echo "App Deployment Domain set to $(APP_DEPLOY_DOMAIN)"
+              echo "Git Branch: $AWS_BRANCH"
+              echo "Amplify App ID: $AWS_APP_ID"
+              echo "App Deployment Domain set to $APP_DEPLOY_DOMAIN"
             - hugo $APP_DEPLOY_DOMAIN
    artifacts:
       baseDirectory: public
