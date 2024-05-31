@@ -217,7 +217,83 @@ And voila! The site is up and running, but very bare. I then spent some time upd
 
 ## Deploying the new version
 
-Now that the main site is ready, I want to deploy it from the branch to double check that everything works and I didn't miss anything. This is fairly simple with Amplify, at least it would be once I can remember in which account I deployed it - I have about 7 - 9 that I used, will do a write-up soon of why I use to many. 
+Now that the main site is ready, I want to deploy it from the branch to double check that everything works and I didn't miss anything. This is fairly simple with Amplify, at least it would be once I can remember in which account I deployed it - I have about 7 - 9 that I used, will do a write-up soon of why I use to many. More yak-shaving later as I had to add MFA to my [root accounts](https://docs.aws.amazon.com/IAM/latest/UserGuide/enable-virt-mfa-for-root.html), then trying to revive my South African mobile number on a phone missing 2cm of screen on the left-hand side to reset the MFA on the account where I *think* my site is deployed, I gave up. Also realised that using auto-branch detection for Amplify won't work out of the box as it would use the same build as for the main branch (which is for Jekyll, not Hugo), I decided to add a `buildspec.yml` to this branch to test if it works. My theory is that if I test this in another account, and the branch builds & deploy, I should just be able to merge it to my `master` branch where my site is - I still need to update the repo to use `main` for the branch name, but that would require me to be able to log into the account where I have the Amplify app running.
+
+To create the build configuration, I was lazy and just asked Q:
+
+```text
+Prompt:
+=======
+
+Can you please show me a build file for AWS Amplify to build my Hugo app? What should the filename be for Amplify to use it in the branch?
+
+Response:
+=========
+
+Certainly! For AWS Amplify to build your Hugo-based site, you'll need to create a build specification (buildspec) file. The filename for this file should be buildspec.yml, as this is the default name that Amplify looks for.
+
+Here's an example buildspec.yml file that you can use to build your Hugo site on Amplify:
+
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14
+    commands:
+      - echo "Installing Hugo..."
+      - wget -q https://github.com/gohugoio/hugo/releases/download/v0.111.3/hugo_0.111.3_Linux-64bit.deb
+      - sudo dpkg -i hugo_0.111.3_Linux-64bit.deb
+  pre_build:
+    commands:
+      - echo "Installing dependencies..."
+      - npm ci
+  build:
+    commands:
+      - echo "Building the Hugo site..."
+      - hugo
+artifacts:
+  files:
+    - '**/*'
+  base-directory: public
+cache:
+  paths:
+    - 'node_modules/**/*'
+
+```
+
+Mostly looks ok, except I want to use Hugo `0.126.1` to match what I have running locally, I'm not too sure `nodejs: 14` is a recent enough version, and lastly, the line for `- npm ci` seems very odd, so I'll be removing it. Final `buildspec.yml` in the root of the repo is now:
+
+```yml
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14
+    commands:
+      - echo "Installing Hugo..."
+      - wget -q https://github.com/gohugoio/hugo/releases/download/v0.126.1/hugo_0.126.1_Linux-64bit.deb
+      - sudo dpkg -i hugo_0.126.1_Linux-64bit.deb
+  pre_build:
+    commands:
+      - echo "Installing dependencies..."
+  build:
+    commands:
+      - echo "Building the Hugo site..."
+      - hugo
+artifacts:
+  files:
+    - '**/*'
+  base-directory: public
+cache:
+  paths:
+    - 'node_modules/**/*'
+```
+
+And now we hope it works...
+
+
 
 ## Migrating Disqus comments
 
