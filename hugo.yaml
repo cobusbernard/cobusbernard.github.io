@@ -1,6 +1,6 @@
 baseURL: https://cobus.io/
 languageCode: en-us
-theme: poison
+theme: poison-modified
 paginate: 10
 pluralizelisttitles: false
 
