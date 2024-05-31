@@ -333,7 +333,7 @@ My approach is to set `baseUrl: https://cobus.io` in the Hugo config, and then d
 Prompt:
 =======
 
-Given 2 environment variables AWS_BRANCH and AWS_APP_ID, can you please provide me with a bash script that will generate a string in the form "-b https://AWS_BRANCH.AWS_APP_ID.amplifyapp.com" when the AWS_BRANCH is not set to "main" or "master"? Please store this string in an environment variable called APP_DEPLOY_DOMAIN. 
+Given 2 environment variables AWS_BRANCH and AWS_APP_ID, can you please provide me with a bash script that will generate a string in the form "https://AWS_BRANCH.AWS_APP_ID.amplifyapp.com" when the AWS_BRANCH is not set to "main" or "master"? Please store this string in an environment variable called APP_DEPLOY_DOMAIN. 
 
 Response:
 =========
@@ -351,7 +351,7 @@ fi
 export APP_DEPLOY_DOMAIN
 ```
 
-So in theory, the following updated `amplify.yml` should do the job - I had to ask Amazon Q how to do a multi-line command in the build file, and also just to double check that `hugo $APP_DEPLOY_DOMAIN` would work - I always get confused between `$ENV_VAR` and `$(ENV_VAR)`. The "final" build file now:
+So in theory, the following updated `amplify.yml` should do the job - I had to ask Amazon Q how to do a multi-line command in the build file, and also just to double check that `hugo $APP_DEPLOY_DOMAIN` would work - I always get confused between `$ENV_VAR` and `$(ENV_VAR)`. The "final" build file now after adding in `https://cobus.io` for the `else` clause:
 
 ```yml
 version: 0.1
@@ -363,13 +363,13 @@ frontend:
             - echo "Building the Hugo site..."
             - |
               if [ -n "$AWS_BRANCH" ] && [ "$AWS_BRANCH" != "main" ] && [ "$AWS_BRANCH" != "master" ]; then
-                APP_DEPLOY_DOMAIN="-b https://$AWS_BRANCH.$AWS_APP_ID.amplifyapp.com"
+                APP_DEPLOY_DOMAIN="https://$AWS_BRANCH.$AWS_APP_ID.amplifyapp.com"
               else
-                APP_DEPLOY_DOMAIN=""
+                APP_DEPLOY_DOMAIN="https://cobus.io"
               fi
               export APP_DEPLOY_DOMAIN
-              echo "App Deployment Domain set to $(APP_DEPLOY_DOMAIN)"
-            - hugo $APP_DEPLOY_DOMAIN
+              echo "App Deployment Domain set to $APP_DEPLOY_DOMAIN"
+            - hugo -b $APP_DEPLOY_DOMAIN
    artifacts:
       baseDirectory: public
       files:
@@ -378,15 +378,19 @@ cache:
   paths: []
 ```
 
-
+Finally a working build of any new branch! Yay! Time to merge to the `master` branch - I will be doing a squash merge to turn this into a single commit instead of the multiple ones I had before.
 
 ## Migrating Disqus comments
 
-Now that I have the content migrated and redirects in place via the following in the front matter for each post:
+The last step before I do that merge is to ensure I can migrate the existing Disqus comments. Luckily there is a way to add a redirect for any page via the following in the front matter:
 
 ```yaml
 aliases:
   - /version%20control/2012/02/04/git-rpc-error
 ```
 
-It is time to migrate the existing comments to the new URLs. I will be using the automatic update that relies on 301 redirects being in place - I went through each post to confirm the redirect is correctly in place. 
+Disqus has a tool [Redirect Crawler](https://help.disqus.com/en/articles/1717126-redirect-crawler) that will then migrate all of the discussions for you, so I'll kick that off afterwards.
+
+## Conclusion
+
+This was quite a bit of fun for me as I learnt a few new things, and had some challenges to dig into. Having a gen-ai assistant directly in my IDE does make a big difference though, I find myself using it more often now, but I do always take a moment to make sure it isn't hallucinating. Think of them as that smart person at work how usually knows the answer, but sometimes just bluffs when they don't. The main time sink ended up not understanding how the module approach for themes work, and then spending way too much time trying out different themes. In the end, I didn't use the Toha theme, but opted for the [Poison](https://github.com/lukeorth/poison) one after tweaking it a little bit, still have some changes I would like to add. But that will wait for another day, the next item on my TODO is to sort out all my AWS accounts.

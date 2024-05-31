@@ -2,9 +2,6 @@ version: 0.1
 
 frontend:
    phases:
-      install:
-          runtime-versions:
-            hugo: 0.126.1
       build:
           commands:
             - echo "Building the Hugo site..."
