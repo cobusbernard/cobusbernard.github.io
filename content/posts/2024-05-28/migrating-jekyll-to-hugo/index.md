@@ -318,6 +318,67 @@ cache:
   paths: []
 ```
 
+Finally this works, sort of:
+
+![Hugo blog site shown without any CSS](images/no_css_site.png)
+
+Looking at the page source, it is referencing `http://localhost:1313`, which is the default for local development. Looking at my `hugo.yml` config file, the `baseURL` is set to `/`, which is likely the cause. After searching and reading a few different solutions, it appears I need to either create multiple config files depending on which environment I'm deploying to, or I can use the `-b  https://mydomain.com/` build flag to specify the domain. Since I don't have access to my current production deployment environment, I need to be very careful here, so let's see if I can use the [environment variables in the build](https://docs.aws.amazon.com/amplify/latest/userguide/environment-variables.html) to work around this. I should be able to use the following ones with some logic:
+
+1. `AWS_BRANCH` - name of the branch from the repository, would need to check for `main` / `master`
+2. `AWS_APP_ID` - the ID of the Amplify App, used in the URL with the format `https://<branch>.<AWS_APP_ID>.amplifyapp.com`.
+
+My approach is to set `baseUrl: https://cobus.io` in the Hugo config, and then detect in the build if I'm on the `main` / `master` branch, and only call the `-b` flag to override it when I am not. Let's take the easy route again:
+
+```text
+Prompt:
+=======
+
+Given 2 environment variables AWS_BRANCH and AWS_APP_ID, can you please provide me with a bash script that will generate a string in the form "-b https://AWS_BRANCH.AWS_APP_ID.amplifyapp.com" when the AWS_BRANCH is not set to "main" or "master"? Please store this string in an environment variable called APP_DEPLOY_DOMAIN. 
+
+Response:
+=========
+
+#!/bin/bash
+
+# Check if AWS_BRANCH is set and not equal to "main" or "master"
+if [ -n "$AWS_BRANCH" ] && [ "$AWS_BRANCH" != "main" ] && [ "$AWS_BRANCH" != "master" ]; then
+    APP_DEPLOY_DOMAIN="-b https://$AWS_BRANCH.$AWS_APP_ID.amplifyapp.com"
+else
+    APP_DEPLOY_DOMAIN=""
+fi
+
+# Export the APP_DEPLOY_DOMAIN variable
+export APP_DEPLOY_DOMAIN
+```
+
+So in theory, the following updated `amplify.yml` should do the job - I had to ask Amazon Q how to do a multi-line command in the build file, and also just to double check that `hugo $APP_DEPLOY_DOMAIN` would work - I always get confused between `$ENV_VAR` and `$(ENV_VAR)`. The "final" build file now:
+
+```yml
+version: 0.1
+
+frontend:
+   phases:
+      build:
+          commands:
+            - echo "Building the Hugo site..."
+            - |
+              if [ -n "$AWS_BRANCH" ] && [ "$AWS_BRANCH" != "main" ] && [ "$AWS_BRANCH" != "master" ]; then
+                APP_DEPLOY_DOMAIN="-b https://$AWS_BRANCH.$AWS_APP_ID.amplifyapp.com"
+              else
+                APP_DEPLOY_DOMAIN=""
+              fi
+              export APP_DEPLOY_DOMAIN
+            - hugo $APP_DEPLOY_DOMAIN
+   artifacts:
+      baseDirectory: public
+      files:
+         - '**/*'
+cache:
+  paths: []
+```
+
+
+
 ## Migrating Disqus comments
 
 Now that I have the content migrated and redirects in place via the following in the front matter for each post:

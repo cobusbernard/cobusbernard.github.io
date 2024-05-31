@@ -5,7 +5,14 @@ frontend:
       build:
           commands:
             - echo "Building the Hugo site..."
-            - hugo
+            - |
+              if [ -n "$AWS_BRANCH" ] && [ "$AWS_BRANCH" != "main" ] && [ "$AWS_BRANCH" != "master" ]; then
+                APP_DEPLOY_DOMAIN="-b https://$AWS_BRANCH.$AWS_APP_ID.amplifyapp.com"
+              else
+                APP_DEPLOY_DOMAIN=""
+              fi
+              export APP_DEPLOY_DOMAIN
+            - hugo $APP_DEPLOY_DOMAIN
    artifacts:
       baseDirectory: public
       files:
