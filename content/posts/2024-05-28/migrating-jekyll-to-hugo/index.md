@@ -311,7 +311,7 @@ frontend:
             - echo "Building the Hugo site..."
             - hugo
    artifacts:
-      base-directory: public
+      baseDirectory: public
       files:
          - '**/*'
 cache:
