@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+<script defer language="javascript" type="text/javascript" src="/js/bundle.min.cbcd24d8731b2aea4f1fef1db2519a78fa4d97baf0a2241b1d0b9759cb5d5acc.js"></script>
+
+
+
+
+
+
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <link rel="icon" href=/favicon.png>
+
+    
+    
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+<!-- Open Graph image and Twitter Card metadata -->
+
+<title itemprop="name">Cobus - Migrating my Jekyll blog to Hugo with Gen-AI</title>
+<meta property="og:title" content=Cobus&#32;-&#32;Migrating&#32;my&#32;Jekyll&#32;blog&#32;to&#32;Hugo&#32;with&#32;Gen-AI />
+<meta name="twitter:title" content=Cobus&#32;-&#32;Migrating&#32;my&#32;Jekyll&#32;blog&#32;to&#32;Hugo&#32;with&#32;Gen-AI />
+<meta itemprop="name" content=Cobus&#32;-&#32;Migrating&#32;my&#32;Jekyll&#32;blog&#32;to&#32;Hugo&#32;with&#32;Gen-AI />
+<meta name="application-name" content=Cobus&#32;-&#32;Migrating&#32;my&#32;Jekyll&#32;blog&#32;to&#32;Hugo&#32;with&#32;Gen-AI />
+<meta property="og:site_name" content="" />
+
+
+<meta name="description" content="Trying out Amazon Q to help me move my personal blog from Jekyll to Hugo" />
+<meta itemprop="description" content="Trying out Amazon Q to help me move my personal blog from Jekyll to Hugo" />
+<meta property="og:description" content="Trying out Amazon Q to help me move my personal blog from Jekyll to Hugo" />
+<meta name="twitter:description" content="Trying out Amazon Q to help me move my personal blog from Jekyll to Hugo" />
+
+
+<base href="//localhost:1313/posts/2024-05-28/migrating-jekyll-to-hugo/" />
+<link rel="canonical" href="//localhost:1313/posts/2024-05-28/migrating-jekyll-to-hugo/" itemprop="url" />
+<meta name="url" content="//localhost:1313/posts/2024-05-28/migrating-jekyll-to-hugo/" />
+<meta name="twitter:url" content="//localhost:1313/posts/2024-05-28/migrating-jekyll-to-hugo/" />
+<meta property="og:url" content="//localhost:1313/posts/2024-05-28/migrating-jekyll-to-hugo/" />
+
+
+<meta property="og:updated_time" content="2024-05-28T00:00:00Z" />
+
+
+<link rel="sitemap" type="application/xml" title="Sitemap" href='//localhost:1313/sitemap.xml' />
+
+<meta name="robots" content="index,follow" />
+<meta name="googlebot" content="index,follow" />
+
+
+<meta name="twitter:site" content="https://twitter.com/cobusbernard" />
+<meta name="twitter:creator" content="https://twitter.com/cobusbernard" />
+<meta property="fb:admins" content="" />
+
+
+<meta name="apple-mobile-web-app-title" content="" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.126.1">
+
+
+    
+    
+
+<link type="text/css" rel="stylesheet" href="/css/bundle.min.94a339836f89f0d25f31980cb6b0631da21e20af128308747ce44e0525eb16ef.css">
+
+
+    
+    <style>
+    body {
+        --sidebar-bg-color: #202020;
+        --sidebar-img-border-color: #515151;
+        --sidebar-p-color: #909090;
+        --sidebar-h1-color: #FFF;
+        --sidebar-a-color: #FFF;
+        --sidebar-socials-color: #FFF;
+        --text-color: #222;
+        --bkg-color: #FAF9F6;
+        --post-title-color: #303030;
+        --list-color: #5A5A5A;
+        --link-color: #268BD2;
+        --date-color: #515151;
+        --table-border-color: #E5E5E5;
+        --table-stripe-color: #F9F9F9;
+        --code-color: #000;
+        --code-background-color: #E5E5E5;
+        --code-block-color: #FFF;
+        --code-block-background-color: #272822;
+        --moon-sun-color: #FFF;
+        --moon-sun-background-color: #515151;
+    }
+    body.dark-theme {
+        --text-color: #EEE;
+        --bkg-color: #121212;
+        --post-title-color: #DBE2E9;
+        --list-color: #9D9D9D;
+        --link-color: #268BD2;
+        --date-color: #9A9A9A;
+        --table-border-color: #515151;
+        --table-stripe-color: #202020;
+        --code-color: #FFF;
+        --code-background-color: #515151;
+        --code-block-color: #FFF;
+        --code-block-background-color: #272822;
+    }
+    body {
+        background-color: var(--bkg-color);
+    }
+</style>
+
+</head>
+
+    <body class="dark-theme">
+        <div class="wrapper">
+            <aside class="sidebar">
+    <div class="container sidebar-sticky">
+        
+        <div class="sidebar-about">
+    <h1 class="brand">
+        
+            <a href="//localhost:1313/">
+                <img src="/images/author/cobus_8_bit.png" alt="brand image">
+            </a>
+        
+        
+            <a href="//localhost:1313/">
+                <h1>Cobus</h1>
+            </a>
+        
+    </h1>
+    <p class="lead">
+    (thoughts) => TryParse(thoughts, out blog)
+    </p>
+</div>
+
+        <nav>
+    <ul class="sidebar-nav">
+
+        
+        
+        
+        
+            
+
+            
+                
+                
+                    <li class="heading">
+                        <a href="/about/">About</a>
+                    </li>
+                    
+                
+            
+                
+                
+            
+            
+                
+                
+                        
+                
+                        
+                
+            
+                
+                
+            
+                
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+            
+        
+        
+            
+
+            
+                
+                
+            
+                
+                
+                    <li class="heading">
+                        <a href="/posts/">Posts</a>
+                    </li>
+                    
+                        <li class="sub-heading">
+                            Recent
+                        </li>
+                        
+                            <li class="bullet">
+                                <a href="//localhost:1313/posts/2024-05-28/migrating-jekyll-to-hugo/">Migrating my Jekyll blog to Hugo with Gen-AI</a>
+                            </li>
+                        
+                            <li class="bullet">
+                                <a href="//localhost:1313/posts/2017-02-09/osx-home-end-keys/">Remapping the Home and End keys on OSX</a>
+                            </li>
+                        
+                            <li class="bullet">
+                                <a href="//localhost:1313/posts/2017-02-05/yak-shaving-makefiles/">Yak Shaving - Makefiles</a>
+                            </li>
+                        
+                            <li class="bullet">
+                                <a href="//localhost:1313/posts/2017-01-15/timemachine-backups/">Setting up a Timemachine server using Mesos/Marathon</a>
+                            </li>
+                        
+                            <li class="bullet">
+                                <a href="//localhost:1313/posts/2016-09-03/aws-multi-account/">Securing AWS environments using role switching</a>
+                            </li>
+                        
+                    
+                
+            
+            
+                
+                
+                        
+                
+                        
+                
+            
+                
+                
+            
+                
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+            
+        
+
+    </ul>
+</nav>
+
+        
+    <a target="_blank" class="social" title="GitHub" href="https://github.com/cobusbernard">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="-2 -2 24 24">
+            <path fill="currentColor" d="M18.88 1.099C18.147.366 17.265 0 16.233 0H3.746C2.714 0 1.832.366 1.099 1.099C.366 1.832 0 2.714 0 3.746v12.487c0 1.032.366 1.914 1.099 2.647c.733.733 1.615 1.099 2.647 1.099H6.66c.19 0 .333-.007.429-.02a.504.504 0 0 0 .286-.169c.095-.1.143-.245.143-.435l-.007-.885c-.004-.564-.006-1.01-.006-1.34l-.3.052c-.19.035-.43.05-.721.046a5.555 5.555 0 0 1-.904-.091a2.026 2.026 0 0 1-.872-.39a1.651 1.651 0 0 1-.572-.8l-.13-.3a3.25 3.25 0 0 0-.41-.663c-.186-.243-.375-.407-.566-.494l-.09-.065a.956.956 0 0 1-.17-.156a.723.723 0 0 1-.117-.182c-.026-.061-.004-.111.065-.15c.07-.04.195-.059.378-.059l.26.04c.173.034.388.138.643.311a2.1 2.1 0 0 1 .631.677c.2.355.44.626.722.813c.282.186.566.28.852.28c.286 0 .533-.022.742-.065a2.59 2.59 0 0 0 .585-.196c.078-.58.29-1.028.637-1.34a8.907 8.907 0 0 1-1.333-.234a5.314 5.314 0 0 1-1.223-.507a3.5 3.5 0 0 1-1.047-.872c-.277-.347-.505-.802-.683-1.365c-.177-.564-.266-1.215-.266-1.952c0-1.049.342-1.942 1.027-2.68c-.32-.788-.29-1.673.091-2.652c.252-.079.625-.02 1.119.175c.494.195.856.362 1.086.5c.23.14.414.257.553.352a9.233 9.233 0 0 1 2.497-.338c.859 0 1.691.113 2.498.338l.494-.312a6.997 6.997 0 0 1 1.197-.572c.46-.174.81-.221 1.054-.143c.39.98.424 1.864.103 2.653c.685.737 1.028 1.63 1.028 2.68c0 .737-.089 1.39-.267 1.957c-.177.568-.407 1.023-.689 1.366a3.65 3.65 0 0 1-1.053.865c-.42.234-.828.403-1.223.507a8.9 8.9 0 0 1-1.333.235c.45.39.676 1.005.676 1.846v3.11c0 .147.021.266.065.357a.36.36 0 0 0 .208.189c.096.034.18.056.254.064c.074.01.18.013.318.013h2.914c1.032 0 1.914-.366 2.647-1.099c.732-.732 1.099-1.615 1.099-2.647V3.746c0-1.032-.367-1.914-1.1-2.647z"/>
+        </svg>
+    </a>
+
+
+
+    <a target="_blank" class="social" title="LinkedIn" href="https://linkedin.com/in/cobusbernard">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1.2em" viewBox="0 0 448 512">
+            <path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5c0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7c-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5c67.2 0 79.7 44.3 79.7 101.9V416z"/>
+        </svg>
+    </a>
+
+
+    <a target="_blank" class="social" title="Twitter" href="https://twitter.com/cobusbernard">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 16 16">
+            <path fill="currentColor" d="M5.032 14.286c6.037 0 9.34-4.837 9.34-9.032c0-.137 0-.274-.01-.41A6.56 6.56 0 0 0 16 3.2c-.6.256-1.235.425-1.885.5a3.207 3.207 0 0 0 1.443-1.757c-.645.37-1.35.63-2.085.77a3.322 3.322 0 0 0-1.862-.958a3.384 3.384 0 0 0-2.082.334a3.223 3.223 0 0 0-1.442 1.49a3.08 3.08 0 0 0-.208 2.03a9.57 9.57 0 0 1-3.747-.963a9.269 9.269 0 0 1-3.018-2.354a3.086 3.086 0 0 0-.36 2.314c.189.787.68 1.475 1.376 1.924a3.344 3.344 0 0 1-1.49-.398v.04c0 .734.263 1.444.743 2.01a3.3 3.3 0 0 0 1.89 1.102c-.483.128-.99.146-1.482.055a3.19 3.19 0 0 0 1.168 1.577a3.36 3.36 0 0 0 1.9.627A6.732 6.732 0 0 1 0 12.86a9.527 9.527 0 0 0 5.032 1.423"/>
+        </svg>
+    </a>
+
+
+    <a target="_blank" class="social" rel="me" title="Mastodon" href="https://hachyderm.io/@cobusbernard">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M20.94 14c-.28 1.41-2.44 2.96-4.97 3.26c-1.31.15-2.6.3-3.97.24c-2.25-.11-4-.54-4-.54v.62c.32 2.22 2.22 2.35 4.03 2.42c1.82.05 3.44-.46 3.44-.46l.08 1.65s-1.28.68-3.55.81c-1.25.07-2.81-.03-4.62-.5c-3.92-1.05-4.6-5.24-4.7-9.5l-.01-3.43c0-4.34 2.83-5.61 2.83-5.61C6.95 2.3 9.41 2 11.97 2h.06c2.56 0 5.02.3 6.47.96c0 0 2.83 1.27 2.83 5.61c0 0 .04 3.21-.39 5.43M18 8.91c0-1.08-.3-1.91-.85-2.56c-.56-.63-1.3-.96-2.23-.96c-1.06 0-1.87.41-2.42 1.23l-.5.88l-.5-.88c-.56-.82-1.36-1.23-2.43-1.23c-.92 0-1.66.33-2.23.96C6.29 7 6 7.83 6 8.91v5.26h2.1V9.06c0-1.06.45-1.62 1.36-1.62c1 0 1.5.65 1.5 1.93v2.79h2.07V9.37c0-1.28.5-1.93 1.51-1.93c.9 0 1.35.56 1.35 1.62v5.11H18V8.91Z"/>
+        </svg>
+    </a>
+
+
+
+    <a target="_blank" class="social" title="Discord" href="https://discord.gg/w6BhuzNX">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"/>
+        </svg>
+    </a>
+
+
+    <a target="_blank" class="social" title="YouTube" href="https://youtube.com/@cobusbernard">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M12.006 19.012h-.02c-.062 0-6.265-.012-7.83-.437a2.5 2.5 0 0 1-1.764-1.765A26.494 26.494 0 0 1 1.986 12a26.646 26.646 0 0 1 .417-4.817A2.564 2.564 0 0 1 4.169 5.4c1.522-.4 7.554-.4 7.81-.4H12c.063 0 6.282.012 7.831.437c.859.233 1.53.904 1.762 1.763c.29 1.594.427 3.211.407 4.831a26.568 26.568 0 0 1-.418 4.811a2.51 2.51 0 0 1-1.767 1.763c-1.52.403-7.553.407-7.809.407Zm-2-10.007l-.005 6l5.212-3l-5.207-3Z"/>
+        </svg>
+    </a>
+
+
+    <a target="_blank" class="social" title="Instagram" href="https://instagram.com">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1.2em" viewBox="0 0 448 512">
+            <path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9S287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7s74.7 33.5 74.7 74.7s-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8c-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8s26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9c-26.2-26.2-58-34.4-93.9-36.2c-37-2.1-147.9-2.1-184.9 0c-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9c1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0c35.9-1.7 67.7-9.9 93.9-36.2c26.2-26.2 34.4-58 36.2-93.9c2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6c-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6c-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6c29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6c11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+        </svg>
+    </a>
+
+
+
+
+
+
+
+    <a target="_blank" class="social" title="RSS Feed" href="/posts/index.xml">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1.2em" viewBox="0 0 1280.000000 1280.000000">
+            <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)" fill="currentColor">
+                <path d="M2295 11929 c-284 -12 -642 -45 -707 -65 -17 -5 -18 -63 -18 -1039 0 -569 4 -1036 8 -1039 5 -3 74 6 153 19 510 86 1168 95 1789 25 1348 -153 2602 -677 3670 -1531 385 -308 820 -744 1126 -1129 842 -1060 1362 -2313 1514 -3650 70 -621 61 -1279 -25 -1789 -13 -79 -22 -148 -19 -153 3 -4 471 -8 1039 -8 l1035 0 5 23 c51 225 85 942 67 1419 -23 605 -77 1044 -198 1617 -294 1400 -927 2734 -1823 3846 -1043 1295 -2364 2259 -3909 2854 -1158 447 -2451 656 -3707 600z"/>
+                <path d="M2255 7845 c-269 -25 -620 -81 -667 -106 -17 -9 -18 -55 -18 -899 0 -706 3 -890 13 -890 6 0 66 18 132 41 130 44 288 79 467 105 154 21 577 30 749 15 1207 -107 2267 -823 2814 -1902 166 -327 268 -637 330 -1001 38 -227 48 -384 42 -662 -8 -348 -44 -590 -126 -831 -23 -66 -41 -126 -41 -132 0 -10 184 -13 890 -13 844 0 890 1 899 18 27 50 88 452 110 725 14 162 14 624 1 782 -59 703 -233 1323 -545 1945 -481 956 -1313 1788 -2270 2268 -620 310 -1239 483 -1940 542 -165 14 -669 10 -840 -5z"/>
+                <path d="M2519 3815 c-391 -66 -725 -336 -868 -703 -79 -201 -96 -462 -45 -677 83 -344 338 -641 666 -774 116 -47 205 -69 330 -80 412 -39 811 153 1040 500 193 292 240 648 128 981 -135 403 -492 699 -914 757 -100 14 -241 12 -337 -4z"/>
+            </g>
+        </svg>
+    </a>
+
+
+
+        <p class="footnote">
+powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a target="_blank" href="https://github.com/lukeorth/poison">poison</a>
+    <br>
+    &copy; 2024 . All rights reserved.
+</p>
+
+  </div>
+</aside>
+
+            <main class="content container">
+                <div class="post">
+  <div class="info">
+  <h1 class="post-title">
+    <a href="//localhost:1313/posts/2024-05-28/migrating-jekyll-to-hugo/">Migrating my Jekyll blog to Hugo with Gen-AI</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      <time datetime=" 2024-05-28T00:00:00Z" class="post-date">
+        May 28, 2024
+      </time>
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>8 mins read</span>
+      </span>
+    </div>
+
+    
+    <ul class="tags">
+      
+      <li class="tag-linux">
+        <a href="//localhost:1313/tags/linux">linux</a>
+      </li>
+      
+      <li class="tag-aws-amplify">
+        <a href="//localhost:1313/tags/aws-amplify">aws-amplify</a>
+      </li>
+      
+      <li class="tag-amazon-q">
+        <a href="//localhost:1313/tags/amazon-q">amazon-q</a>
+      </li>
+      
+      <li class="tag-hugo">
+        <a href="//localhost:1313/tags/hugo">hugo</a>
+      </li>
+      
+      <li class="tag-blog">
+        <a href="//localhost:1313/tags/blog">blog</a>
+      </li>
+      
+    </ul>
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+  <p>I&rsquo;ve been neglecting my blog, and decided it is time to start writing again. So like any good software developer, I don&rsquo;t actually write a post, I start by tinkering with my blog setup. I initially ran it as a Jekyll generated static site on GitHub using GitHub Pages, and then as part of a live-stream, moved it to use AWS Amplify to host it in on of my many AWS accounts. Coming back to it a few years later, I still remember the headaches of dealing with different Ruby versions, getting <code>rvm</code> set up, and then only getting it going. The paging is currently not working, so I&rsquo;ll be trying to move over to Hugo for this.</p>
+<p>The first step was to find a theme I liked, settled on <a href="https://themes.gohugo.io/themes/toha/" target="_blank">Toha</a> by <a href="https://hossainemruz.github.io/" target="_blank">Emruz Hossain</a> specifically for how I can have multiple sub-sections and <a href="https://hossainemruz.github.io/notes/" target="_blank">notes</a>. When looking at the <a href="https://github.com/hugo-toha/toha" target="_blank">GitHub repo</a>, it starts with a note about using <code>hugo modules</code> instead of the <code>git submodule</code> approach I previously used. Love how this yak-shaving mimics my usually day-to-day work where I only want to do that 1 things, but end up going down the rabbit hole. I&rsquo;m jotting down the steps as I go for future reference.</p>
+<h2 id="getting-some-help-from-amazon-q">Getting some help from Amazon Q</h2>
+<p>Since I have no idea about what the tradeoffs are, I decided to use Amazon Q to help me through this whole process. I installed the Amazon Q extension in VSCode, authenticated, and started asking away. Step one is to ask it:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>Prompt:
+</span></span><span style="display:flex;"><span>=======
+</span></span><span style="display:flex;"><span>When setting up a new site using Hugo, can you please explain the difference 
+</span></span><span style="display:flex;"><span>between a git submodule vs a go module w.r.t. installing a theme?
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Response:
+</span></span><span style="display:flex;"><span>=========
+</span></span><span style="display:flex;"><span>Certainly, I&#39;d be happy to explain the difference between using a Git submodule
+</span></span><span style="display:flex;"><span>versus a Go module when installing a theme for a new Hugo site.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>When using a Git submodule, you essentially link your Hugo site&#39;s repository to 
+</span></span><span style="display:flex;"><span>the repository of the theme you want to use. This means that the theme&#39;s source 
+</span></span><span style="display:flex;"><span>code is maintained in a separate repository, and your Hugo site&#39;s repository 
+</span></span><span style="display:flex;"><span>contains a reference to that theme repository. This approach has a few 
+</span></span><span style="display:flex;"><span>advantages: [1]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">1.</span> Separation of Concerns: By keeping the theme in a separate repository, you 
+</span></span><span style="display:flex;"><span>   can more easily update the theme independently of your site&#39;s content and 
+</span></span><span style="display:flex;"><span>   configuration.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">2.</span> Versioning: You can specify a specific version or commit of the theme that 
+</span></span><span style="display:flex;"><span>   you want to use, which helps with maintaining consistency across different 
+</span></span><span style="display:flex;"><span>  deployments of your site.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">3.</span> Collaboration: If you&#39;re working on a team, using a Git submodule makes it 
+</span></span><span style="display:flex;"><span>   easier for other team members to clone your site&#39;s repository and have the 
+</span></span><span style="display:flex;"><span>   theme available as well.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>On the other hand, using a Go module for a theme integration is a more modern 
+</span></span><span style="display:flex;"><span>approach that is recommended by the Hugo team. With Go modules, the theme&#39;s 
+</span></span><span style="display:flex;"><span>source code is directly included in your Hugo site&#39;s repository, and the theme 
+</span></span><span style="display:flex;"><span>is treated as a dependency that is fetched and compiled as part of the build 
+</span></span><span style="display:flex;"><span>process.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>The main advantages of using Go modules are:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">1.</span> Simplicity: There&#39;s no need to manage the submodule separately, as the theme 
+</span></span><span style="display:flex;"><span>   is just another dependency that is handled by the Go module system.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">2.</span> Reproducibility: When you build your Hugo site, the exact versions of the 
+</span></span><span style="display:flex;"><span>   dependencies (including the theme) are guaranteed to be used, making the 
+</span></span><span style="display:flex;"><span>   build process more reliable and reproducible.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">3.</span> Tooling Integration: Go modules integrate well with the standard Go tooling, 
+</span></span><span style="display:flex;"><span>   which can make managing dependencies and updating themes easier.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>In summary, while both approaches can be used to install a theme for a Hugo site, 
+</span></span><span style="display:flex;"><span>the Go module approach is generally considered the more modern and recommended way, 
+</span></span><span style="display:flex;"><span>as it provides a more streamlined and integrated dependency management experience.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Sources
+</span></span><span style="display:flex;"><span>[1] Hugo website on github pages deployed through github actions is not working with 
+</span></span><span style="display:flex;"><span>custom theme stackoverflow.comquestions/67725758
+</span></span></code></pre></div><h2 id="planning">Planning</h2>
+<p>Before we get too carried away, let&rsquo;s build ourselves a todo list to move the blog:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>Prompt:
+</span></span><span style="display:flex;"><span>=======
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>I have a personal blog currently deployed using AWS Amplify from a GitHub repository 
+</span></span><span style="display:flex;"><span>that is public, with Disqus for comments, Google Analytics for my site analytics, 
+</span></span><span style="display:flex;"><span>and would like to change it to use Hugo, but keep the other technologies the same, 
+</span></span><span style="display:flex;"><span>can you please create a todo list for me to ensure I don&#39;t forget to migrate something?
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Response:
+</span></span><span style="display:flex;"><span>=========
+</span></span><span style="display:flex;"><span>Certainly, here&#39;s a suggested todo list to help you migrate your personal blog from 
+</span></span><span style="display:flex;"><span>GitHub Pages with Jekyll to using Hugo, while keeping the existing technologies like 
+</span></span><span style="display:flex;"><span>AWS Amplify, Disqus, and Google Analytics:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>TODO List for Migrating Personal Blog from Jekyll to Hugo:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">1.</span> Set up a new Hugo project
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">-</span> Create a new Hugo site using the <span style="color:#e6db74">`hugo new site`</span> command
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">-</span> Choose a suitable Hugo theme, such as the Toha theme you mentioned previously
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">2.</span> Migrate content from Jekyll to Hugo
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">-</span> Convert your existing Markdown posts to the Hugo format
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">-</span> Ensure that the front matter (metadata) in your posts is compatible with Hugo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">3.</span> Configure AWS Amplify for the new Hugo site
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">-</span> Create a new Amplify app for your Hugo site
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">-</span> Set up the necessary build settings and environment variables
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">-</span> Configure the Amplify app to use your new Hugo site&#39;s repository
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">4.</span> Integrate Disqus comments
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">-</span> Add the necessary Disqus shortname and configuration to your Hugo site&#39;s templates
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">5.</span> Integrate Google Analytics
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">-</span> Add the Google Analytics tracking code to your Hugo site&#39;s templates
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">-</span> Ensure that the tracking code is compatible with the latest version of Google 
+</span></span><span style="display:flex;"><span>     Analytics (GA4)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">6.</span> Update DNS and domain settings
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">-</span> If you&#39;re using a custom domain, update the DNS settings to point to your new Hugo 
+</span></span><span style="display:flex;"><span>     site hosted on AWS Amplify
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">7.</span> Test the migration
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">-</span> Thoroughly test your new Hugo-based site to ensure that all features, content, and 
+</span></span><span style="display:flex;"><span>     integrations are working as expected
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">-</span> Verify that your site is rendering correctly and that all links, images, and other 
+</span></span><span style="display:flex;"><span>     assets are properly loaded
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">8.</span> Redirect old Jekyll-based URLs (optional)
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">-</span> If you had a significant number of existing URLs for your Jekyll-based site, consider 
+</span></span><span style="display:flex;"><span>     setting up URL redirects to ensure that existing links continue to work
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">9.</span> Update any external references (e.g., social media, email signatures)
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">-</span> Update any references to your old Jekyll-based site with the new Hugo-based site URL
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">10.</span> Monitor and maintain the new Hugo-based site
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">-</span> Set up monitoring and alerting for your new Hugo-based site hosted on AWS Amplify
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">-</span> Keep your Hugo version, theme, and dependencies up-to-date to ensure security and 
+</span></span><span style="display:flex;"><span>      stability
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Remember, this is a general todo list, and the specific steps may vary depending on your 
+</span></span><span style="display:flex;"><span>existing setup and the technologies you&#39;re using. It&#39;s always a good idea to thoroughly 
+</span></span><span style="display:flex;"><span>test and validate each step of the migration process to ensure a smooth transition for 
+</span></span><span style="display:flex;"><span>your personal blog.
+</span></span></code></pre></div><!-- raw HTML omitted -->
+<p>The <code>toha</code> theme mentioned above is due to a longer discussion on figuring out the theme install first, but this is a decent list. The only step I would update is point 4 - for Disqus, you would also need to migrate the existing comments if the domain or path structure of the content changed. Luckily there are <a href="https://help.disqus.com/en/articles/1717068-migration-tools" target="_blank">a few ways to do it</a>, I will just need to look into how to handle redirects with Hugo, it should be a standard feature.</p>
+<p>I do need to confess that I went down a rabbit hole first here when I followed the <a href="https://toha-guides.netlify.app/posts/quickstart/" target="_blank">quickstart</a> without realising those instructions are for modifying and publishing the theme to then pull into Hugo as a module. But I digress, let&rsquo;s build this!</p>
+<h2 id="barebones-site">Barebones site</h2>
+<p>Following the steps in the <a href="https://toha-guides.netlify.app/posts/getting-started/prepare-site/" target="_blank">getting started guide</a>, I ran the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git checkout -b switch-to-hugo <span style="color:#75715e"># Let&#39;s not break the site before we are ready to move</span>
+</span></span><span style="display:flex;"><span>mkdir old
+</span></span><span style="display:flex;"><span>mv !<span style="color:#f92672">(</span>old<span style="color:#f92672">)</span>* old/ <span style="color:#75715e"># Include all files / folders, but not hidden ones, and exclude the one called &#34;old&#34;.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>hugo new site ./ --format<span style="color:#f92672">=</span>yaml --force
+</span></span><span style="display:flex;"><span>hugo mod init github.com/cobusbernard/cobusbernard.github.io <span style="color:#75715e"># Repo name is a left-over from when I used GitHub pages</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Adding the theme module to the Hugo config</span>
+</span></span><span style="display:flex;"><span>cat <span style="color:#e6db74">&lt;&lt; EOF &gt;&gt; hugo.yaml
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">module:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  imports:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  - path: github.com/hugo-toha/toha/v4
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  mounts:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  - source: ./node_modules/flag-icon-css/flags
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    target: static/flags
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  - source: ./node_modules/@fontsource/mulish/files
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    target: static/files
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  - source: ./node_modules/katex/dist/fonts
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    target: static/fonts
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>hugo mod get -u
+</span></span><span style="display:flex;"><span>hugo mod tidy
+</span></span><span style="display:flex;"><span>hugo mod npm pack
+</span></span><span style="display:flex;"><span>npm install
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>hugo server -w
+</span></span></code></pre></div><p>And voila! The site is up and running, but very bare. I then spent some time updating the configs with all my details, and added the sections I needed. Next, I need to migrate my old content from the Jekyll front matter format to the one for Hugo. This was a tedious, manual task, but an hour or 3 later I was done. Also, past-Cobus really needs to sort out consistency in filenames, this is what I found - you can clearly spot when I started working at a company that used quite a lot of Python:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>.
+</span></span><span style="display:flex;"><span>├── 2011-07-25-Ubuntu-on-HyperV.md
+</span></span><span style="display:flex;"><span>├── 2012-02-04-git-rpc-error.md
+</span></span><span style="display:flex;"><span>├── 2012-03-27-Terminal-install-Java-Ubuntu-10.10.md
+</span></span><span style="display:flex;"><span>├── 2012-04-10-chrome_default_xubuntu.md
+</span></span><span style="display:flex;"><span>├── 2012-04-12-ssh-config-multiple-keys.md
+</span></span><span style="display:flex;"><span>├── 2013-01-28-ssh-rate-limit.md
+</span></span><span style="display:flex;"><span>├── 2015-01-26-basic-github-jekyll-blog.md
+</span></span><span style="display:flex;"><span>├── 2015-02-08-convert-putty-keys-to-openssh.md
+</span></span><span style="display:flex;"><span>├── 2015-02-13-openvpn-on-digital-ocean.md
+</span></span><span style="display:flex;"><span>├── 2015-02-14-openvpn-home.md
+</span></span><span style="display:flex;"><span>├── 2015-02-17-route-53-dns-update-script.md
+</span></span><span style="display:flex;"><span>├── 2015-02-19-mdadm-replace-drive.md
+</span></span><span style="display:flex;"><span>├── 2015-02-27-git-checkout-ssh-vs-https.md
+</span></span><span style="display:flex;"><span>├── 2015-03-30-MSBuild-External-Error.md
+</span></span><span style="display:flex;"><span>├── 2015-04-04-GitFlow-SemVer-PSake.md
+</span></span><span style="display:flex;"><span>├── 2015-12-16-NTP-on-AWS.md
+</span></span><span style="display:flex;"><span>├── 2016-02-06-Parameterizing_Webconfig.md
+</span></span><span style="display:flex;"><span>├── 2016-02-18-Upgrading_Berks_Dependency_Issue.md
+</span></span><span style="display:flex;"><span>├── 2016-06-12-Centos_Gluster_Startup.md
+</span></span><span style="display:flex;"><span>├── 2016-09-03-AWS_Multi_Account.md
+</span></span><span style="display:flex;"><span>├── 2017-01-15-timemachine-backups.md
+</span></span><span style="display:flex;"><span>├── 2017-02-05-Yak_shaving_Makefiles.md
+</span></span><span style="display:flex;"><span>├── 2017-02-09-OSX_Home_End_Keys.md
+</span></span><span style="display:flex;"><span>├── 2024-05-28-migrating-jekyll-to-hugo.md
+</span></span><span style="display:flex;"><span>└── _index.md
+</span></span></code></pre></div><h2 id="deploying-the-new-version">Deploying the new version</h2>
+<p>Now that the main site is ready, I want to deploy it from the branch to double check that everything works and I didn&rsquo;t miss anything. This is fairly simple with Amplify, at least it would be once I can remember in which account I deployed it - I have about 7 - 9 that I used, will do a write-up soon of why I use to many.</p>
+<h2 id="migrating-disqus-comments">Migrating Disqus comments</h2>
+<p>Now that I have the content migrated and redirects in place via the following in the front matter for each post:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">aliases</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">/version%20control/2012/02/04/git-rpc-error</span>
+</span></span></code></pre></div><p>It is time to migrate the existing comments to the new URLs. I will be using the automatic update that relies on 301 redirects being in place - I went through each post to confirm the redirect is correctly in place.</p>
+
+  
+  <hr>
+<div class="footer">
+    
+	    
+            <a class="previous-post" href="//localhost:1313/posts/2017-02-09/osx-home-end-keys/?ref=footer"><span style="font-weight:bold;">« Previous</span><br>Remapping the Home and End keys on OSX</a>
+        
+	    
+    
+</div>
+
+  
+    <div class="comments">
+    
+        <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "cobusio" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+</div>
+
+  
+</div>
+            </main>
+            
+  
+    <div class="article-toc ">
+    <div class="toc-wrapper">
+      <h4 id="contents"></h4>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#getting-some-help-from-amazon-q">Getting some help from Amazon Q</a></li>
+    <li><a href="#planning">Planning</a></li>
+    <li><a href="#barebones-site">Barebones site</a></li>
+    <li><a href="#deploying-the-new-version">Deploying the new version</a></li>
+    <li><a href="#migrating-disqus-comments">Migrating Disqus comments</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+  
+
+        </div>
+    </body>
+</html>

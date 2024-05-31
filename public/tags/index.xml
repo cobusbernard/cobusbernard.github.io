@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on </title>
+    <link>//localhost:1313/tags/</link>
+    <description>Recent content in Tags on </description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 28 May 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Amazon-Q</title>
+      <link>//localhost:1313/tags/amazon-q/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/amazon-q/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Aws-Amplify</title>
+      <link>//localhost:1313/tags/aws-amplify/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/aws-amplify/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Blog</title>
+      <link>//localhost:1313/tags/blog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/blog/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hugo</title>
+      <link>//localhost:1313/tags/hugo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/hugo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linux</title>
+      <link>//localhost:1313/tags/linux/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Osx</title>
+      <link>//localhost:1313/tags/osx/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/osx/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Docker</title>
+      <link>//localhost:1313/tags/docker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/docker/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Make</title>
+      <link>//localhost:1313/tags/make/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/make/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Scripts</title>
+      <link>//localhost:1313/tags/scripts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/scripts/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Home</title>
+      <link>//localhost:1313/tags/home/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/home/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Marathon</title>
+      <link>//localhost:1313/tags/marathon/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/marathon/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mesos</title>
+      <link>//localhost:1313/tags/mesos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/mesos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Aws</title>
+      <link>//localhost:1313/tags/aws/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/aws/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Infrastructure-as-Code</title>
+      <link>//localhost:1313/tags/infrastructure-as-code/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/infrastructure-as-code/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Security</title>
+      <link>//localhost:1313/tags/security/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Terraform</title>
+      <link>//localhost:1313/tags/terraform/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/terraform/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Centos</title>
+      <link>//localhost:1313/tags/centos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/centos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Glusterfs</title>
+      <link>//localhost:1313/tags/glusterfs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/glusterfs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Chef</title>
+      <link>//localhost:1313/tags/chef/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/chef/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Builds</title>
+      <link>//localhost:1313/tags/builds/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/builds/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Webapi</title>
+      <link>//localhost:1313/tags/webapi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/webapi/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Windows</title>
+      <link>//localhost:1313/tags/windows/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/windows/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ntp</title>
+      <link>//localhost:1313/tags/ntp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/ntp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Csharp</title>
+      <link>//localhost:1313/tags/csharp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/csharp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Git</title>
+      <link>//localhost:1313/tags/git/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/git/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Msbuild</title>
+      <link>//localhost:1313/tags/msbuild/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/msbuild/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Psake</title>
+      <link>//localhost:1313/tags/psake/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/psake/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Errors</title>
+      <link>//localhost:1313/tags/errors/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/errors/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Visualstudio</title>
+      <link>//localhost:1313/tags/visualstudio/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/visualstudio/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Https</title>
+      <link>//localhost:1313/tags/https/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/https/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ssh</title>
+      <link>//localhost:1313/tags/ssh/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/ssh/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mdadm</title>
+      <link>//localhost:1313/tags/mdadm/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/mdadm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Openvpn</title>
+      <link>//localhost:1313/tags/openvpn/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/openvpn/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vpn</title>
+      <link>//localhost:1313/tags/vpn/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/vpn/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Putty</title>
+      <link>//localhost:1313/tags/putty/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/putty/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Demo</title>
+      <link>//localhost:1313/tags/demo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/demo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Jekyll</title>
+      <link>//localhost:1313/tags/jekyll/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/jekyll/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ruby</title>
+      <link>//localhost:1313/tags/ruby/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/ruby/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Setup</title>
+      <link>//localhost:1313/tags/setup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/setup/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Config</title>
+      <link>//localhost:1313/tags/config/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/config/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Xubuntu</title>
+      <link>//localhost:1313/tags/xubuntu/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/xubuntu/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Java</title>
+      <link>//localhost:1313/tags/java/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/java/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Svn</title>
+      <link>//localhost:1313/tags/svn/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/svn/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hyper-V</title>
+      <link>//localhost:1313/tags/hyper-v/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/hyper-v/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ubuntu</title>
+      <link>//localhost:1313/tags/ubuntu/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/ubuntu/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

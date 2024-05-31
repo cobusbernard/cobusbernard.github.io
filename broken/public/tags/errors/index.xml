@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Errors on (thoughts) =&gt; TryParse(thoughts, out blog)</title>
+    <link>https://cobus.io/tags/errors/</link>
+    <description>Recent content in Errors on (thoughts) =&gt; TryParse(thoughts, out blog)</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 30 Mar 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://cobus.io/tags/errors/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>External MSBuild for WebApi in VS 2013 fails</title>
+      <link>https://cobus.io/posts/2015-03-30/msbuild-external-error/</link>
+      <pubDate>Mon, 30 Mar 2015 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/posts/2015-03-30/msbuild-external-error/</guid>
+      <description>Earlier today, I ran into the following error when trying to build a new WebApi solution using the command-line and MSBuild:&#xA;This is odd as v11 is Visual Studio 2012 and don&amp;rsquo;t even have 2012 installed. The issue manifests when you try to build the solution with: msbuild /t:Clean;Rebuild /v:q /p:Configuration=$projectConfig $source_dir\$projectName.sln /p:Platform=&amp;quot;Any CPU&amp;quot;&#xA;The cause and solution is discussed on Stack Overflow - TL;DR version is this is due to adding the feature for older versions of Visual Studio, but then not setting the correct version number.</description>
+    </item>
+  </channel>
+</rss>

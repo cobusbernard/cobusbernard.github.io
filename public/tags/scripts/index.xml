@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Scripts on </title>
+    <link>//localhost:1313/tags/scripts/</link>
+    <description>Recent content in Scripts on </description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 05 Feb 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/scripts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Yak Shaving - Makefiles</title>
+      <link>//localhost:1313/posts/2017-02-05/yak-shaving-makefiles/</link>
+      <pubDate>Sun, 05 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2017-02-05/yak-shaving-makefiles/</guid>
+      <description>The Problem I woke up this morning wanting to start on a long post about Terraform and how I ended up with the structure shown in my repo. I recently reinstalled my Macbook using Netatalk for a timemachine , and as I fired up my vagrant image, it started to pull down the Ubuntu box first and then started configuring it. This is very useful, but it is slow. And it broke.</description>
+    </item>
+  </channel>
+</rss>

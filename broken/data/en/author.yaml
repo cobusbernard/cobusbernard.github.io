@@ -1,0 +1,19 @@
+# some information about you
+name: "Cobus Bernard"
+nickname: "Cobus"
+# greeting message before your name. it will default to "Hi! I am" if not provided
+greeting: "Welcome to my blog, musings, and notes about"
+image: "images/author/cobus_8_bit.png"
+# give your some contact information. they will be used in the footer
+contactInfo:
+  email: "info@cobus.io"
+  github: cobusbernard
+  linkedin: cobusbernard
+
+# some summary about what you do
+summary:
+  - DevOps
+  - Automation
+  - AWS
+  - Terraform
+  - Homelab tinkering

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Csharp on (thoughts) =&gt; TryParse(thoughts, out blog)</title>
+    <link>https://cobus.io/tags/csharp/</link>
+    <description>Recent content in Csharp on (thoughts) =&gt; TryParse(thoughts, out blog)</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 04 Apr 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://cobus.io/tags/csharp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using the Git tag as a version number via PSake</title>
+      <link>https://cobus.io/posts/2015-04-04/gitflow-semver-psake/</link>
+      <pubDate>Sat, 04 Apr 2015 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/posts/2015-04-04/gitflow-semver-psake/</guid>
+      <description>I have been spending most of my time splitting up a monolithic system into separately deployable NuGet packages. The system is monolithic in the sense that there are multiple domains that are deployed as independent WCF services, but all reference the same set of base projects. This means that all the source sits in the same repository. The first step has been to move these common libraries into NuGet packages served from a local network folder and referencing them in each of these solutions as a package rather than project.</description>
+    </item>
+    <item>
+      <title>External MSBuild for WebApi in VS 2013 fails</title>
+      <link>https://cobus.io/posts/2015-03-30/msbuild-external-error/</link>
+      <pubDate>Mon, 30 Mar 2015 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/posts/2015-03-30/msbuild-external-error/</guid>
+      <description>Earlier today, I ran into the following error when trying to build a new WebApi solution using the command-line and MSBuild:&#xA;This is odd as v11 is Visual Studio 2012 and don&amp;rsquo;t even have 2012 installed. The issue manifests when you try to build the solution with: msbuild /t:Clean;Rebuild /v:q /p:Configuration=$projectConfig $source_dir\$projectName.sln /p:Platform=&amp;quot;Any CPU&amp;quot;&#xA;The cause and solution is discussed on Stack Overflow - TL;DR version is this is due to adding the feature for older versions of Visual Studio, but then not setting the correct version number.</description>
+    </item>
+  </channel>
+</rss>

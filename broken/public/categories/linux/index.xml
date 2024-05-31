@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on (thoughts) =&gt; TryParse(thoughts, out blog)</title>
+    <link>https://cobus.io/categories/linux/</link>
+    <description>Recent content in Linux on (thoughts) =&gt; TryParse(thoughts, out blog)</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 05 Feb 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://cobus.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Yak Shaving - Makefiles</title>
+      <link>https://cobus.io/posts/2017-02-05/yak-shaving-makefiles/</link>
+      <pubDate>Sun, 05 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/posts/2017-02-05/yak-shaving-makefiles/</guid>
+      <description>The Problem I woke up this morning wanting to start on a long post about Terraform and how I ended up with the structure shown in my repo. I recently reinstalled my Macbook using Netatalk for a timemachine , and as I fired up my vagrant image, it started to pull down the Ubuntu box first and then started configuring it. This is very useful, but it is slow. And it broke.</description>
+    </item>
+    <item>
+      <title>Getting Glusterd to start at boot on Centos</title>
+      <link>https://cobus.io/posts/2016-06-12/centos-gluster-startup/</link>
+      <pubDate>Sun, 12 Jun 2016 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/posts/2016-06-12/centos-gluster-startup/</guid>
+      <description>I&amp;rsquo;ve been working on a pair of Centos servers using GluserFS for a volume that is shared by various other servers. Each time the server reboots, I had to log in and manually start the service. Turns out this is due to the networking no yet being started when the glusterd service starts. I found this post with the solution:&#xA;Execute systemctl enable NetworkManager-wait-online Add the following to /lib/systemd/system/crond.service under [Unit]: Requires=network.</description>
+    </item>
+    <item>
+      <title>Replacing mdadm drive</title>
+      <link>https://cobus.io/posts/2015-02-19/mdadm-replace-drive/</link>
+      <pubDate>Thu, 19 Feb 2015 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/posts/2015-02-19/mdadm-replace-drive/</guid>
+      <description>Update 2016-01-09: In the previous version, I never added the command for creating the array and since then I needed it for a new server. When the array starts rebuilding, it will look like there is a failed drive: this is normal. When it builds from scratch, it is actually doing the rebuild process and will indicate a failed drive until the array is rebuilt.&#xA;# mdadm --create --verbose /dev/md0 --level=5 --raid-devices=3 /dev/sdb1 /dev/sdc1 /dev/sdd1 # cat /proc/mdstat md0 : active raid5 sdd1[3] sdc1[1] sdb1[0] 4294702080 blocks super 1.</description>
+    </item>
+    <item>
+      <title>Moving DNS to Amazon Route 53, Dynamic Updates</title>
+      <link>https://cobus.io/posts/2015-02-17/route-53-dns-update-script/</link>
+      <pubDate>Tue, 17 Feb 2015 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/posts/2015-02-17/route-53-dns-update-script/</guid>
+      <description>In my previous post, I set up OpenVPN on my home network and everything was awesome. Until this morning: I could not connect to my VPN. I had forgotten to set up some kind of dynamic DNS updater for it. That should be easy enough, I had previously done this using DynDNS. Only problem was that the service is no longer free. This shouldn&amp;rsquo;t be too much of a problem as I have a couple of my own domains - yes, I will one day still get round to finishing my pet project &amp;lsquo;Tinkle Tones&amp;rsquo; ;)</description>
+    </item>
+    <item>
+      <title>Home VPN with OpenVPN</title>
+      <link>https://cobus.io/posts/2015-02-14/openvpn-home/</link>
+      <pubDate>Sat, 14 Feb 2015 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/posts/2015-02-14/openvpn-home/</guid>
+      <description>Having just set up an external VPN to pretend to be in the US, I wanted one to get into my home network as well when on the road. I ran into the issue while in the USA recently where I was unable to purchase Steam games as their servers picked up that I was in the States, but my payment method was South African. Never thought I would need to spoof my own IP Address to pretend to be in South Africa.</description>
+    </item>
+    <item>
+      <title>Personal VPN - OpenVPN in Docker on DigitalOcean</title>
+      <link>https://cobus.io/posts/2015-02-13/openvpn-on-digital-ocean/</link>
+      <pubDate>Fri, 13 Feb 2015 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/posts/2015-02-13/openvpn-on-digital-ocean/</guid>
+      <description>I was playing around on a random site today, when I received the message This content is not available in your country yet. As a South African, we run into this a lot as our online presence it not that large and most international companies do not feel it is financially viable to run their services here. So I decided it is time to get a VPN going to avoid this.</description>
+    </item>
+    <item>
+      <title>Linux SSH rate limiting</title>
+      <link>https://cobus.io/posts/2013-01-28/ssh-rate-limit/</link>
+      <pubDate>Mon, 28 Jan 2013 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/posts/2013-01-28/ssh-rate-limit/</guid>
+      <description>Everyone who has an SSH port open to the world knows the amount of brute force attempts you will get. It doesn’t matter if you only accept keys, the script kiddies will still try. Easiest fix for this is rate limiting: you can only attempt to login 3 times per 10 minutes. This does not include successful logins, only failed ones. To do this, use the following IPTables commands:&#xA;sudo iptables -A INPUT -p tcp --dport 22 -m state --state NEW -m recent --set --name SSH --rsource sudo iptables -A INPUT -m recent --update --seconds 600 --hitcount 4 --rttl --name SSH --rsource -j DROP sudo iptables-save &amp;gt; /etc/iptables_rules Add the following to /etc/rc.</description>
+    </item>
+    <item>
+      <title>Using SSH Config</title>
+      <link>https://cobus.io/posts/2012-04-12/ssh-config-multiple-keys/</link>
+      <pubDate>Thu, 12 Apr 2012 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/posts/2012-04-12/ssh-config-multiple-keys/</guid>
+      <description>If you use SSH on Linux a lot, you will know that having to specify the key each time you want to access a server is a pain. You really don&amp;rsquo;t want to have a single key for all servers as you would need to revoke it globally in the event that it was compromised. The ssh config file allows you to specify multiple values to use for specific hosts:</description>
+    </item>
+    <item>
+      <title>Chrome as default browser in Xubuntu</title>
+      <link>https://cobus.io/posts/2012-04-10/chrome-default-xubuntu/</link>
+      <pubDate>Tue, 10 Apr 2012 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/posts/2012-04-10/chrome-default-xubuntu/</guid>
+      <description>If you need to set Chrome as the default browser in Xubuntu, run the following from your terminal:&#xA;gconftool-2 --type string -s /desktop/gnome/url-handlers/http/command &amp;#34;google-chrome %s&amp;#34; </description>
+    </item>
+    <item>
+      <title>Install Java JDK using terminal</title>
+      <link>https://cobus.io/posts/2012-03-27/terminal-install-java-ubuntu-10.10/</link>
+      <pubDate>Tue, 27 Mar 2012 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/posts/2012-03-27/terminal-install-java-ubuntu-10.10/</guid>
+      <description>To install the Java JDK using only the terminal, follow the following steps:&#xA;Download the JDK from:&#xA;http://www.oracle.com/technetwork/java/javase/downloads/java-se-jdk-7-download-432154.html Then run the following commands (change the filename as required):&#xA;tar -xvf jdk-7-linux-i586.tar.gz sudo mv ./jdk1.7.0 /usr/lib/jvm/jdk1.7.0 sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.7.0/jre/bin/java 1 sudo update-alternatives --config java sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk1.7.0/bin/javac 1 sudo update-alternatives --config javac To test that everything is working:&#xA;java -version Should output:&#xA;java version &amp;#34;1.7.0&amp;#34; Java(TM) SE Runtime Environment (build 1.</description>
+    </item>
+    <item>
+      <title>Ubuntu on Hyper-V</title>
+      <link>https://cobus.io/posts/2011-07-25/ubuntu-on-hyper-v/</link>
+      <pubDate>Mon, 25 Jul 2011 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/posts/2011-07-25/ubuntu-on-hyper-v/</guid>
+      <description>Getting Ubuntu to run on Hyper-V was a bit of an issue for Windows Server 2008, here are some things to look for. In the boot menu, add vga16fb.modeset=0 to the boot options by hitting F6 to disable framebuffer mode that is really slow under Hyper-V.&#xA;Do normal install, don’t worry about the red “can’t find network issue”.&#xA;Enable the Hyper-V modules:&#xA;echo &amp;#34;hv_vmbus&amp;#34; &amp;gt;&amp;gt; /etc/initramfs-tools/modules echo &amp;#34;hv_storvsc&amp;#34; &amp;gt;&amp;gt; /etc/initramfs-tools/modules echo &amp;#34;hv_blkvsc&amp;#34; &amp;gt;&amp;gt; /etc/initramfs-tools/modules echo &amp;#34;hv_netvsc&amp;#34; &amp;gt;&amp;gt; /etc/initramfs-tools/modules update-initramfs –u Disable Framebuffer (otherwise the text screen scrolls by like a 9600 modem)</description>
+    </item>
+  </channel>
+</rss>

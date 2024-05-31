@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mdadm on </title>
+    <link>//localhost:1313/tags/mdadm/</link>
+    <description>Recent content in Mdadm on </description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 19 Feb 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/mdadm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Replacing mdadm drive</title>
+      <link>//localhost:1313/posts/2015-02-19/mdadm-replace-drive/</link>
+      <pubDate>Thu, 19 Feb 2015 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2015-02-19/mdadm-replace-drive/</guid>
+      <description>Update 2016-01-09: In the previous version, I never added the command for creating the array and since then I needed it for a new server. When the array starts rebuilding, it will look like there is a failed drive: this is normal. When it builds from scratch, it is actually doing the rebuild process and will indicate a failed drive until the array is rebuilt.&#xA;# mdadm --create --verbose /dev/md0 --level=5 --raid-devices=3 /dev/sdb1 /dev/sdc1 /dev/sdd1 # cat /proc/mdstat md0 : active raid5 sdd1[3] sdc1[1] sdb1[0] 4294702080 blocks super 1.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Marathon on (thoughts) =&gt; TryParse(thoughts, out blog)</title>
+    <link>https://cobus.io/tags/marathon/</link>
+    <description>Recent content in Marathon on (thoughts) =&gt; TryParse(thoughts, out blog)</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 15 Jan 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://cobus.io/tags/marathon/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setting up a Timemachine server using Mesos/Marathon</title>
+      <link>https://cobus.io/posts/2017-01-15/timemachine-backups/</link>
+      <pubDate>Sun, 15 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/posts/2017-01-15/timemachine-backups/</guid>
+      <description>I am currently unable to upgrade to the latest version of Slack due to this bug. That combined with my user profile confusion (originally I set up using a US account, then changed to an South African one) that causes requests to update to versions of iPhoto which aren&amp;rsquo;t available in my region made me decide that it is time for a reformat.&#xA;To create a full backup to my raid&amp;rsquo;ed server, I need to set up netatalk.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Osx on </title>
+    <link>//localhost:1313/tags/osx/</link>
+    <description>Recent content in Osx on </description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 09 Feb 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/osx/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Remapping the Home and End keys on OSX</title>
+      <link>//localhost:1313/posts/2017-02-09/osx-home-end-keys/</link>
+      <pubDate>Thu, 09 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2017-02-09/osx-home-end-keys/</guid>
+      <description>The Problem As I was pasting something into Chrome this morning, I, once again, expected the Home key to take me to the start of the URL. It. Did. Not. So I decided that I won&amp;rsquo;t be able to change this ingrained behaviour and need to fix it. First Google hit led me to a post by Damian Guard that I will be pasting below to keep as notes for myself.</description>
+    </item>
+    <item>
+      <title>Yak Shaving - Makefiles</title>
+      <link>//localhost:1313/posts/2017-02-05/yak-shaving-makefiles/</link>
+      <pubDate>Sun, 05 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2017-02-05/yak-shaving-makefiles/</guid>
+      <description>The Problem I woke up this morning wanting to start on a long post about Terraform and how I ended up with the structure shown in my repo. I recently reinstalled my Macbook using Netatalk for a timemachine , and as I fired up my vagrant image, it started to pull down the Ubuntu box first and then started configuring it. This is very useful, but it is slow. And it broke.</description>
+    </item>
+    <item>
+      <title>Setting up a Timemachine server using Mesos/Marathon</title>
+      <link>//localhost:1313/posts/2017-01-15/timemachine-backups/</link>
+      <pubDate>Sun, 15 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2017-01-15/timemachine-backups/</guid>
+      <description>I am currently unable to upgrade to the latest version of Slack due to this bug. That combined with my user profile confusion (originally I set up using a US account, then changed to an South African one) that causes requests to update to versions of iPhoto which aren&amp;rsquo;t available in my region made me decide that it is time for a reformat.&#xA;To create a full backup to my raid&amp;rsquo;ed server, I need to set up netatalk.</description>
+    </item>
+  </channel>
+</rss>

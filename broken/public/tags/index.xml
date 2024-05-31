@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on (thoughts) =&gt; TryParse(thoughts, out blog)</title>
+    <link>https://cobus.io/tags/</link>
+    <description>Recent content in Tags on (thoughts) =&gt; TryParse(thoughts, out blog)</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 28 May 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://cobus.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Amazon-Q</title>
+      <link>https://cobus.io/tags/amazon-q/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/amazon-q/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Aws-Amplify</title>
+      <link>https://cobus.io/tags/aws-amplify/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/aws-amplify/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Blog</title>
+      <link>https://cobus.io/tags/blog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/blog/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hugo</title>
+      <link>https://cobus.io/tags/hugo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linux</title>
+      <link>https://cobus.io/tags/linux/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Osx</title>
+      <link>https://cobus.io/tags/osx/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/osx/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Docker</title>
+      <link>https://cobus.io/tags/docker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/docker/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Make</title>
+      <link>https://cobus.io/tags/make/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/make/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Scripts</title>
+      <link>https://cobus.io/tags/scripts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/scripts/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Apply</title>
+      <link>https://cobus.io/tags/apply/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/apply/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Home</title>
+      <link>https://cobus.io/tags/home/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/home/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Marathon</title>
+      <link>https://cobus.io/tags/marathon/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/marathon/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mesos</title>
+      <link>https://cobus.io/tags/mesos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/mesos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Aws</title>
+      <link>https://cobus.io/tags/aws/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/aws/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Infrastructure-as-Code</title>
+      <link>https://cobus.io/tags/infrastructure-as-code/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/infrastructure-as-code/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Security</title>
+      <link>https://cobus.io/tags/security/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Terraform</title>
+      <link>https://cobus.io/tags/terraform/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/terraform/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Centos</title>
+      <link>https://cobus.io/tags/centos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/centos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Glusterfs</title>
+      <link>https://cobus.io/tags/glusterfs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/glusterfs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Chef</title>
+      <link>https://cobus.io/tags/chef/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/chef/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Builds</title>
+      <link>https://cobus.io/tags/builds/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/builds/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Webapi</title>
+      <link>https://cobus.io/tags/webapi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/webapi/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Windows</title>
+      <link>https://cobus.io/tags/windows/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/windows/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ntp</title>
+      <link>https://cobus.io/tags/ntp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/ntp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Csharp</title>
+      <link>https://cobus.io/tags/csharp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/csharp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Git</title>
+      <link>https://cobus.io/tags/git/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/git/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Msbuild</title>
+      <link>https://cobus.io/tags/msbuild/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/msbuild/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Psake</title>
+      <link>https://cobus.io/tags/psake/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/psake/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Errors</title>
+      <link>https://cobus.io/tags/errors/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/errors/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Visualstudio</title>
+      <link>https://cobus.io/tags/visualstudio/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/visualstudio/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Https</title>
+      <link>https://cobus.io/tags/https/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/https/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ssh</title>
+      <link>https://cobus.io/tags/ssh/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/ssh/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mdadm</title>
+      <link>https://cobus.io/tags/mdadm/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/mdadm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Openvpn</title>
+      <link>https://cobus.io/tags/openvpn/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/openvpn/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vpn</title>
+      <link>https://cobus.io/tags/vpn/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/vpn/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Putty</title>
+      <link>https://cobus.io/tags/putty/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/putty/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Demo</title>
+      <link>https://cobus.io/tags/demo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/demo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Jekyll</title>
+      <link>https://cobus.io/tags/jekyll/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/jekyll/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ruby</title>
+      <link>https://cobus.io/tags/ruby/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/ruby/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Setup</title>
+      <link>https://cobus.io/tags/setup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/setup/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Config</title>
+      <link>https://cobus.io/tags/config/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/config/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Xubuntu</title>
+      <link>https://cobus.io/tags/xubuntu/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/xubuntu/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Java</title>
+      <link>https://cobus.io/tags/java/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/java/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Svn</title>
+      <link>https://cobus.io/tags/svn/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/svn/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hyper-V</title>
+      <link>https://cobus.io/tags/hyper-v/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/hyper-v/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ubuntu</title>
+      <link>https://cobus.io/tags/ubuntu/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/tags/ubuntu/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on </title>
+    <link>//localhost:1313/tags/git/</link>
+    <description>Recent content in Git on </description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 04 Apr 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using the Git tag as a version number via PSake</title>
+      <link>//localhost:1313/posts/2015-04-04/gitflow-semver-psake/</link>
+      <pubDate>Sat, 04 Apr 2015 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2015-04-04/gitflow-semver-psake/</guid>
+      <description>I have been spending most of my time splitting up a monolithic system into separately deployable NuGet packages. The system is monolithic in the sense that there are multiple domains that are deployed as independent WCF services, but all reference the same set of base projects. This means that all the source sits in the same repository. The first step has been to move these common libraries into NuGet packages served from a local network folder and referencing them in each of these solutions as a package rather than project.</description>
+    </item>
+    <item>
+      <title>Git checkout error for public repo</title>
+      <link>//localhost:1313/posts/2015-02-27/git-checkout-ssh-vs-https/</link>
+      <pubDate>Fri, 27 Feb 2015 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2015-02-27/git-checkout-ssh-vs-https/</guid>
+      <description>One of those djissis duh moments - trying to check out a public git repo, but failing due to authentication &amp;hellip;&#xA;git clone git@github.com:cobusbernard/Scripts.git Cloning into &amp;#39;Scripts&amp;#39;... Warning: Permanently added the RSA host key for IP address &amp;#39;192.30.252.131&amp;#39; to the list of known hosts. Permission denied (publickey). fatal: Could not read from remote repository. Please make sure you have the correct access rights and the repository exists. So I checked my ssh setup / keys, but nothing in there looks dodgy:</description>
+    </item>
+    <item>
+      <title>Migrating repo from SVN to Git RPC error</title>
+      <link>//localhost:1313/posts/2012-02-04/git-rpc-error/</link>
+      <pubDate>Sat, 04 Feb 2012 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2012-02-04/git-rpc-error/</guid>
+      <description>While I was working on Dementium II HD, I wanted to migrate the repository from SVN to Git. It was being hosted on a machine in the one studio and served the external developers over a 10mbit ADSL connection. The upstream rate is ~400kbit, so imagine trying to checkout a 26GB repository. I ran into the following error when I tried to import the SVN repo into a Git one:</description>
+    </item>
+  </channel>
+</rss>

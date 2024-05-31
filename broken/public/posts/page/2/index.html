@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>Posts</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+<link rel="stylesheet" href="/application.960c52735e73a5e2c6317666b734ed9397637850abc37827d6ab50e1dc12ca03.css" integrity="sha256-lgxSc15zpeLGMXZmtzTtk5djeFCrw3gn1qtQ4dwSygM=" />
+
+
+
+
+
+  
+
+  
+  
+  
+  
+
+  <link rel="icon" type="image/png" href="/images/site/favicon.svg" />
+
+<meta property="og:url" content="http://localhost:1313/posts/">
+  <meta property="og:site_name" content="(thoughts) =&gt; TryParse(thoughts, out blog)">
+  <meta property="og:title" content="Posts">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="website">
+
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Posts">
+
+    
+     
+
+    
+
+    
+        
+            
+            
+                
+                
+                
+  
+
+
+            
+
+            
+            
+
+            
+            
+
+            
+            
+
+            
+
+            
+        
+    
+
+
+
+
+<script>
+      theme = localStorage.getItem('darkmode:color-scheme') || 'system';
+      if (theme == 'system') {
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          theme = 'dark';
+        } else {
+          theme = 'light';
+        }
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    </script>
+  </head>
+
+  <body class="type-posts kind-section" data-bs-spy="scroll" data-bs-target="#TableOfContents" data-bs-offset="80">
+    <div class="container-fluid bg-secondary wrapper">
+      
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+  
+  
+  
+
+
+
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+
+<nav class="navbar navbar-expand-xl top-navbar shadow " id="top-navbar">
+  <div class="container">
+    
+    <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button">
+      <i data-feather="sidebar"></i>
+    </button>
+    
+    <a class="navbar-brand" href="/">
+      
+        <img src="/images/site/favicon-inverted.svg" id="logo" alt="Logo">
+      (thoughts) =&gt; TryParse(thoughts, out blog)</a>
+    <button
+      class="navbar-toggler navbar-light"
+      id="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#top-nav-items"
+      aria-label="menu"
+    >
+      <i data-feather="menu"></i>
+    </button>
+
+    <div class="collapse navbar-collapse dynamic-navbar" id="top-nav-items">
+      <ul class="nav navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/#home">Home</a>
+        </li>
+        
+          
+          
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#about">About</a>
+                </li>
+              
+            
+            
+          
+        
+        
+          <div id="top-navbar-divider"></div>
+        
+        
+          <li class="nav-item">
+            <a class="nav-link" id="blog-link" href="/posts">Posts</a>
+          </li>
+        
+        
+          <li class="nav-item">
+            <a class="nav-link" id="note-link" href="/notes">Notes</a>
+          </li>
+        
+        
+        
+        
+      </ul>
+    </div>
+  </div>
+  
+  
+    <img src="/images/site/favicon-inverted.svg" class="d-none" id="main-logo" alt="Logo">
+  
+  
+    <img src="/images/site/favicon-inverted.svg" class="d-none" id="inverted-logo" alt="Inverted Logo">
+  
+</nav>
+
+
+
+      
+      
+  
+  
+
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <form class="mx-auto" method="get" action="/search">
+          <input type="text" name="keyword" value="" placeholder="Search" data-search="" id="search-box" />
+        </form>
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/posts" data-filter="all">Posts</a></li>
+            <div class="subtree">
+                
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content container-fluid" id="content">
+    <div class="container-fluid post-card-holder" id="post-card-holder">
+      
+      
+      
+      
+        
+          <div class="post-card">
+  <div class="card">
+    <div class="card-head">
+      <a href="/posts/2015-02-19/mdadm-replace-drive/" class="post-card-link">
+        <img class="card-img-top" src='/images/default-hero.jpg' alt="Hero Image">
+      </a>
+    </div>
+    <div class="card-body">
+      <a href="/posts/2015-02-19/mdadm-replace-drive/" class="post-card-link">
+        <h5 class="card-title">Replacing mdadm drive</h5>
+        <p class="card-text post-summary">Update 2016-01-09: In the previous version, I never added the command for creating the array and since then I needed it for a new server. When the array starts rebuilding, it will look like there is a failed drive: this is normal. When it builds from scratch, it is actually doing the rebuild process and will indicate a failed drive until the array is rebuilt.
+# mdadm --create --verbose /dev/md0 --level=5 --raid-devices=3 /dev/sdb1 /dev/sdc1 /dev/sdd1 # cat /proc/mdstat md0 : active raid5 sdd1[3] sdc1[1] sdb1[0] 4294702080 blocks super 1.</p>
+      </a>
+      
+    </div>
+    <div class="card-footer">
+      <span class="float-start">
+          Thursday, February 19, 2015
+           | 6 minutes </span>
+      <a
+      href="/posts/2015-02-19/mdadm-replace-drive/"
+      class="float-end btn btn-outline-info btn-sm">Read</a>
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+          <div class="post-card">
+  <div class="card">
+    <div class="card-head">
+      <a href="/posts/2015-02-17/route-53-dns-update-script/" class="post-card-link">
+        <img class="card-img-top" src='/posts/2015-02-17/route-53-dns-update-script/images/route.53.dns.png' alt="Hero Image">
+      </a>
+    </div>
+    <div class="card-body">
+      <a href="/posts/2015-02-17/route-53-dns-update-script/" class="post-card-link">
+        <h5 class="card-title">Moving DNS to Amazon Route 53, Dynamic Updates</h5>
+        <p class="card-text post-summary">In my previous post, I set up OpenVPN on my home network and everything was awesome. Until this morning: I could not connect to my VPN. I had forgotten to set up some kind of dynamic DNS updater for it. That should be easy enough, I had previously done this using DynDNS. Only problem was that the service is no longer free. This shouldn&rsquo;t be too much of a problem as I have a couple of my own domains - yes, I will one day still get round to finishing my pet project &lsquo;Tinkle Tones&rsquo; ;)</p>
+      </a>
+      
+    </div>
+    <div class="card-footer">
+      <span class="float-start">
+          Tuesday, February 17, 2015
+           | 4 minutes </span>
+      <a
+      href="/posts/2015-02-17/route-53-dns-update-script/"
+      class="float-end btn btn-outline-info btn-sm">Read</a>
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+          <div class="post-card">
+  <div class="card">
+    <div class="card-head">
+      <a href="/posts/2015-02-14/openvpn-home/" class="post-card-link">
+        <img class="card-img-top" src='/images/default-hero.jpg' alt="Hero Image">
+      </a>
+    </div>
+    <div class="card-body">
+      <a href="/posts/2015-02-14/openvpn-home/" class="post-card-link">
+        <h5 class="card-title">Home VPN with OpenVPN</h5>
+        <p class="card-text post-summary">Having just set up an external VPN to pretend to be in the US, I wanted one to get into my home network as well when on the road. I ran into the issue while in the USA recently where I was unable to purchase Steam games as their servers picked up that I was in the States, but my payment method was South African. Never thought I would need to spoof my own IP Address to pretend to be in South Africa.</p>
+      </a>
+      
+    </div>
+    <div class="card-footer">
+      <span class="float-start">
+          Saturday, February 14, 2015
+           | 2 minutes </span>
+      <a
+      href="/posts/2015-02-14/openvpn-home/"
+      class="float-end btn btn-outline-info btn-sm">Read</a>
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+          <div class="post-card">
+  <div class="card">
+    <div class="card-head">
+      <a href="/posts/2015-02-13/openvpn-on-digital-ocean/" class="post-card-link">
+        <img class="card-img-top" src='/images/default-hero.jpg' alt="Hero Image">
+      </a>
+    </div>
+    <div class="card-body">
+      <a href="/posts/2015-02-13/openvpn-on-digital-ocean/" class="post-card-link">
+        <h5 class="card-title">Personal VPN - OpenVPN in Docker on DigitalOcean</h5>
+        <p class="card-text post-summary">I was playing around on a random site today, when I received the message This content is not available in your country yet. As a South African, we run into this a lot as our online presence it not that large and most international companies do not feel it is financially viable to run their services here. So I decided it is time to get a VPN going to avoid this.</p>
+      </a>
+      
+    </div>
+    <div class="card-footer">
+      <span class="float-start">
+          Friday, February 13, 2015
+           | 3 minutes </span>
+      <a
+      href="/posts/2015-02-13/openvpn-on-digital-ocean/"
+      class="float-end btn btn-outline-info btn-sm">Read</a>
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+          <div class="post-card">
+  <div class="card">
+    <div class="card-head">
+      <a href="/posts/2015-02-08/convert-putty-keys-to-openssh/" class="post-card-link">
+        <img class="card-img-top" src='/images/default-hero.jpg' alt="Hero Image">
+      </a>
+    </div>
+    <div class="card-body">
+      <a href="/posts/2015-02-08/convert-putty-keys-to-openssh/" class="post-card-link">
+        <h5 class="card-title">Converting Putty keys to OpenSSH</h5>
+        <p class="card-text post-summary">I was playing with Docker yesterday and needed to convert a key that I had been using in Windows with Putty for a while. First attempt with puttygen didn&rsquo;t work at all, then I found this Stack Overflow post, copying the details here so I know where to find it next time :)
+To install the required tools, use
+Ubuntu: sudo apt-get install putty-tools OSX: brew install putty After the required tools have been installed, use the following 2 commands to extract the private and public portion of the key:</p>
+      </a>
+      
+    </div>
+    <div class="card-footer">
+      <span class="float-start">
+          Sunday, February 8, 2015
+           | 1 minute </span>
+      <a
+      href="/posts/2015-02-08/convert-putty-keys-to-openssh/"
+      class="float-end btn btn-outline-info btn-sm">Read</a>
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+          <div class="post-card">
+  <div class="card">
+    <div class="card-head">
+      <a href="/posts/2015-01-26/basic-github-jekyll-blog/" class="post-card-link">
+        <img class="card-img-top" src='/images/default-hero.jpg' alt="Hero Image">
+      </a>
+    </div>
+    <div class="card-body">
+      <a href="/posts/2015-01-26/basic-github-jekyll-blog/" class="post-card-link">
+        <h5 class="card-title">Basic Jekyll GitHub Blog</h5>
+        <p class="card-text post-summary">So I finally got round to sorting out the tech blog. I chose to use Jekyll rather than WordPress as I didn&rsquo;t want to deal with constant updates, security vulnerabilities and backing up of the site. Jekyll generates a static site based on the posts created, but still has the advantages of a CMS like tags and categories. Posts are written using Markdown in a plain text file, making it very easy to do the formatting.</p>
+      </a>
+      
+    </div>
+    <div class="card-footer">
+      <span class="float-start">
+          Monday, January 26, 2015
+           | 5 minutes </span>
+      <a
+      href="/posts/2015-01-26/basic-github-jekyll-blog/"
+      class="float-end btn btn-outline-info btn-sm">Read</a>
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+          <div class="post-card">
+  <div class="card">
+    <div class="card-head">
+      <a href="/posts/2013-01-28/ssh-rate-limit/" class="post-card-link">
+        <img class="card-img-top" src='/images/default-hero.jpg' alt="Hero Image">
+      </a>
+    </div>
+    <div class="card-body">
+      <a href="/posts/2013-01-28/ssh-rate-limit/" class="post-card-link">
+        <h5 class="card-title">Linux SSH rate limiting</h5>
+        <p class="card-text post-summary">Everyone who has an SSH port open to the world knows the amount of brute force attempts you will get. It doesn’t matter if you only accept keys, the script kiddies will still try. Easiest fix for this is rate limiting: you can only attempt to login 3 times per 10 minutes. This does not include successful logins, only failed ones. To do this, use the following IPTables commands:
+sudo iptables -A INPUT -p tcp --dport 22 -m state --state NEW -m recent --set --name SSH --rsource sudo iptables -A INPUT -m recent --update --seconds 600 --hitcount 4 --rttl --name SSH --rsource -j DROP sudo iptables-save &gt; /etc/iptables_rules Add the following to /etc/rc.</p>
+      </a>
+      
+    </div>
+    <div class="card-footer">
+      <span class="float-start">
+          Monday, January 28, 2013
+           | 1 minute </span>
+      <a
+      href="/posts/2013-01-28/ssh-rate-limit/"
+      class="float-end btn btn-outline-info btn-sm">Read</a>
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+          <div class="post-card">
+  <div class="card">
+    <div class="card-head">
+      <a href="/posts/2012-04-12/ssh-config-multiple-keys/" class="post-card-link">
+        <img class="card-img-top" src='/images/default-hero.jpg' alt="Hero Image">
+      </a>
+    </div>
+    <div class="card-body">
+      <a href="/posts/2012-04-12/ssh-config-multiple-keys/" class="post-card-link">
+        <h5 class="card-title">Using SSH Config</h5>
+        <p class="card-text post-summary">If you use SSH on Linux a lot, you will know that having to specify the key each time you want to access a server is a pain. You really don&rsquo;t want to have a single key for all servers as you would need to revoke it globally in the event that it was compromised. The ssh config file allows you to specify multiple values to use for specific hosts:</p>
+      </a>
+      
+    </div>
+    <div class="card-footer">
+      <span class="float-start">
+          Thursday, April 12, 2012
+           | 1 minute </span>
+      <a
+      href="/posts/2012-04-12/ssh-config-multiple-keys/"
+      class="float-end btn btn-outline-info btn-sm">Read</a>
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+          <div class="post-card">
+  <div class="card">
+    <div class="card-head">
+      <a href="/posts/2012-04-10/chrome-default-xubuntu/" class="post-card-link">
+        <img class="card-img-top" src='/images/default-hero.jpg' alt="Hero Image">
+      </a>
+    </div>
+    <div class="card-body">
+      <a href="/posts/2012-04-10/chrome-default-xubuntu/" class="post-card-link">
+        <h5 class="card-title">Chrome as default browser in Xubuntu</h5>
+        <p class="card-text post-summary">If you need to set Chrome as the default browser in Xubuntu, run the following from your terminal:
+gconftool-2 --type string -s /desktop/gnome/url-handlers/http/command &#34;google-chrome %s&#34; </p>
+      </a>
+      
+    </div>
+    <div class="card-footer">
+      <span class="float-start">
+          Tuesday, April 10, 2012
+           | 1 minute </span>
+      <a
+      href="/posts/2012-04-10/chrome-default-xubuntu/"
+      class="float-end btn btn-outline-info btn-sm">Read</a>
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+          <div class="post-card">
+  <div class="card">
+    <div class="card-head">
+      <a href="/posts/2012-03-27/terminal-install-java-ubuntu-10.10/" class="post-card-link">
+        <img class="card-img-top" src='/images/default-hero.jpg' alt="Hero Image">
+      </a>
+    </div>
+    <div class="card-body">
+      <a href="/posts/2012-03-27/terminal-install-java-ubuntu-10.10/" class="post-card-link">
+        <h5 class="card-title">Install Java JDK using terminal</h5>
+        <p class="card-text post-summary">To install the Java JDK using only the terminal, follow the following steps:
+Download the JDK from:
+http://www.oracle.com/technetwork/java/javase/downloads/java-se-jdk-7-download-432154.html Then run the following commands (change the filename as required):
+tar -xvf jdk-7-linux-i586.tar.gz sudo mv ./jdk1.7.0 /usr/lib/jvm/jdk1.7.0 sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.7.0/jre/bin/java 1 sudo update-alternatives --config java sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk1.7.0/bin/javac 1 sudo update-alternatives --config javac To test that everything is working:
+java -version Should output:
+java version &#34;1.7.0&#34; Java(TM) SE Runtime Environment (build 1.</p>
+      </a>
+      
+    </div>
+    <div class="card-footer">
+      <span class="float-start">
+          Tuesday, March 27, 2012
+           | 1 minute </span>
+      <a
+      href="/posts/2012-03-27/terminal-install-java-ubuntu-10.10/"
+      class="float-end btn btn-outline-info btn-sm">Read</a>
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+          <div class="post-card">
+  <div class="card">
+    <div class="card-head">
+      <a href="/posts/2012-02-04/git-rpc-error/" class="post-card-link">
+        <img class="card-img-top" src='/images/default-hero.jpg' alt="Hero Image">
+      </a>
+    </div>
+    <div class="card-body">
+      <a href="/posts/2012-02-04/git-rpc-error/" class="post-card-link">
+        <h5 class="card-title">Migrating repo from SVN to Git RPC error</h5>
+        <p class="card-text post-summary">While I was working on Dementium II HD, I wanted to migrate the repository from SVN to Git. It was being hosted on a machine in the one studio and served the external developers over a 10mbit ADSL connection. The upstream rate is ~400kbit, so imagine trying to checkout a 26GB repository. I ran into the following error when I tried to import the SVN repo into a Git one:</p>
+      </a>
+      
+    </div>
+    <div class="card-footer">
+      <span class="float-start">
+          Saturday, February 4, 2012
+           | 2 minutes </span>
+      <a
+      href="/posts/2012-02-04/git-rpc-error/"
+      class="float-end btn btn-outline-info btn-sm">Read</a>
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+          <div class="post-card">
+  <div class="card">
+    <div class="card-head">
+      <a href="/posts/2011-07-25/ubuntu-on-hyper-v/" class="post-card-link">
+        <img class="card-img-top" src='/images/default-hero.jpg' alt="Hero Image">
+      </a>
+    </div>
+    <div class="card-body">
+      <a href="/posts/2011-07-25/ubuntu-on-hyper-v/" class="post-card-link">
+        <h5 class="card-title">Ubuntu on Hyper-V</h5>
+        <p class="card-text post-summary">Getting Ubuntu to run on Hyper-V was a bit of an issue for Windows Server 2008, here are some things to look for. In the boot menu, add vga16fb.modeset=0 to the boot options by hitting F6 to disable framebuffer mode that is really slow under Hyper-V.
+Do normal install, don’t worry about the red “can’t find network issue”.
+Enable the Hyper-V modules:
+echo &#34;hv_vmbus&#34; &gt;&gt; /etc/initramfs-tools/modules echo &#34;hv_storvsc&#34; &gt;&gt; /etc/initramfs-tools/modules echo &#34;hv_blkvsc&#34; &gt;&gt; /etc/initramfs-tools/modules echo &#34;hv_netvsc&#34; &gt;&gt; /etc/initramfs-tools/modules update-initramfs –u Disable Framebuffer (otherwise the text screen scrolls by like a 9600 modem)</p>
+      </a>
+      
+    </div>
+    <div class="card-footer">
+      <span class="float-start">
+          Monday, July 25, 2011
+           | 2 minutes </span>
+      <a
+      href="/posts/2011-07-25/ubuntu-on-hyper-v/"
+      class="float-end btn btn-outline-info btn-sm">Read</a>
+    </div>
+  </div>
+</div>
+
+        
+      
+    </div>
+    <div class="paginator">
+      
+    <ul class="pagination pagination-default">
+      <li class="page-item">
+        <a href="/posts/" aria-label="First" class="page-link" role="button"><span aria-hidden="true">&laquo;&laquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/posts/" aria-label="Previous" class="page-link" role="button"><span aria-hidden="true">&laquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/posts/" aria-label="Page 1" class="page-link" role="button">1</a>
+      </li>
+      <li class="page-item active">
+        <a aria-current="page" aria-label="Page 2" class="page-link" role="button">2</a>
+      </li>
+      <li class="page-item disabled">
+        <a aria-disabled="true" aria-label="Next" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&raquo;</span></a>
+      </li>
+      <li class="page-item disabled">
+        <a aria-disabled="true" aria-label="Last" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&raquo;&raquo;</span></a>
+      </li>
+    </ul>
+    </div>
+  </div>
+</section>
+
+
+      
+       
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="/application.c3522c396a560d44cdbe7953a7fe2c05c464bd8b68cd799514b348fad505095e.js" integrity="sha256-w1IsOWpWDUTNvnlTp/4sBcRkvYtozXmVFLNI&#43;tUFCV4=" defer></script>
+
+
+    
+     
+
+    
+</body>
+</html>

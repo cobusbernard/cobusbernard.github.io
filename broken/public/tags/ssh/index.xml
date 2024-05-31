@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ssh on (thoughts) =&gt; TryParse(thoughts, out blog)</title>
+    <link>https://cobus.io/tags/ssh/</link>
+    <description>Recent content in Ssh on (thoughts) =&gt; TryParse(thoughts, out blog)</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 27 Feb 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://cobus.io/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git checkout error for public repo</title>
+      <link>https://cobus.io/posts/2015-02-27/git-checkout-ssh-vs-https/</link>
+      <pubDate>Fri, 27 Feb 2015 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/posts/2015-02-27/git-checkout-ssh-vs-https/</guid>
+      <description>One of those djissis duh moments - trying to check out a public git repo, but failing due to authentication &amp;hellip;&#xA;git clone git@github.com:cobusbernard/Scripts.git Cloning into &amp;#39;Scripts&amp;#39;... Warning: Permanently added the RSA host key for IP address &amp;#39;192.30.252.131&amp;#39; to the list of known hosts. Permission denied (publickey). fatal: Could not read from remote repository. Please make sure you have the correct access rights and the repository exists. So I checked my ssh setup / keys, but nothing in there looks dodgy:</description>
+    </item>
+    <item>
+      <title>Converting Putty keys to OpenSSH</title>
+      <link>https://cobus.io/posts/2015-02-08/convert-putty-keys-to-openssh/</link>
+      <pubDate>Sun, 08 Feb 2015 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/posts/2015-02-08/convert-putty-keys-to-openssh/</guid>
+      <description>I was playing with Docker yesterday and needed to convert a key that I had been using in Windows with Putty for a while. First attempt with puttygen didn&amp;rsquo;t work at all, then I found this Stack Overflow post, copying the details here so I know where to find it next time :)&#xA;To install the required tools, use&#xA;Ubuntu: sudo apt-get install putty-tools OSX: brew install putty After the required tools have been installed, use the following 2 commands to extract the private and public portion of the key:</description>
+    </item>
+    <item>
+      <title>Linux SSH rate limiting</title>
+      <link>https://cobus.io/posts/2013-01-28/ssh-rate-limit/</link>
+      <pubDate>Mon, 28 Jan 2013 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/posts/2013-01-28/ssh-rate-limit/</guid>
+      <description>Everyone who has an SSH port open to the world knows the amount of brute force attempts you will get. It doesn’t matter if you only accept keys, the script kiddies will still try. Easiest fix for this is rate limiting: you can only attempt to login 3 times per 10 minutes. This does not include successful logins, only failed ones. To do this, use the following IPTables commands:&#xA;sudo iptables -A INPUT -p tcp --dport 22 -m state --state NEW -m recent --set --name SSH --rsource sudo iptables -A INPUT -m recent --update --seconds 600 --hitcount 4 --rttl --name SSH --rsource -j DROP sudo iptables-save &amp;gt; /etc/iptables_rules Add the following to /etc/rc.</description>
+    </item>
+    <item>
+      <title>Using SSH Config</title>
+      <link>https://cobus.io/posts/2012-04-12/ssh-config-multiple-keys/</link>
+      <pubDate>Thu, 12 Apr 2012 00:00:00 +0000</pubDate>
+      <guid>https://cobus.io/posts/2012-04-12/ssh-config-multiple-keys/</guid>
+      <description>If you use SSH on Linux a lot, you will know that having to specify the key each time you want to access a server is a pain. You really don&amp;rsquo;t want to have a single key for all servers as you would need to revoke it globally in the event that it was compromised. The ssh config file allows you to specify multiple values to use for specific hosts:</description>
+    </item>
+  </channel>
+</rss>

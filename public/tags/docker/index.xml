@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on </title>
+    <link>//localhost:1313/tags/docker/</link>
+    <description>Recent content in Docker on </description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 05 Feb 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Yak Shaving - Makefiles</title>
+      <link>//localhost:1313/posts/2017-02-05/yak-shaving-makefiles/</link>
+      <pubDate>Sun, 05 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2017-02-05/yak-shaving-makefiles/</guid>
+      <description>The Problem I woke up this morning wanting to start on a long post about Terraform and how I ended up with the structure shown in my repo. I recently reinstalled my Macbook using Netatalk for a timemachine , and as I fired up my vagrant image, it started to pull down the Ubuntu box first and then started configuring it. This is very useful, but it is slow. And it broke.</description>
+    </item>
+    <item>
+      <title>Setting up a Timemachine server using Mesos/Marathon</title>
+      <link>//localhost:1313/posts/2017-01-15/timemachine-backups/</link>
+      <pubDate>Sun, 15 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2017-01-15/timemachine-backups/</guid>
+      <description>I am currently unable to upgrade to the latest version of Slack due to this bug. That combined with my user profile confusion (originally I set up using a US account, then changed to an South African one) that causes requests to update to versions of iPhoto which aren&amp;rsquo;t available in my region made me decide that it is time for a reformat.&#xA;To create a full backup to my raid&amp;rsquo;ed server, I need to set up netatalk.</description>
+    </item>
+    <item>
+      <title>Home VPN with OpenVPN</title>
+      <link>//localhost:1313/posts/2015-02-14/openvpn-home/</link>
+      <pubDate>Sat, 14 Feb 2015 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2015-02-14/openvpn-home/</guid>
+      <description>Having just set up an external VPN to pretend to be in the US, I wanted one to get into my home network as well when on the road. I ran into the issue while in the USA recently where I was unable to purchase Steam games as their servers picked up that I was in the States, but my payment method was South African. Never thought I would need to spoof my own IP Address to pretend to be in South Africa.</description>
+    </item>
+    <item>
+      <title>Personal VPN - OpenVPN in Docker on DigitalOcean</title>
+      <link>//localhost:1313/posts/2015-02-13/openvpn-on-digital-ocean/</link>
+      <pubDate>Fri, 13 Feb 2015 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2015-02-13/openvpn-on-digital-ocean/</guid>
+      <description>I was playing around on a random site today, when I received the message This content is not available in your country yet. As a South African, we run into this a lot as our online presence it not that large and most international companies do not feel it is financially viable to run their services here. So I decided it is time to get a VPN going to avoid this.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Glusterfs on </title>
+    <link>//localhost:1313/tags/glusterfs/</link>
+    <description>Recent content in Glusterfs on </description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 12 Jun 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/glusterfs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Getting Glusterd to start at boot on Centos</title>
+      <link>//localhost:1313/posts/2016-06-12/centos-gluster-startup/</link>
+      <pubDate>Sun, 12 Jun 2016 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2016-06-12/centos-gluster-startup/</guid>
+      <description>I&amp;rsquo;ve been working on a pair of Centos servers using GluserFS for a volume that is shared by various other servers. Each time the server reboots, I had to log in and manually start the service. Turns out this is due to the networking no yet being started when the glusterd service starts. I found this post with the solution:&#xA;Execute systemctl enable NetworkManager-wait-online Add the following to /lib/systemd/system/crond.service under [Unit]: Requires=network.</description>
+    </item>
+  </channel>
+</rss>

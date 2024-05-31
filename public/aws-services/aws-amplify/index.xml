@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Aws-Amplify on </title>
+    <link>//localhost:1313/aws-services/aws-amplify/</link>
+    <description>Recent content in Aws-Amplify on </description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 28 May 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/aws-services/aws-amplify/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Migrating my Jekyll blog to Hugo with Gen-AI</title>
+      <link>//localhost:1313/posts/2024-05-28/migrating-jekyll-to-hugo/</link>
+      <pubDate>Tue, 28 May 2024 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2024-05-28/migrating-jekyll-to-hugo/</guid>
+      <description>I&amp;rsquo;ve been neglecting my blog, and decided it is time to start writing again. So like any good software developer, I don&amp;rsquo;t actually write a post, I start by tinkering with my blog setup. I initially ran it as a Jekyll generated static site on GitHub using GitHub Pages, and then as part of a live-stream, moved it to use AWS Amplify to host it in on of my many AWS accounts.</description>
+    </item>
+  </channel>
+</rss>

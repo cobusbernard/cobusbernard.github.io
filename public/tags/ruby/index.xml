@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ruby on </title>
+    <link>//localhost:1313/tags/ruby/</link>
+    <description>Recent content in Ruby on </description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 26 Jan 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Basic Jekyll GitHub Blog</title>
+      <link>//localhost:1313/posts/2015-01-26/basic-github-jekyll-blog/</link>
+      <pubDate>Mon, 26 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2015-01-26/basic-github-jekyll-blog/</guid>
+      <description>So I finally got round to sorting out the tech blog. I chose to use Jekyll rather than WordPress as I didn&amp;rsquo;t want to deal with constant updates, security vulnerabilities and backing up of the site. Jekyll generates a static site based on the posts created, but still has the advantages of a CMS like tags and categories. Posts are written using Markdown in a plain text file, making it very easy to do the formatting.</description>
+    </item>
+  </channel>
+</rss>

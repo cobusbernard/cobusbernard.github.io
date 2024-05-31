@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Webapi on </title>
+    <link>//localhost:1313/tags/webapi/</link>
+    <description>Recent content in Webapi on </description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 06 Feb 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/webapi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Parameterizing Web.config</title>
+      <link>//localhost:1313/posts/2016-02-06/parameterizing-webconfig/</link>
+      <pubDate>Sat, 06 Feb 2016 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2016-02-06/parameterizing-webconfig/</guid>
+      <description>Most people would have experienced the issue of setting values in web.config for a project on different environments, i.e. the connection string for the database. My first attempt at resolving this was to simply create multiple configurations and build the appropriate one per environment. This has multiple issues: you are including sensitive information in your build artifact, creating different builds for the same version (to allow different values) and tightly coupling your build process to your environment values.</description>
+    </item>
+  </channel>
+</rss>
