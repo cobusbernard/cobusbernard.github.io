@@ -291,14 +291,32 @@ cache:
     - 'node_modules/**/*'
 ```
 
-And now we hope it works... which it did not. The following in the AWS Console may be a hint:
-*To modify your app's build spec choose 'Edit'. Alternatively, you may download the YML file and deploy in the root of your repository to as amplify.yml to override this setting.*
+I set up a new Amplify application (Hey! The Amplify console has a new look!) by connecting it to my GitHub account, selecting the `cobusbernard.github.io` repo, and then ignoring the fact that the detected build settings was empty. I'm not surprised it couldn't pick up my old Jekyll site's build as it is 7 years old, I vaguely remember needing to add some custom steps. I think. Now I just need to wait for the build and hope it works... which it did not. The following in the AWS Console may be a hint:
 
-The file should be called `amplify.yml` according to that line, so let's do that.
+> *To modify your app's build spec choose 'Edit'. Alternatively, you may download the YML file and deploy in the root of your repository to as amplify.yml to override this setting.*
 
+The file should be called `amplify.yml` according to that line, so let's do that. And again it breaks:
 
+> *!!! CustomerError: Missing frontend definition in buildspec*
 
+Clearly there is an issue with the layout of `amplify.yml`, so I stop being lazy and open the [documentation](https://docs.aws.amazon.com/amplify/latest/userguide/build-settings.html). The default example uses `npm run build`, which is why there was that line for `npm ci` I believe. I also took a look at the [Hugo documentation for Amplify](https://gohugo.io/hosting-and-deployment/hosting-on-aws-amplify/), which seems to be what I want, so here is the updated version:
 
+```yml
+version: 0.1
+
+frontend:
+   phases:
+      build:
+          commands:
+            - echo "Building the Hugo site..."
+            - hugo
+   artifacts:
+      base-directory: public
+      files:
+         - '**/*'
+cache:
+  paths: []
+```
 
 ## Migrating Disqus comments
 

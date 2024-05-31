@@ -1,24 +1,14 @@
-version: 0.2
+version: 0.1
 
-phases:
-  install:
-    runtime-versions:
-      nodejs: 14
-    commands:
-      - echo "Installing Hugo..."
-      - wget -q https://github.com/gohugoio/hugo/releases/download/v0.126.1/hugo_0.126.1_Linux-64bit.deb
-      - sudo dpkg -i hugo_0.126.1_Linux-64bit.deb
-  pre_build:
-    commands:
-      - echo "Installing dependencies..."
-  build:
-    commands:
-      - echo "Building the Hugo site..."
-      - hugo
-artifacts:
-  files:
-    - '**/*'
-  base-directory: public
+frontend:
+   phases:
+      build:
+          commands:
+            - echo "Building the Hugo site..."
+            - hugo
+   artifacts:
+      base-directory: public
+      files:
+         - '**/*'
 cache:
-  paths:
-    - 'node_modules/**/*'
+  paths: []
