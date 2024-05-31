@@ -291,7 +291,12 @@ cache:
     - 'node_modules/**/*'
 ```
 
-And now we hope it works...
+And now we hope it works... which it did not. The following in the AWS Console may be a hint:
+*To modify your app's build spec choose 'Edit'. Alternatively, you may download the YML file and deploy in the root of your repository to as amplify.yml to override this setting.*
+
+The file should be called `amplify.yml` according to that line, so let's do that.
+
+
 
 
 
