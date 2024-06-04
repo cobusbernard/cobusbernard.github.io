@@ -17,7 +17,6 @@ frontend:
               echo "Amplify App ID: $AWS_APP_ID"
               echo "App Deployment Domain set to $APP_DEPLOY_DOMAIN"
             - hugo -b $APP_DEPLOY_DOMAIN
-            - ls -al ./public/
    artifacts:
       baseDirectory: ./public
       files:
