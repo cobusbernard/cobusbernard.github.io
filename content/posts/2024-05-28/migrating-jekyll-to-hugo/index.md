@@ -396,3 +396,9 @@ Disqus has a tool [Redirect Crawler](https://help.disqus.com/en/articles/1717126
 ## Conclusion
 
 This was quite a bit of fun for me as I learnt a few new things, and had some challenges to dig into. Having a gen-ai assistant directly in my IDE does make a big difference though, I find myself using it more often now, but I do always take a moment to make sure it isn't hallucinating. Think of them as that smart person at work how usually knows the answer, but sometimes just bluffs when they don't. The main time sink ended up not understanding how the module approach for themes work, and then spending way too much time trying out different themes. In the end, I didn't use the Toha theme, but opted for the [Poison](https://github.com/lukeorth/poison) one after tweaking it a little bit, still have some changes I would like to add. But that will wait for another day, the next item on my TODO is to sort out all my AWS accounts.
+
+## Completing the switch
+
+**2024-06-07 Update:** Just finished implementing the custom domain, Amplify now has the option to auto-manage the SSL certificate for me, so I used that. Now I'm just waiting on the deployment to complete, and then it should all be done.
+
+![Amplify creating the SSL certificate in the console](images/amplify_applying_custom_comain.png)
