@@ -7,6 +7,7 @@ categories: [DevOps]
 tags: [windows, webapi, builds]
 aliases:
   - /devops/2016/02/06/Parameterizing_Webconfig
+  - /devops/2016/02/06/Parameterizing_Webconfig.html
 ---
 
 Most people would have experienced the issue of setting values in `web.config` for a project on different environments, i.e. the connection string for the database. My first attempt at resolving this was to simply create multiple configurations and build the appropriate one per environment. This has multiple issues: you are including sensitive information in your build artifact, creating different builds for the same version (to allow different values) and tightly coupling your build process to your environment values. This will require a rebuild if your connection string changes, which could be problematic if you are unable to build a specific version easily. But it won't be the exact same version as you would need to commit the new config value, re-tag and finally rebuild the solution. Sounds like too much effort for a simple change.

@@ -6,6 +6,7 @@ categories: [aws]
 tags: [linux, aws, ntp]
 aliases:
   - /aws/2015/12/16/NTP-on-AWS
+  - /aws/2015/12/16/NTP-on-AWS.html
 ---
 
 Ran into an issue where a Linux instance running on [AWS](http://aws.amazon.com) in a private subnet was not updating the system time via [NTP](https://en.wikipedia.org/wiki/Network_Time_Protocol). First check was for the config file, but it had a list of servers, both inside and 1 outside AWS:

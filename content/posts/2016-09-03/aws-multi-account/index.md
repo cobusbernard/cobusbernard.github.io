@@ -7,6 +7,7 @@ categories: [AWS]
 tags: [aws, security, terraform, infrastructure-as-code]
 aliases:
   - /aws/2016/09/03/AWS_Multi_Account
+  - /aws/2016/09/03/AWS_Multi_Account.html
 ---
 
 I've been working with multiple AWS accounts for the last few months between various organisations. Logging into each one when I need to make a change quickly became tedious and slow. Each environment (dev, test, staging, production) has their own AWS account. The need to log in stems from taming the infrastructure with [Terraform](https://terraform.io) for systems that have been set up by hand and dealing with the discrepancies between them, so I tend to jump between dev and staging very often. Being in this is a very normal state of affairs as most people starting out with AWS haven't worked with any infrastructure creation automation. I will create another post detailing how to start this taming process.

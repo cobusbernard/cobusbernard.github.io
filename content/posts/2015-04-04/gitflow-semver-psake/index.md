@@ -7,6 +7,7 @@ categories: [dotnet]
 tags: [msbuild, psake, git, csharp]
 aliases:
   - /dotnet/2015/04/04/GitFlow-SemVer-PSake
+  - /dotnet/2015/04/04/GitFlow-SemVer-PSake.html
 ---
 
 I have been spending most of my time splitting up a [monolithic system](http://en.wikipedia.org/wiki/Monolithic_system) into separately deployable [NuGet](https://www.nuget.org/) packages. The system is monolithic in the sense that there are multiple domains that are deployed as independent WCF services, but all reference the same set of base projects. This means that all the source sits in the same repository. The first step has been to move these common libraries into NuGet packages served from a local network folder and referencing them in each of these solutions as a package rather than project.
@@ -25,7 +26,7 @@ Before we get to the actual implementation, just a quick overview of the Git-Flo
 
 ![GitFlow](./images/git_flow_release_cycle.png)
 
-All development is done on feature branches cut from `develop` and merged back in when done. When you have enough features for a release, you cut a short-lived `release` branch from `develop`. After this branch has been vetted, it will be merged into `master` and `develop` (to ensure any fixes are also merged back into you development stream). When merging into `master`, a tag with the new version number will be created. This will increment either the minor or major version number, depending on how big the release is. For hotfixes, you would branch from `master` directly, fix the issue and then merge it back into `master` as well as `develop`. Every time you merge into `master`, you update the version number and tag the source - this is the version that you want to use to stamp the releases with.
+All development is done on feature branches cut from `develop` and merged back in when done. When you have enough features for a release, you cut a short-lived `release` branch from `develop`. After this branch has been vetted, it will be merged into `master` and `develop` (to ensure any fixes are also merged back into you development stream). When merging into `master`, a tag with the new version number will be created. This will increment either the minor or major version number, depending on how big the release is. For hot-fixes, you would branch from `master` directly, fix the issue and then merge it back into `master` as well as `develop`. Every time you merge into `master`, you update the version number and tag the source - this is the version that you want to use to stamp the releases with.
 
 The command for the build & push with NuGet are (ignore the versioning and poking for further down):
 
@@ -47,7 +48,7 @@ task NuGetPackage -depends Init {
 }
 ```
 
-This will result in the Class Library being packaged as a single NuGet package and pushed to the network share. This is the point where the [PSake](https://github.com/psake/psake), [GitFlow](http://nvie.com/posts/a-successful-git-branching-model/) and [Semantic Versions](http://semver.org/) come in. When you use GitFlow, there is a very specific way to create new releases / hotfixes - this ties in perfectecly with SemVer. If you are just doing a minor feature release, you would increment the minor version number in the `<major>.<minor>.<hotfix>` version of the release. Same with major / hotfix numbers. The catch is that you want to also stamp your package with this version and ultimately enforce this via the build server to prevent accidental releases of incorrect versions. Part of the GitFlow release / hotfix workflow is to specify the tag name. Using the git command `git describe --exact-match --abbrev=0` as part of the PSake function:
+This will result in the Class Library being packaged as a single NuGet package and pushed to the network share. This is the point where the [PSake](https://github.com/psake/psake), [GitFlow](http://nvie.com/posts/a-successful-git-branching-model/) and [Semantic Versions](http://semver.org/) come in. When you use GitFlow, there is a very specific way to create new releases / hot-fixes - this ties in perfectly with SemVer. If you are just doing a minor feature release, you would increment the minor version number in the `<major>.<minor>.<hotfix>` version of the release. Same with major / hotfix numbers. The catch is that you want to also stamp your package with this version and ultimately enforce this via the build server to prevent accidental releases of incorrect versions. Part of the GitFlow release / hotfix workflow is to specify the tag name. Using the git command `git describe --exact-match --abbrev=0` as part of the PSake function:
 
 ```powershell
 function global:Generate-Semantic-Version-Number {

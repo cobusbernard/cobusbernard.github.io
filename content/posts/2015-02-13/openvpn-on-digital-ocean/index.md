@@ -6,6 +6,7 @@ categories: [Linux]
 tags: [linux, openvpn, vpn, docker]
 aliases:
   - /linux/2015/02/13/openvpn-on-digital-ocean
+  - /linux/2015/02/13/openvpn-on-digital-ocean.html
 ---
 
 I was playing around on a [random](http://netflix.com) site today, when I received the message *This content is not available in your country yet*. As a South African, we run into this a lot as our online presence it not that large and most international companies do not feel it is financially viable to run their services here. So I decided it is time to get a VPN going to avoid this. I decided to use a [Digital Ocean](https://www.digitalocean.com/) Droplet for the task - costing $5 a month is cheap enough. The smallest one has 512MB Ram, 20GB SSD, 1 core and 1TB of transfer - this will be plenty to get the VPN up and possibly some other services. Signup was very quick and I was happy to see that they support 2 factor auth via [Google Authenticator](https://itunes.apple.com/za/app/google-authenticator/id388497605?mt=8).
@@ -49,4 +50,4 @@ docker run --volumes-from $OVPN_DATA --rm -it kylemanna/openvpn easyrsa build-cl
 docker run --volumes-from $OVPN_DATA --rm kylemanna/openvpn ovpn_getclient CLIENTNAME > CLIENTNAME.ovpn
 ```
 
-The client isntallation is trivial and the guide does a great job covering all the major operating systems.
+The client installation is trivial and the guide does a great job covering all the major operating systems.

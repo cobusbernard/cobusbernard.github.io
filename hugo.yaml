@@ -32,6 +32,16 @@ params:
       URL: /posts/
       Pre: Recent
       HasChildren: true
+      Limit: 3
+    - Name: Notes
+      URL: /notes/
+      Pre: Recent
+      HasChildren: true
+      Limit: 3
+    - Name: Tips
+      URL: /tips/
+      Pre: Recent
+      HasChildren: true
       Limit: 5
   # Social links    
   discord_url: https://discord.gg/w6BhuzNX

@@ -4,14 +4,9 @@ description: Creating my first makefile
 date: 2017-02-05
 categories: [Linux]
 tags: [docker, osx, make, scripts]
-# menu:
-#   sidebar:
-#     name: yak-shaving-makefiles
-#     identifier: yak-shaving-makefiles
-#     parent: 2017
-#     weight: 10
 aliases:
   - /linux/2017/02/05/Yak_shaving_Makefiles
+  - /linux/2017/02/05/Yak_shaving_Makefiles.html
 ---
 
 ## The Problem

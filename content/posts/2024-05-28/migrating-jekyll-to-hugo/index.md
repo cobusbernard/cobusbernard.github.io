@@ -219,6 +219,8 @@ And voila! The site is up and running, but very bare. I then spent some time upd
 
 Now that the main site is ready, I want to deploy it from the branch to double check that everything works and I didn't miss anything. This is fairly simple with Amplify, at least it would be once I can remember in which account I deployed it - I have about 7 - 9 that I used, will do a write-up soon of why I use to many. More yak-shaving later as I had to add MFA to my [root accounts](https://docs.aws.amazon.com/IAM/latest/UserGuide/enable-virt-mfa-for-root.html), then trying to revive my South African mobile number on a phone missing 2cm of screen on the left-hand side to reset the MFA on the account where I *think* my site is deployed, I gave up. Also realised that using auto-branch detection for Amplify won't work out of the box as it would use the same build as for the main branch (which is for Jekyll, not Hugo), I decided to add a `buildspec.yml` to this branch to test if it works. My theory is that if I test this in another account, and the branch builds & deploy, I should just be able to merge it to my `master` branch where my site is - I still need to update the repo to use `main` for the branch name, but that would require me to be able to log into the account where I have the Amplify app running.
 
+> **2024-06-07 Update:** Finally rewatched the livestream where Darko and I migrated my site and realised it wasn't using my `cobus.io` domain, my site will still being deployed using GitHub Pages, this has been updated now to use Amplify.
+
 To create the build configuration, I was lazy and just asked Q:
 
 ```text
@@ -386,7 +388,7 @@ The last step before I do that merge is to ensure I can migrate the existing Dis
 
 ```yaml
 aliases:
-  - /version%20control/2012/02/04/git-rpc-error
+  - "/version control/2012/02/04/git-rpc-error.html" # The quotes here are needed as using %20 without them didn't work
 ```
 
 Disqus has a tool [Redirect Crawler](https://help.disqus.com/en/articles/1717126-redirect-crawler) that will then migrate all of the discussions for you, so I'll kick that off afterwards.

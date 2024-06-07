@@ -7,6 +7,7 @@ categories: [Linux]
 tags: [linux, openvpn, vpn]
 aliases:
   - /linux/2015/02/17/route-53-dns-update-script
+  - /linux/2015/02/17/route-53-dns-update-script.html
 ---
 
 In my previous post, I set up [OpenVPN on my home network](/posts/2015-02-14/openvpn-home/) and [everything was awesome](https://www.youtube.com/watch?v=StTqXEQ2l-Y). Until this morning: I could not connect to my VPN. I had forgotten to set up some kind of [dynamic DNS](http://en.wikipedia.org/wiki/Dynamic_DNS0) updater for it. That should be easy enough, I had previously done this using [DynDNS](http://dyn.com/all-dns). Only problem was that the [service is no longer free](http://dyn.com/blog/why-we-decided-to-stop-offering-free-accounts/). This shouldn't be too much of a problem as I have a couple of my own domains - yes, I will one day still get round to finishing my pet project 'Tinkle Tones' ;)
@@ -23,7 +24,7 @@ I found [this script](http://willwarren.com/2014/07/03/roll-dynamic-dns-service-
 
 {{< gist cobusbernard 8f7f99eeb9597d3a0979 >}}
 
-The script was a good start, but I wanted to externalize the sensitive parts to allow committing this to a public repository. This led to a merry chase to acquire answers to more questions - [Aarron Patterson](https://twitter.com/tenderlove) spoke about *The joy of programming* at [RubyFuza](http://www.rubyfuza.org/) recently. Moving along swiftly ...
+The script was a good start, but I wanted to externalize the sensitive parts to allow committing this to a public repository. This led to a merry chase to acquire answers to more questions - [Aaron Patterson](https://twitter.com/tenderlove) spoke about *The joy of programming* at [RubyFuza](http://www.rubyfuza.org/) recently. Moving along swiftly ...
 
 To interact with the AWS API, you will need to install the [CLI tools](http://docs.aws.amazon.com/cli/latest/userguide/installing.html). Quick notes copied from there to get [pip](https://pypi.python.org/pypi/pip) installed:
 
@@ -41,9 +42,9 @@ And then the CLI:
 sudo pip install awscli
 ```
 
-Before we can use the CLI, we will need credentials to interact with the AWS. To generate these, open up your AWS console in the browser and go to the [IAM users](https://console.aws.amazon.com/iam/home#users). Create a new user with the following security policy - copy Hosted Zone ID from [Route 53]() and replace the value in the [ARN](http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) below with your one:
+Before we can use the CLI, we will need credentials to interact with the AWS. To generate these, open up your AWS console in the browser and go to the [IAM users](https://console.aws.amazon.com/iam/home#users). Create a new user with the following security policy - copy Hosted Zone ID from [Route 53](https://us-east-1.console.aws.amazon.com/route53/v2/hostedzones) and replace the value in the [ARN](http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) below with your one:
 
-```
+```json
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -61,7 +62,7 @@ Before we can use the CLI, we will need credentials to interact with the AWS. To
 }
 ```
 
-After creating the user, you will be presented with a AWS access key and secret for this user - keep them safe somewhere are you cannot retrive them after this point.
+After creating the user, you will be presented with a AWS access key and secret for this user - keep them safe somewhere are you cannot retrieve them after this point.
 
 To set up an AWS CLI profile, use the credentials provided in the previous step, the default region and output format can be left empty:
 
@@ -77,7 +78,7 @@ Finally, to test that your script is working, run it:
 
 This should output the following:
 
-```
+```text
 Force update is set.
 IP has changed to 10.0.0.1, updating ...
 ```
