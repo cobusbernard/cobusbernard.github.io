@@ -26,8 +26,8 @@ params:
   front_page_content:
     - posts
   menu:
-    # - Name: About
-    #   URL: /about/
+    # - Name: AWS Services
+    #   URL: /aws-services/
     #   HasChildren: false
     - Name: Posts
       URL: /posts/

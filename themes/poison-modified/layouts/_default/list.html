@@ -3,6 +3,8 @@
 <ul class="entries">
     {{ if eq .Title "Tags" }}
         {{ partial "group_by_tags.html" . }}
+    {{ else if eq .Title "Aws Services" }}
+        {{ partial "group_by_services.html" . }}
     {{ else }}
         {{ range .Pages.GroupByDate "2006" }}
             <h3 style="text-align: center;">{{ .Key }}</h3>

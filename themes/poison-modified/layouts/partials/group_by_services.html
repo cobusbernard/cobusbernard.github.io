@@ -1,0 +1,24 @@
+{{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
+{{ if eq "aws-services" $taxonomyname }}
+  {{ range $key, $value := $taxonomy }}
+    <!-- <h3 style="text-align: center;">{{ $key }}</h3> -->
+    <h3 style="text-align: center;">
+        <a href="{{ `tags/` | absLangURL }}{{ $key | urlize }}" style="color: #FF9900;">{{ $key }}</a>
+      </h3>
+    <ul>
+    {{ range $value.Pages }}
+      <li>
+        <span class="title">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </span>
+        <span class="published">
+            <time class="pull-right post-list">{{ .Date | time.Format ":date_long" }}</time>
+        </span>
+    </li>
+    {{ end }}
+    </ul>
+  {{ end }}
+{{ end }}
+{{ else }}
+    <p>No aws-services found</p>
+{{ end }}
