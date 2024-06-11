@@ -22,6 +22,7 @@ params:
   brand_image: /images/author/cobus_8_bit.png
   description: (thoughts) => TryParse(thoughts, out blog)
   dark_mode: true
+  favicon: "/images/site/favicon.svg"
   front_page_content:
     - posts
   menu:
