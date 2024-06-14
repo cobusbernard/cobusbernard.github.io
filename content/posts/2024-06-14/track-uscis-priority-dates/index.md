@@ -1,5 +1,5 @@
 ---
-title: Using Amazon Q to build a tracker for my Green Card priority date
+title: Using Amazon Q Developer to build a tracker for my Green Card priority date
 description: I moved to Seattle at the end of 2021 on an L1b visa, and need to keep an eye on the priority dates for my Green Card application, so I decided to build an app that will pull the historic data for me and graph it.
 aws-services:
   - amazon-q
