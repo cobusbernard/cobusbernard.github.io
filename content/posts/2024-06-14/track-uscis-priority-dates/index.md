@@ -865,7 +865,7 @@ EOF
 
 When we call the `VisaBulletinData` table to read from it, we are not using a `.get()` call, but a `.query()` call. I would have missed that 😳 ... Nice to see that someone else is at least paying attention.
 
-### Finishing up for now
+## Finishing up for now
 
 Once all these changes were in place, I ran the app again locally to process all the bulletins for 2022 - 2024. While I was building so far, I had limited it to only the most recent one (July 2024). The first few pages it processed scrolled past very quickly, and the it just hung in my terminal. No error. And I realised what the issue was:
 
