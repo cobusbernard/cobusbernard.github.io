@@ -1,5 +1,5 @@
 ---
-title: Using Amazon Q Developer to build a tracker for my Green Card priority date
+title: "Building a Serverless Web Scraper with a ~little~ lot of help from Amazon Q Developer"
 description: I moved to Seattle at the end of 2021 on an L1b visa, and need to keep an eye on the priority dates for my Green Card application, so I decided to build an app that will pull the historic data for me and graph it.
 aws-services:
   - amazon-q
@@ -151,7 +151,7 @@ Ok, we can now start building the app.
 
 I ask the following to help me get started:
 
->Thanks, can you show me how I would write a webpage scraper with Lambda to scrape all the pages linked from https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin.html with the format https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin/2024/visa-bulletin-for-july-2024.html - they should be linked from the first page listed. Each page has multiple sections and tables, I would like to only store the rows in the tables listed under the heading "A.  FINAL ACTION DATES FOR EMPLOYMENT-BASED PREFERENCE CASES" and "B.  DATES FOR FILING OF EMPLOYMENT-BASED VISA APPLICATIONS". Can you show me how to create a Lambda function to do this and store the data in DynamoDB?
+>Thanks, can you show me how I would write a webpage scraper with Lambda to scrape all the pages linked from [https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin.html(https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin.html)] with the format [https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin/2024/visa-bulletin-for-july-2024.html(https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin/2024/visa-bulletin-for-july-2024.html)] - they should be linked from the first page listed. Each page has multiple sections and tables, I would like to only store the rows in the tables listed under the heading "A.  FINAL ACTION DATES FOR EMPLOYMENT-BASED PREFERENCE CASES" and "B.  DATES FOR FILING OF EMPLOYMENT-BASED VISA APPLICATIONS". Can you show me how to create a Lambda function to do this and store the data in DynamoDB?
 
 The [provided code](#prompt-3) needs a few changes, and I now have this:
 
@@ -955,7 +955,7 @@ I've been using Amazon Q Developer for a few months now while building an intern
 
 As for not even having to switch to my browser, that is probably the biggest win. I've found myself even using it for non-coding questions, e.g. [the difference between "learnt" and "learned"](#prompt-20). While it makes me much more productive, that doesn't mean I can copy and paste everything. Large language models (LLMs) are still improving every day, and while I didn't run into any [hallucinations](https://community.aws/content/2cdOjrnXxuTbjwNDXPjxqlZujgk/spoiler-alert-it-s-all-a-hallucination) in this exercise, I did have to evaluate each response for accuracy, and if it was the way I should be solving the problem. Just look at the part where I built that whole [`transform_data`](#transforming-the-data) method only to realise I didn't need it all. All my experience over the last 32 years *(GET OFF MY LAWN YA KIDS, I ENJOYED CHANGING DOS 6.22 MENUS!!!)* is still very relevant.
 
-One paint point I had was when I accidentally closed my IDE, and with that, lost the conversation thread I had going. I'll definitely be passing on that feedback to our service teams, and also seeing if it doesn't keep a local log somewhere. If anyone knows, please drop that in a comment below please.
+One pain point I had was when I accidentally closed my IDE, and with that, lost the conversation thread I had going. I'll definitely be passing on that feedback to our service teams, and also seeing if it doesn't keep a local log somewhere. If anyone knows, please drop that in a comment below please.
 
 ### Approach and Tech Choices
 
@@ -2112,7 +2112,7 @@ By importing the `Key` function from the `boto3.dynamodb.conditions` module, you
 
 ### Prompt 15
 
-> Again, codeblock added for readability. 
+> Again, codeblock added for readability.
 
 Can you help me update the following code to handle multiple items with the same "country" field? The "bulletin_date" should be unique per "country". Here is the code causing the issue:
 

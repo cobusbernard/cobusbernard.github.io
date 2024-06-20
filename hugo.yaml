@@ -94,6 +94,5 @@ params:
   text_color_dark: "#EEE"
 
 taxonomies:
-  series: series
   tags: tags
   aws-services: aws-services
