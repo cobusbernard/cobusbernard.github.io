@@ -8,15 +8,16 @@ aws-services:
   - amazon-dynamodb
 date: 2024-06-14
 tags: [aws, amazon-q, terraform, aws-lambda, amazon-dynamodb]
+canonicalUrl: https://community.aws/content/2hsUp8ZV7UoQpVCApnaTOBljCai
 ---
 
 ## Introduction
 
-> Update: 2024-06-14: This turned out to be more than I initially though, so will be turned into a series of articles, this being the first.
+> Update: 2024-06-14: This turned out to be more than I initially though, so will be turned into a series of articles, this being the first. I'll be posting the followups in this series, and link them as a list.
 
-Since I moved to the US at the end of 2021, I've been going through the process to apply for a Green Card. An important aspect of this is your "priority date". The process is a convoluted one, the short summary is that each month, they publish the dates per visa category. While the latest date is useful, I wanted to look at the [historic data as the bulletins go back to 2002](https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin.html). I'm only interested in the last 5 years, and I do expect the data to not really show a trend due to COVID-19.
+I've been itching to build a little serverless API for a while now, so I decided to use [Amazon Q Developer](https://aws.amazon.com/q/?trk=07910bf4-f673-4ded-8aa5-ce30fb5e3fdc&sc_channel=el) to help decide how to build it. I didn't feel like building yet another Todo or note taking app, so I picked a practical problem I currently have: US Green Card priority dates. Since I moved to the US at the end of 2021, I've been going through the process to apply for a Green Card. An important aspect of this is your "priority date". The process is a convoluted one, the short summary is that each month, they publish the dates per visa category. While the latest date is useful, I wanted to look at the [historic data as the bulletins go back to 2002](https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin.html). There are many factors influencing how these dates progress, so I'll be looking at the last 5 years (at least, that's my plan right now).
 
-My plan is to write a little API that pulls the values from all the bulletins, and then add it to a database table so I can query it. And I'll be using [Amazon Q Developer](https://aws.amazon.com/developer/generative-ai/amazon-q/?trk=01b23196-71a4-403b-909c-65ddc571caa0&sc_channel=el) to help me along the way - both for asking general questions, and to help generate my code. So let's get started. I'm going to try my best to follow the instructions as-is, and only make small changes to see how far I can get.
+The idea is to write an API that pulls the values from all the bulletins, and then add it to a database table so I can query it. I'll be using [Amazon Q Developer](https://aws.amazon.com/q/?trk=07910bf4-f673-4ded-8aa5-ce30fb5e3fdc&sc_channel=el) to help me along the way - both for asking general questions, and to help generate my code. So let's get started. I'm going to try my best to follow the instructions as-is, and only make small changes to see how far I can get.
 
 > All the code for this app can be found on [GitHub](https://github.com/build-on-aws/uscis-priority-date-tracker/), with the code as it was at the end of this article on the [article-1 tag](https://github.com/build-on-aws/uscis-priority-date-tracker/tree/article-1).
 
@@ -1015,7 +1016,7 @@ You can also explore the AWS Bedrock Studio, a web-based development environment
 
 **Sources:**
 
-1. [Generative AI App Development - Amazon Bedrock Studio - AWS](https://aws.amazon.com/bedrock/studio/)
+1. [Generative AI App Development - Amazon Bedrock Studio - AWS](https://aws.amazon.com/bedrock/studio/?trk=e20cd2b5-00b6-428e-9d18-8dd4cfd43985&sc_channel=el)
 
 > This is mostly ok, except I prefer not to create the infrastructure to store the statefile by hand, so I usually have `_bootstrap.tf` that contains the details of my base infrastructure for Terraform, create the S3 bucket, DynamoDB locking table, and KSM key with that, and then I add in the backend config to use those resources.
 

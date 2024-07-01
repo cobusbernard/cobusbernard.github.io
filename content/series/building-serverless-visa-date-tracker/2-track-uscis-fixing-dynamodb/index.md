@@ -10,7 +10,7 @@ tags: [aws, amazon-q, amazon-dynamodb, terraform]
 
 ## Introduction
 
-In the [previous article](({{<ref "/posts/2024-06-14/track-uscis-priority-dates">}})), I was able to extract the priority dates from the USCIS website, but the schema for my DynamoDB table needed a change to store the data. Today, I'm going to tackle this using [Amazon Q Developer](https://aws.amazon.com/developer/generative-ai/amazon-q/?trk=01b23196-71a4-403b-909c-65ddc571caa0&sc_channel=el).
+In the [previous article](({{<ref "/series/building-serverless-visa-date-tracker/1-track-uscis-priority-dates">}})), I was able to extract the priority dates from the USCIS website, but the schema for my DynamoDB table needed a change to store the data. Today, I'm going to tackle this using [Amazon Q Developer](https://aws.amazon.com/developer/generative-ai/amazon-q/?trk=01b23196-71a4-403b-909c-65ddc571caa0&sc_channel=el).
 
 The issue I ran into was how I was storing my data. I had a primary key as `pk = f"{filing_type}#{category}"` and a secondary key as `sk = f"{country}"`. The data that I'm trying to store has a date for when the Visa Bulletin was published (`bulletin_date`), and each bulletin has two tables I'm interested in for the priority date (`filing_type` for `Final Date` and `Application Date`). Each of those tables has a row per visa category (`category`), and column for the country groupings. The date for each combination of country and category is what I'm trying to store. This will allow me to query the historic data specific to me, with `category='3rd'`, `filing_type='Final Date'`, and `country='All Chargeability Areas Except Those Listed'`.
 

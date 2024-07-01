@@ -14,3 +14,4 @@ hugo.linux
 /.hugo_build.lockcontent/_drafts
 .hugo_build.lock
 /content/_drafts/
+.DS_Store

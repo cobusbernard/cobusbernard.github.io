@@ -34,8 +34,8 @@ params:
       Pre: Recent
       HasChildren: true
       Limit: 3
-    - Name: Notes
-      URL: /notes/
+    - Name: Series
+      URL: /series/
       Pre: Recent
       HasChildren: true
       Limit: 3
