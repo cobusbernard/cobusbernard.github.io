@@ -6,13 +6,14 @@ aws-services:
   - amazon-dynamodb
 date: 2024-06-16
 tags: [aws, amazon-q, amazon-dynamodb, terraform]
+canonicalUrl: "https://community.aws/content/2ihOgUm8x9k15XZ6aBfvUTlwmNN/fixing-err-i-mean-implementing-my-amazon-dynamodb-approach-with-gen-ai"
 ---
 
 ## Introduction
 
-In the [previous article](({{<ref "/series/building-serverless-visa-date-tracker/1-track-uscis-priority-dates">}})), I was able to extract the priority dates from the USCIS website, but the schema for my DynamoDB table needed a change to store the data. Today, I'm going to tackle this using [Amazon Q Developer](https://aws.amazon.com/developer/generative-ai/amazon-q/?trk=01b23196-71a4-403b-909c-65ddc571caa0&sc_channel=el).
+In the [previous article](({{<ref "/series/building-serverless-visa-date-tracker/1-track-uscis-priority-dates">}})), I started building a serverless app to scrape the USCIS priority dates from their website. I was able to extract the dates from the website, but the schema for my DynamoDB table needed a change to store the data. Today, I'm going to tackle this using [Amazon Q Developer](https://aws.amazon.com/developer/generative-ai/amazon-q/?trk=01b23196-71a4-403b-909c-65ddc571caa0&sc_channel=el).
 
-The issue I ran into was how I was storing my data. I had a primary key as `pk = f"{filing_type}#{category}"` and a secondary key as `sk = f"{country}"`. The data that I'm trying to store has a date for when the Visa Bulletin was published (`bulletin_date`), and each bulletin has two tables I'm interested in for the priority date (`filing_type` for `Final Date` and `Application Date`). Each of those tables has a row per visa category (`category`), and column for the country groupings. The date for each combination of country and category is what I'm trying to store. This will allow me to query the historic data specific to me, with `category='3rd'`, `filing_type='Final Date'`, and `country='All Chargeability Areas Except Those Listed'`.
+The issue I ran into was how I was storing my data. I had the primary key as `pk = f"{filing_type}#{category}"` and the secondary key as `sk = f"{country}"`. The data that I'm trying to store has a date for when the Visa Bulletin was published (`bulletin_date`), and each bulletin has two tables I'm interested in for the priority date (`filing_type` for `Final Date` and `Application Date`). Each of those tables has a row per visa category (`category`), and column for the country groupings. The date for each combination of country and category is what I'm trying to store. This will allow me to query the historic data specific to me, with `category='3rd'`, `filing_type='Final Date'`, and `country='All Chargeability Areas Except Those Listed'`.
 
 ## Table Schema
 
@@ -45,7 +46,7 @@ pk = f"BULLETIN_DATE#{bulletin_date.strftime('%Y-%m')}"
 sk = f"FILING_TYPE#{filing_type}#COUNTRY#{country}#CATEGORY#{category}"
 ```
 
-I did go back and forth between using provisioned capacity vs on-demand, I do like the idea of using the retry logic, but in the end, I settled on going for a simpler approach. I know that once I have everything working, I will do another pass to improve the code for the app. Ensuring that I combine the database write / retry logic with how I currently handle getting the data will cause issues. In the `scrape_visa_bulletin` function, I'm looping over each of the bulletins to extract the data, and adding that URL to the `ProcessedURLs` table so I don't process it again, but if writing to the database fails, it won't reprocess the pages that weren't saved. We now have the following for our `store_data` function:
+I went back and forth between using provisioned capacity vs on-demand, I do like the idea of using the retry logic, but in the end, I settled on going for a simpler approach. I know that once I have everything working, I will do another pass to improve the code for the app. Ensuring that I combine the database write / retry logic with how I currently handle getting the data will cause issues. In the `scrape_visa_bulletin` function, I'm looping over each of the bulletins to extract the data, and adding that URL to the `ProcessedURLs` table so I don't process it again, but if writing to the database fails, it won't reprocess the pages that weren't saved. We now have the following for our `store_data` function:
 
 ```python
 def store_data(data):
@@ -156,7 +157,7 @@ Traceback (most recent call last):
 botocore.exceptions.ClientError: An error occurred (ValidationException) when calling the Query operation: Query key condition not supported
 ```
 
-Turns out that the primary key [needs to be an "equality condition"](#prompt-9). I also notice that the files referenced are from a different directory than where I moved my code to. Initially this was going to be part of a larger repo with Terraform examples, but decided to split it out. I *think* this is due to using `venv` from that folder, but as long as my code runs, I'm going to ignore it for now. Let's fix the database first.
+Turns out that the primary key [needs to be an "equality condition"](#prompt-8). I also notice that the files referenced are from a different directory than where I moved my code to. Initially this was going to be part of a larger repo with Terraform examples, but decided to split it out. I *think* this is due to using `venv` from that folder, but as long as my code runs, I'm going to ignore it for now. Let's fix the database first.
 
 ## Redoing the Table Again
 
