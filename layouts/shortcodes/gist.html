@@ -1,0 +1,8 @@
+{{- $user := .Get 0 -}}
+{{- $gist := .Get 1 -}}
+{{- $file := .Get 2 -}}
+{{- if and $user $gist -}}
+<script src="https://gist.github.com/{{ $user }}/{{ $gist }}.js{{ with $file }}?file={{ . | urlquery }}{{ end }}"></script>
+{{- else -}}
+{{- errorf "gist shortcode requires GitHub username and gist ID: %s" .Position -}}
+{{- end -}}
